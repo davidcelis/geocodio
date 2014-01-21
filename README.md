@@ -1,6 +1,6 @@
-# Geocodio [![Build Status](https://travis-ci.org/davidcelis/geocodio.png?branch=master)](https://travis-ci.org/davidcelis/geocodio)
+# Geocodio [![Build Status](https://travis-ci.org/davidcelis/geocodio.png?branch=master)](https://travis-ci.org/davidcelis/geocodio) [![Coverage Status](https://coveralls.io/repos/davidcelis/geocodio/badge.png)](https://coveralls.io/r/davidcelis/geocodio)
 
-Geocodio is a lightweight Ruby wrapper around [geocod.io][geocod.io]'s API.
+Geocodio is a lightweight Ruby wrapper around the [geocod.io][geocod.io] API.
 
 ## Installation
 

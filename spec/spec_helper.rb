@@ -1,3 +1,7 @@
+# Measure test coverage.
+require 'coveralls'
+Coveralls.wear!
+
 require 'geocodio'
 require 'webmock/rspec'
 require 'vcr'
