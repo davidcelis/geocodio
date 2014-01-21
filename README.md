@@ -25,38 +25,42 @@ geocodio = Geocodio::Client.new
 
 ### Geocoding
 
+The `Geocodio::Client#geocode` method is used to request coordinates and expanded information on one or more addresses. It is possible for a geocoding request to yield multiple results with varying degrees of accuracy, so the `geocode` method will always return one `Geocodio::AddressSet` for each query made:
+
 ```ruby
 results = geocodio.geocode('1 Infinite Loop, Cupertino, CA 95014')
 # => #<Geocodio::AddressSet:0x007fdf23a07f80 @query="1 Infinite Loop, Cupertino, CA 95014", @addresses=[...]>
-address = results.first
-# => #<Geocodio::Address:0x007fb062e7fb20 @number="1", @street="Infinite", @suffix="Loop", @city="Monta Vista", @state="CA", @zip="95014", @latitude=37.331669, @longitude=-122.03074, @accuracy=1, @formatted_address="1 Infinite Loop, Monta Vista CA, 95014">
-puts address
-# => 1 Infinite Loop, Cupertino CA, 95014
-puts address.latitude # or address.lat
-# => 37.331669
-puts address.longitude # or address.lng
-# => -122.03074
-puts address.accuracy
-# => 1
 ```
 
-You can pass multiple addresses to `Geocodio::Client#geocode`:
+AddressSets are enumerable, so you can iterate over each result and perform operations on the addresses:
+
+```ruby
+results.each { |address| puts address }
+```
+
+If you just want the most accurate result, use the `#best` convenience method:
+
+```ruby
+address = results.best
+# => #<Geocodio::Address:0x007fb062e7fb20 @number="1", @street="Infinite", @suffix="Loop", @city="Monta Vista", @state="CA", @zip="95014", @latitude=37.331669, @longitude=-122.03074, @accuracy=1, @formatted_address="1 Infinite Loop, Monta Vista CA, 95014">
+
+puts address
+# => 1 Infinite Loop, Cupertino CA, 95014
+
+puts address.latitude # or address.lat
+# => 37.331669
+
+puts address.longitude # or address.lng
+# => -122.03074
+```
+
+To perform a batch geocoding operation, simply pass multiple addresses to `Geocodio::Client#geocode`:
 
 ```ruby
 result_sets = geocodio.geocode('1 Infinite Loop, Cupertino, CA 95014', '54 West Colorado Boulevard, Pasadena, CA 91105')
 # => [#<Geocodio::AddressSet:0x007fdf23a07f80 @query="1 Infinite Loop, Cupertino, CA 95014", @addresses=[...]>, #<Geocodio::AddressSet:0x007fdf23a07f80 @query="54 West Colorado Boulevard, Pasadena, CA 91105", @addresses=[...]>]
+
 cupertino = result_sets.first.best
-# => #<Geocodio::Address:0x007fb062e7fb20 @number="1", @street="Infinite", @suffix="Loop", @city="Monta Vista", @state="CA", @zip="95014", @latitude=37.331669, @longitude=-122.03074, @accuracy=1, @formatted_address="1 Infinite Loop, Monta Vista CA, 95014">
-```
-
-Geocoding will return one or more instances of `Geocodio::AddressSet` which represent a collection of addresses returned from geocod.io. Each address in the result set has an associated accuracy. If you just want whichever result was the most accurate, a `#best` convenience method is provided:
-
-```ruby
-results = geocodio.geocode('1 Infinite Loop, Cupertino, CA 95014')
-# => #<Geocodio::AddressSet:0x007fdf23a07f80 @query="1 Infinite Loop, Cupertino, CA 95014", @addresses=[...]>
-results.size
-# => 2
-results.best
 # => #<Geocodio::Address:0x007fb062e7fb20 @number="1", @street="Infinite", @suffix="Loop", @city="Monta Vista", @state="CA", @zip="95014", @latitude=37.331669, @longitude=-122.03074, @accuracy=1, @formatted_address="1 Infinite Loop, Monta Vista CA, 95014">
 ```
 
@@ -71,7 +75,7 @@ Note that this endpoint performs no geocoding; it merely formats a single provid
 
 ## Contributing
 
-1. Fork it ( http://github.com/[my-github-username]/geocodio/fork )
+1. Fork it ( http://github.com/davidcelis/geocodio/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
