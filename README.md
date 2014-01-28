@@ -73,6 +73,82 @@ address = geocodio.parse('1 Infinite Loop, Cupertino, CA 95014')
 
 Note that this endpoint performs no geocoding; it merely formats a single provided address according to geocod.io's standards.
 
+
+## Testing Geocodio
+When writing tests for an app that uses Geocodio, it would be wise to avoid network calls that result in wasted daily requests and potentially expensive test driven development.
+
+### Using Fakweb
+Fakeweb allows us to fake a web request and avoid hitting the Geocodio API. First add ```fakeweb``` to your ```Gemfile``` under the ```:test``` group and then install.
+
+```ruby
+group :test do
+  ...
+  gem 'fakeweb'
+  ...
+end
+```
+
+Next you should add your fake JSON response and the uri that is being faked to your ```spec/support/geocoding.rb``` file or wherever you keep your testing support files.
+
+```ruby
+geocodio_json = <<-JSON
+{
+  "input": {
+    "address_components": {
+      "number": "1101",
+      "street": "Pennsylvania",
+      "suffix": "Ave",
+      "postdirectional": "NW",
+      "city": "Washington",
+      "state": "DC"
+    },
+    "formatted_address": "1101 Pennsylvania Ave NW, Washington DC"
+  },
+  "results": [
+    {
+      "address_components": {
+        "number": "1101",
+        "street": "Pennsylvania",
+        "suffix": "Ave",
+        "postdirectional": "NW",
+        "city": "Washington",
+        "state": "DC",
+        "zip": "20004"
+      },
+      "formatted_address": "1101 Pennsylvania Ave NW, Washington DC, 20004",
+      "location": {
+        "lat": 38.895019,
+        "lng": -77.028095
+      },
+      "accuracy": 1
+    },
+    {
+      "address_components": {
+        "number": "1101",
+        "street": "Pennsylvania",
+        "suffix": "Ave",
+        "postdirectional": "NW",
+        "city": "Washington",
+        "state": "DC",
+        "zip": "20004"
+      },
+      "formatted_address": "1101 Pennsylvania Ave NW, Washington DC, 20004",
+      "location": {
+        "lat": 38.895016122449,
+        "lng": -77.028084377551
+      },
+      "accuracy": 0.8
+    }
+  ]
+}
+JSON
+
+FakeWeb.register_uri(:any, %r|http://api\.geocod\.io/v1/geocode|, :body => geocodio_json)
+```
+
+Lastly, include this support file in your testng environment!
+
+
 ## Contributing
 
 1. Fork it ( http://github.com/davidcelis/geocodio/fork )
