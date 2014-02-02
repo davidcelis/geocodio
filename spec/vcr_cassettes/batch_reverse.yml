@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.geocod.io/v1/reverse?api_key=secret_api_key
+    body:
+      encoding: UTF-8
+      string: "[\"37.331669,-122.03074\",\"34.145760590909,-118.15204363636\",\"37.7815,-122.404933\"]"
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 02 Feb 2014 17:35:59 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/5.4.24
+      Cache-Control:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: "{\"results\":[{\"query\":\"37.331669,-122.03074\",\"response\":{\"results\":[{\"address_components\":{\"number\":\"91\",\"street\":\"Infinite\",\"suffix\":\"Loop\",\"city\":\"Monta
+        Vista\",\"state\":\"CA\",\"zip\":\"95014\"},\"formatted_address\":\"91 Infinite
+        Loop, Monta Vista, CA 95014\",\"location\":{\"lat\":37.332709,\"lng\":-122.03071},\"accuracy\":1},{\"address_components\":{\"number\":\"19116\",\"street\":\"Mariani\",\"suffix\":\"Ave\",\"city\":\"Monta
+        Vista\",\"state\":\"CA\",\"zip\":\"95014\"},\"formatted_address\":\"19116
+        Mariani Ave, Monta Vista, CA 95014\",\"location\":{\"lat\":37.330407,\"lng\":-122.030873},\"accuracy\":0.28},{\"address_components\":{\"number\":\"19118\",\"street\":\"Mariani\",\"suffix\":\"Ave\",\"city\":\"Monta
+        Vista\",\"state\":\"CA\",\"zip\":\"95014\"},\"formatted_address\":\"19118
+        Mariani Ave, Monta Vista, CA 95014\",\"location\":{\"lat\":37.330489,\"lng\":-122.0305},\"accuracy\":0.28}]}},{\"query\":\"34.145760590909,-118.15204363636\",\"response\":{\"results\":[{\"address_components\":{\"number\":\"43\",\"predirectional\":\"W\",\"street\":\"Colorado\",\"suffix\":\"Blvd\",\"city\":\"Pasadena\",\"state\":\"CA\",\"zip\":\"91105\"},\"formatted_address\":\"43
+        W Colorado Blvd, Pasadena, CA 91105\",\"location\":{\"lat\":34.145766,\"lng\":-118.15141},\"accuracy\":1},{\"address_components\":{\"number\":\"1\",\"predirectional\":\"N\",\"street\":\"De
+        Lacey\",\"suffix\":\"Ave\",\"city\":\"Pasadena\",\"state\":\"CA\",\"zip\":\"91103\"},\"formatted_address\":\"1
+        N De Lacey Ave, Pasadena, CA 91103\",\"location\":{\"lat\":34.145759,\"lng\":-118.15223},\"accuracy\":0},{\"address_components\":{\"number\":\"1\",\"predirectional\":\"S\",\"street\":\"De
+        Lacey\",\"suffix\":\"Ave\",\"city\":\"Pasadena\",\"state\":\"CA\",\"zip\":\"91105\"},\"formatted_address\":\"1
+        S De Lacey Ave, Pasadena, CA 91105\",\"location\":{\"lat\":34.145759,\"lng\":-118.15223},\"accuracy\":0}]}},{\"query\":\"37.7815,-122.404933\",\"response\":{\"results\":[{\"address_components\":{\"number\":\"177\",\"street\":\"5th\",\"suffix\":\"St\",\"city\":\"San
+        Francisco\",\"state\":\"CA\",\"zip\":\"94102\"},\"formatted_address\":\"177
+        5th St, San Francisco, CA 94102\",\"location\":{\"lat\":37.781925,\"lng\":-122.405466},\"accuracy\":0},{\"address_components\":{\"number\":\"900\",\"street\":\"Howard\",\"suffix\":\"St\",\"city\":\"San
+        Francisco\",\"state\":\"CA\",\"zip\":\"94103\"},\"formatted_address\":\"900
+        Howard St, San Francisco, CA 94103\",\"location\":{\"lat\":37.7815,\"lng\":-122.404933},\"accuracy\":0},{\"address_components\":{\"number\":\"861\",\"street\":\"Howard\",\"suffix\":\"St\",\"city\":\"San
+        Francisco\",\"state\":\"CA\",\"zip\":\"94103\"},\"formatted_address\":\"861
+        Howard St, San Francisco, CA 94103\",\"location\":{\"lat\":37.782831,\"lng\":-122.40325},\"accuracy\":0}]}}]}"
+    http_version: 
+  recorded_at: Sun, 02 Feb 2014 17:36:00 GMT
+recorded_with: VCR 2.8.0

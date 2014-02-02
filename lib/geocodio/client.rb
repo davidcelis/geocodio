@@ -26,7 +26,7 @@ module Geocodio
     # is submitted to http://api.geocod.io/v1/geocode. Multiple addresses will
     # instead submit a POST request.
     #
-    # @param addresses [Array] one or more String addresses
+    # @param addresses [Array<String>] one or more String addresses
     # @return [Geocodio::Address, Array<Geocodio::AddressSet>] One or more Address Sets
     def geocode(*addresses)
       addresses = addresses.first if addresses.first.is_a?(Array)
@@ -39,6 +39,28 @@ module Geocodio
         geocode_batch(addresses)
       end
     end
+
+    # Reverse geocodes one or more pairs of coordinates. Coordinate pairs may be
+    # specified either as a comma-separated "latitude,longitude" string, or as
+    # a Hash with :lat/:latitude and :lng/:longitude keys. If one pair of
+    # coordinates is specified, a GET request is submitted to
+    # http://api.geocod.io/v1/reverse. Multiple pairs of coordinates will instead
+    # submit a POST request.
+    #
+    # @param coordinates [Array<String>, Array<Hash>] one or more pairs of coordinates
+    # @return [Geocodio::Address, Array<Geocodio::AddressSet>] One or more Address Sets
+    def reverse_geocode(*coordinates)
+      coordinates = coordinates.first if coordinates.first.is_a?(Array)
+
+      if coordinates.size < 1
+        raise ArgumentError, 'You must provide coordinates to reverse geocode.'
+      elsif coordinates.size == 1
+        reverse_geocode_single(coordinates.first)
+      else
+        reverse_geocode_batch(coordinates)
+      end
+    end
+    alias :reverse :reverse_geocode
 
     # Sends a GET request to http://api.geocod.io/v1/parse to correctly dissect
     # an address into individual parts. As this endpoint does not do any
@@ -67,6 +89,16 @@ module Geocodio
         AddressSet.new(address, *addresses)
       end
 
+      def reverse_geocode_single(pair)
+        pair = pair.sort.map { |p| p[1] }.join(',') if pair.is_a?(Hash)
+
+        response = get '/reverse', q: pair
+        results   = response.body['results']
+        addresses = results.map { |result| Address.new(result) }
+
+        AddressSet.new(pair, *addresses)
+      end
+
       def geocode_batch(addresses)
         response    = post '/geocode', {}, body: addresses
         result_sets = response.body['results']
@@ -77,6 +109,23 @@ module Geocodio
           addresses = results.map { |result| Address.new(result) }
 
           AddressSet.new(query, *addresses)
+        end
+      end
+
+      def reverse_geocode_batch(pairs)
+        pairs.map! do |pair|
+          pair.is_a?(Hash) ? pair.sort.map { |p| p[1] }.join(',') : pair
+        end
+
+        response    = post '/reverse', {}, body: pairs
+        result_sets = response.body['results']
+
+        result_sets.map do |result_set|
+          results   = result_set['response']['results']
+          pair      = result_set['query']
+          addresses = results.map { |result| Address.new(result) }
+
+          AddressSet.new(pair, *addresses)
         end
       end
 

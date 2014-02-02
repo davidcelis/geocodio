@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.geocod.io/v1/reverse?api_key=secret_api_key&q=37.331669,-122.03074
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 02 Feb 2014 17:29:11 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/5.4.24
+      Cache-Control:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: "{\"results\":[{\"address_components\":{\"number\":\"91\",\"street\":\"Infinite\",\"suffix\":\"Loop\",\"city\":\"Monta
+        Vista\",\"state\":\"CA\",\"zip\":\"95014\"},\"formatted_address\":\"91 Infinite
+        Loop, Monta Vista, CA 95014\",\"location\":{\"lat\":37.332709,\"lng\":-122.03071},\"accuracy\":1},{\"address_components\":{\"number\":\"19116\",\"street\":\"Mariani\",\"suffix\":\"Ave\",\"city\":\"Monta
+        Vista\",\"state\":\"CA\",\"zip\":\"95014\"},\"formatted_address\":\"19116
+        Mariani Ave, Monta Vista, CA 95014\",\"location\":{\"lat\":37.330407,\"lng\":-122.030873},\"accuracy\":0.28},{\"address_components\":{\"number\":\"19118\",\"street\":\"Mariani\",\"suffix\":\"Ave\",\"city\":\"Monta
+        Vista\",\"state\":\"CA\",\"zip\":\"95014\"},\"formatted_address\":\"19118
+        Mariani Ave, Monta Vista, CA 95014\",\"location\":{\"lat\":37.330489,\"lng\":-122.0305},\"accuracy\":0.28}]}"
+    http_version: 
+  recorded_at: Sun, 02 Feb 2014 17:29:13 GMT
+recorded_with: VCR 2.8.0

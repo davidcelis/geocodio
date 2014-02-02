@@ -1,8 +1,9 @@
 require 'spec_helper'
 
 describe Geocodio::Client do
-  let(:geocodio) { Geocodio::Client.new }
-  let(:address) { '54 West Colorado Boulevard Pasadena CA 91105' }
+  let(:geocodio)    { Geocodio::Client.new }
+  let(:address)     { '54 West Colorado Boulevard Pasadena CA 91105' }
+  let(:coordinates) { '37.331669,-122.03074' }
 
   it 'requires an API key' do
     VCR.use_cassette('invalid_key') do
@@ -27,6 +28,27 @@ describe Geocodio::Client do
     end
   end
 
+  context 'reverse geocoding a single address' do
+    it 'uses a string' do
+      VCR.use_cassette('reverse') do
+        addresses = geocodio.reverse_geocode(coordinates)
+
+        expect(addresses.size).to eq(3)
+        expect(addresses).to be_a(Geocodio::AddressSet)
+      end
+    end
+
+    it 'uses a hash' do
+      VCR.use_cassette('reverse') do
+        lat, lng = coordinates.split(',')
+        addresses = geocodio.reverse_geocode(latitude: lat, longitude: lng)
+
+        expect(addresses.size).to eq(3)
+        expect(addresses).to be_a(Geocodio::AddressSet)
+      end
+    end
+  end
+
   it 'geocodes multiple addresses' do
     VCR.use_cassette('batch_geocode') do
       addresses = [
@@ -39,6 +61,53 @@ describe Geocodio::Client do
 
       expect(addresses.size).to eq(3)
       addresses.each { |address| expect(address).to be_a(Geocodio::AddressSet) }
+    end
+  end
+
+  context 'reverse geocoding multiple addresses' do
+    it 'uses strings' do
+      VCR.use_cassette('batch_reverse') do
+        coordinate_pairs = [
+          '37.331669,-122.03074',
+          '34.145760590909,-118.15204363636',
+          '37.7815,-122.404933'
+        ]
+
+        addresses = geocodio.reverse_geocode(*coordinate_pairs)
+
+        expect(addresses.size).to eq(3)
+        addresses.each { |address| expect(address).to be_a(Geocodio::AddressSet) }
+      end
+    end
+
+    it 'uses hashes' do
+      VCR.use_cassette('batch_reverse') do
+        coordinate_pairs = [
+          { latitude: 37.331669,       longitude: -122.03074 },
+          { latitude: 34.145760590909, longitude: -118.15204363636 },
+          { latitude: 37.7815,         longitude: -122.404933 }
+        ]
+
+        addresses = geocodio.reverse_geocode(*coordinate_pairs)
+
+        expect(addresses.size).to eq(3)
+        addresses.each { |address| expect(address).to be_a(Geocodio::AddressSet) }
+      end
+    end
+
+    it 'uses an arbitrary combination of strings and hashes' do
+      VCR.use_cassette('batch_reverse') do
+        coordinate_pairs = [
+          { latitude: 37.331669, longitude: -122.03074 },
+          '34.145760590909,-118.15204363636',
+          { latitude: 37.7815,   longitude: -122.404933 }
+        ]
+
+        addresses = geocodio.reverse_geocode(*coordinate_pairs)
+
+        expect(addresses.size).to eq(3)
+        addresses.each { |address| expect(address).to be_a(Geocodio::AddressSet) }
+      end
     end
   end
 end
