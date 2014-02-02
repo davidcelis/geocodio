@@ -62,10 +62,9 @@ module Geocodio
       def geocode_single(address)
         response  = get '/geocode', q: address
         results   = response.body['results']
-        query     = response.body['input']['formatted_address']
         addresses = results.map { |result| Address.new(result) }
 
-        AddressSet.new(query, *addresses)
+        AddressSet.new(address, *addresses)
       end
 
       def geocode_batch(addresses)
@@ -73,7 +72,7 @@ module Geocodio
         result_sets = response.body['results']
 
         result_sets.map do |result_set|
-          query     = result_set['response']['input']['formatted_address']
+          query     = result_set['query']
           results   = result_set['response']['results']
           addresses = results.map { |result| Address.new(result) }
 

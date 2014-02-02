@@ -26,6 +26,6 @@ describe Geocodio::AddressSet do
   end
 
   it 'references the original query' do
-    expect(address_set.query).to eq('826 Howard St, San Francisco CA, 94103')
+    expect(address_set.query).to eq('826 Howard Street San Francisco CA 94103')
   end
 end
