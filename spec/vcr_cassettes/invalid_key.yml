@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.geocod.io/v1/geocode?api_key=secret_api_key&q=1%20Infinite%20Loop%20Cupertino%20CA%2095014
+    uri: http://api.geocod.io/v1/geocode?api_key=secret_api_key&q=54%20West%20Colorado%20Boulevard%20Pasadena%20CA%2091105
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: Forbidden
     headers:
       Date:
-      - Tue, 21 Jan 2014 20:47:20 GMT
+      - Sun, 02 Feb 2014 17:43:02 GMT
       Server:
       - Apache
       X-Powered-By:
@@ -36,5 +36,5 @@ http_interactions:
       encoding: UTF-8
       string: "{\"error\":\"Invalid API key\"}"
     http_version: 
-  recorded_at: Tue, 21 Jan 2014 20:47:21 GMT
+  recorded_at: Sun, 02 Feb 2014 17:43:03 GMT
 recorded_with: VCR 2.8.0

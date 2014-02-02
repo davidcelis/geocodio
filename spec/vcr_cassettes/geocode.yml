@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.geocod.io/v1/geocode?api_key=secret_api_key&q=1%20Infinite%20Loop%20Cupertino%20CA%2095014
+    uri: http://api.geocod.io/v1/geocode?api_key=secret_api_key&q=54%20West%20Colorado%20Boulevard%20Pasadena%20CA%2091105
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 21 Jan 2014 19:55:27 GMT
+      - Sun, 02 Feb 2014 17:40:52 GMT
       Server:
       - Apache
       X-Powered-By:
@@ -34,10 +34,10 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: "{\"input\":{\"address_components\":{\"number\":\"1\",\"street\":\"Infinite\",\"suffix\":\"Loop\",\"city\":\"Cupertino\",\"state\":\"CA\",\"zip\":\"95014\"},\"formatted_address\":\"1
-        Infinite Loop, Cupertino CA, 95014\"},\"results\":[{\"address_components\":{\"number\":\"1\",\"street\":\"Infinite\",\"suffix\":\"Loop\",\"city\":\"Monta
-        Vista\",\"state\":\"CA\",\"zip\":\"95014\"},\"formatted_address\":\"1 Infinite
-        Loop, Monta Vista CA, 95014\",\"location\":{\"lat\":37.331669,\"lng\":-122.03074},\"accuracy\":1}]}"
+      string: "{\"input\":{\"address_components\":{\"number\":\"54\",\"predirectional\":\"W\",\"street\":\"Colorado\",\"suffix\":\"Blvd\",\"city\":\"Pasadena\",\"state\":\"CA\",\"zip\":\"91105\"},\"formatted_address\":\"54
+        W Colorado Blvd, Pasadena, CA 91105\"},\"results\":[{\"address_components\":{\"number\":\"54\",\"predirectional\":\"W\",\"street\":\"Colorado\",\"suffix\":\"Blvd\",\"city\":\"Pasadena\",\"state\":\"CA\",\"zip\":\"91105\"},\"formatted_address\":\"54
+        W Colorado Blvd, Pasadena, CA 91105\",\"location\":{\"lat\":34.145760590909,\"lng\":-118.15204363636},\"accuracy\":1},{\"address_components\":{\"number\":\"54\",\"predirectional\":\"W\",\"street\":\"Colorado\",\"suffix\":\"Blvd\",\"city\":\"Pasadena\",\"state\":\"CA\",\"zip\":\"91105\"},\"formatted_address\":\"54
+        W Colorado Blvd, Pasadena, CA 91105\",\"location\":{\"lat\":34.1457634625,\"lng\":-118.15170725},\"accuracy\":0.8}]}"
     http_version: 
-  recorded_at: Tue, 21 Jan 2014 19:55:28 GMT
+  recorded_at: Sun, 02 Feb 2014 17:40:53 GMT
 recorded_with: VCR 2.8.0

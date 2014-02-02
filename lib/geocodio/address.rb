@@ -1,6 +1,7 @@
 module Geocodio
   class Address
     attr_accessor :number
+    attr_accessor :predirectional
     attr_accessor :street
     attr_accessor :suffix
     attr_accessor :city
@@ -19,12 +20,13 @@ module Geocodio
 
     def initialize(payload = {})
       if payload['address_components']
-        @number    = payload['address_components']['number']
-        @street    = payload['address_components']['street']
-        @suffix    = payload['address_components']['suffix']
-        @city      = payload['address_components']['city']
-        @state     = payload['address_components']['state']
-        @zip       = payload['address_components']['zip']
+        @number         = payload['address_components']['number']
+        @predirectional = payload['address_components']['predirectional']
+        @street         = payload['address_components']['street']
+        @suffix         = payload['address_components']['suffix']
+        @city           = payload['address_components']['city']
+        @state          = payload['address_components']['state']
+        @zip            = payload['address_components']['zip']
       end
 
       if payload['location']

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Geocodio::Client do
   let(:geocodio) { Geocodio::Client.new }
-  let(:address) { '1 Infinite Loop Cupertino CA 95014' }
+  let(:address) { '54 West Colorado Boulevard Pasadena CA 91105' }
 
   it 'requires an API key' do
     VCR.use_cassette('invalid_key') do
@@ -22,7 +22,7 @@ describe Geocodio::Client do
     VCR.use_cassette('geocode') do
       addresses = geocodio.geocode(address)
 
-      expect(addresses.size).to eq(1)
+      expect(addresses.size).to eq(2)
       expect(addresses).to be_a(Geocodio::AddressSet)
     end
   end

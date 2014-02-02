@@ -6,24 +6,28 @@ describe Geocodio::Address do
   context 'when parsed' do
     subject(:address) do
       VCR.use_cassette('parse') do
-        geocodio.parse('1 Infinite Loop Cupertino CA 95014')
+        geocodio.parse('54 West Colorado Boulevard Pasadena CA 91105')
       end
     end
 
     it 'has a number' do
-      expect(address.number).to eq('1')
+      expect(address.number).to eq('54')
+    end
+
+    it 'has a predirectional' do
+      expect(address.predirectional).to eq('W')
     end
 
     it 'has a street' do
-      expect(address.street).to eq('Infinite')
+      expect(address.street).to eq('Colorado')
     end
 
     it 'has a suffix' do
-      expect(address.suffix).to eq('Loop')
+      expect(address.suffix).to eq('Blvd')
     end
 
     it 'has a city' do
-      expect(address.city).to eq('Cupertino')
+      expect(address.city).to eq('Pasadena')
     end
 
     it 'has a state' do
@@ -31,7 +35,7 @@ describe Geocodio::Address do
     end
 
     it 'has a zip' do
-      expect(address.zip).to eq('95014')
+      expect(address.zip).to eq('91105')
     end
 
     it 'does not have a latitude' do
@@ -52,24 +56,28 @@ describe Geocodio::Address do
   context 'when geocoded' do
     subject(:address) do
       VCR.use_cassette('geocode') do
-        geocodio.geocode('1 Infinite Loop Cupertino CA 95014').best
+        geocodio.geocode('54 West Colorado Boulevard Pasadena CA 91105').best
       end
     end
 
     it 'has a number' do
-      expect(address.number).to eq('1')
+      expect(address.number).to eq('54')
+    end
+
+    it 'has a predirectional' do
+      expect(address.predirectional).to eq('W')
     end
 
     it 'has a street' do
-      expect(address.street).to eq('Infinite')
+      expect(address.street).to eq('Colorado')
     end
 
     it 'has a suffix' do
-      expect(address.suffix).to eq('Loop')
+      expect(address.suffix).to eq('Blvd')
     end
 
     it 'has a city' do
-      expect(address.city).to eq('Monta Vista')
+      expect(address.city).to eq('Pasadena')
     end
 
     it 'has a state' do
@@ -77,17 +85,17 @@ describe Geocodio::Address do
     end
 
     it 'has a zip' do
-      expect(address.zip).to eq('95014')
+      expect(address.zip).to eq('91105')
     end
 
     it 'has a latitude' do
-      expect(address.latitude).to eq(37.331669)
-      expect(address.lat).to      eq(37.331669)
+      expect(address.latitude).to eq(34.145760590909)
+      expect(address.lat).to      eq(34.145760590909)
     end
 
     it 'has a longitude' do
-      expect(address.longitude).to eq(-122.03074)
-      expect(address.lng).to       eq(-122.03074)
+      expect(address.longitude).to eq(-118.15204363636)
+      expect(address.lng).to       eq(-118.15204363636)
     end
 
     it 'has an accuracy' do
