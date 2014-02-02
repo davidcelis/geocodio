@@ -4,9 +4,12 @@ require 'cgi'
 
 require 'geocodio/client/error'
 require 'geocodio/client/response'
+require 'geocodio/utils'
 
 module Geocodio
   class Client
+    include Geocodio::Utils
+
     CONTENT_TYPE = 'application/json'
     METHODS = {
       :get    => Net::HTTP::Get,
@@ -44,8 +47,8 @@ module Geocodio
     # specified either as a comma-separated "latitude,longitude" string, or as
     # a Hash with :lat/:latitude and :lng/:longitude keys. If one pair of
     # coordinates is specified, a GET request is submitted to
-    # http://api.geocod.io/v1/reverse. Multiple pairs of coordinates will instead
-    # submit a POST request.
+    # http://api.geocod.io/v1/reverse. Multiple pairs of coordinates will
+    # instead submit a POST request.
     #
     # @param coordinates [Array<String>, Array<Hash>] one or more pairs of coordinates
     # @return [Geocodio::Address, Array<Geocodio::AddressSet>] One or more Address Sets
@@ -83,50 +86,31 @@ module Geocodio
 
       def geocode_single(address)
         response  = get '/geocode', q: address
-        results   = response.body['results']
-        addresses = results.map { |result| Address.new(result) }
+        addresses = parse_results(response)
 
         AddressSet.new(address, *addresses)
       end
 
       def reverse_geocode_single(pair)
-        pair = pair.sort.map { |p| p[1] }.join(',') if pair.is_a?(Hash)
+        pair = normalize_coordinates(pair)
 
-        response = get '/reverse', q: pair
-        results   = response.body['results']
-        addresses = results.map { |result| Address.new(result) }
+        response  = get '/reverse', q: pair
+        addresses = parse_results(response)
 
         AddressSet.new(pair, *addresses)
       end
 
       def geocode_batch(addresses)
-        response    = post '/geocode', {}, body: addresses
-        result_sets = response.body['results']
+        response = post '/geocode', {}, body: addresses
 
-        result_sets.map do |result_set|
-          query     = result_set['query']
-          results   = result_set['response']['results']
-          addresses = results.map { |result| Address.new(result) }
-
-          AddressSet.new(query, *addresses)
-        end
+        parse_nested_results(response)
       end
 
       def reverse_geocode_batch(pairs)
-        pairs.map! do |pair|
-          pair.is_a?(Hash) ? pair.sort.map { |p| p[1] }.join(',') : pair
-        end
+        pairs.map! { |pair| normalize_coordinates(pair) }
+        response = post '/reverse', {}, body: pairs
 
-        response    = post '/reverse', {}, body: pairs
-        result_sets = response.body['results']
-
-        result_sets.map do |result_set|
-          results   = result_set['response']['results']
-          pair      = result_set['query']
-          addresses = results.map { |result| Address.new(result) }
-
-          AddressSet.new(pair, *addresses)
-        end
+        parse_nested_results(response)
       end
 
       def request(method, path, options)
