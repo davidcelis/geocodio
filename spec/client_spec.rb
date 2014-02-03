@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Geocodio::Client do
   let(:geocodio)    { Geocodio::Client.new }
   let(:address)     { '54 West Colorado Boulevard Pasadena CA 91105' }
-  let(:coordinates) { '37.331669,-122.03074' }
+  let(:coordinates) { '34.145760590909,-118.15204363636' }
 
   it 'requires an API key' do
     VCR.use_cassette('invalid_key') do
