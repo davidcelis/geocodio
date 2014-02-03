@@ -64,6 +64,25 @@ cupertino = result_sets.first.best
 # => #<Geocodio::Address:0x007fb062e7fb20 @number="1", @street="Infinite", @suffix="Loop", @city="Monta Vista", @state="CA", @zip="95014", @latitude=37.331669, @longitude=-122.03074, @accuracy=1, @formatted_address="1 Infinite Loop, Monta Vista CA, 95014">
 ```
 
+### Reverse Geocoding
+
+The interface to reverse geocoding is very similar to geocoding. Use the `Geocodio::Client#reverse_geocode` method (aliased to `Geocodio::Client#reverse`) with one or more pairs of coordinates:
+
+```ruby
+addresses = geocodio.reverse_geocode('37.331669,-122.03074')
+# => #<Geocodio::AddressSet:0x007fdf23a07f80 @query="1 Infinite Loop, Cupertino, CA 95014", @addresses=[...]>
+
+address_sets = geocodio.reverse_geocode('37.331669,-122.03074', '34.145760590909,-118.15204363636')
+# => [#<Geocodio::AddressSet:0x007fdf23a07f80 @query="1 Infinite Loop, Cupertino, CA 95014", @addresses=[...]>, #<Geocodio::AddressSet:0x007fdf23a07f80 @query="54 West Colorado Boulevard, Pasadena, CA 91105", @addresses=[...]>]
+```
+
+Coordinate pairs can also be specified as hashes:
+
+```ruby
+address_sets = geocodio.reverse_geocode({ lat: 37.331669, lng: -122.03074 }, { latitude: 34.145760590909, longitude: -118.15204363636 })
+# => [#<Geocodio::AddressSet:0x007fdf23a07f80 @query="1 Infinite Loop, Cupertino, CA 95014", @addresses=[...]>, #<Geocodio::AddressSet:0x007fdf23a07f80 @query="54 West Colorado Boulevard, Pasadena, CA 91105", @addresses=[...]>]
+```
+
 ### Parsing
 
 ```ruby
