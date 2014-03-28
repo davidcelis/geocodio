@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.geocod.io/v1/geocode?api_key=secret_api_key&fields=cd,stateleg,school,timezone&q=54%20West%20Colorado%20Boulevard%20Pasadena%20CA%2091105
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.2.1
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 28 Mar 2014 16:00:06 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"input":{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","city":"Pasadena","state":"CA","zip":"91105"},"formatted_address":"54
+        W Colorado Blvd, Pasadena, CA 91105"},"results":[{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","city":"Pasadena","county":"Los
+        Angeles County","state":"CA","zip":"91105"},"formatted_address":"54 W Colorado
+        Blvd, Pasadena, CA 91105","location":{"lat":34.145760590909,"lng":-118.15204363636},"accuracy":1,"fields":{"congressional_district":{"name":"Congressional
+        District 27","district_number":27,"congress_number":"113th","congress_years":"2013-2015"},"state_legislative_districts":{"senate":{"name":"State
+        Senate District 25","district_number":25},"house":{"name":"Assembly District
+        41","district_number":41}},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"29940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","city":"Pasadena","county":"Los
+        Angeles County","state":"CA","zip":"91105"},"formatted_address":"54 W Colorado
+        Blvd, Pasadena, CA 91105","location":{"lat":34.1457634625,"lng":-118.15170725},"accuracy":0.8,"fields":{"congressional_district":{"name":"Congressional
+        District 27","district_number":27,"congress_number":"113th","congress_years":"2013-2015"},"state_legislative_districts":{"senate":{"name":"State
+        Senate District 25","district_number":25},"house":{"name":"Assembly District
+        41","district_number":41}},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"29940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}}]}'
+    http_version: 
+  recorded_at: Fri, 28 Mar 2014 16:00:06 GMT
+recorded_with: VCR 2.8.0

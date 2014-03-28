@@ -12,7 +12,7 @@ describe Geocodio::AddressSet do
 
   subject(:address_set) do
     VCR.use_cassette('batch_geocode') do
-      geocodio.geocode(*addresses).last
+      geocodio.geocode(addresses).last
     end
   end
 

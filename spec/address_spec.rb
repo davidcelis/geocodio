@@ -56,7 +56,7 @@ describe Geocodio::Address do
   context 'when geocoded' do
     subject(:address) do
       VCR.use_cassette('geocode') do
-        geocodio.geocode('54 West Colorado Boulevard Pasadena CA 91105').best
+        geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105']).best
       end
     end
 
@@ -100,6 +100,42 @@ describe Geocodio::Address do
 
     it 'has an accuracy' do
       expect(address.accuracy).to eq(1)
+    end
+
+    context 'with additional fields' do
+      subject(:address) do
+        VCR.use_cassette('geocode_with_fields') do
+          geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd stateleg school timezone]).best
+        end
+      end
+
+      it 'has a congressional district' do
+        expect(address.congressional_district).to be_a(Geocodio::CongressionalDistrict)
+      end
+
+      it 'has a house district' do
+        expect(address.house_district).to be_a(Geocodio::StateLegislativeDistrict)
+      end
+
+      it 'has a senate district' do
+        expect(address.senate_district).to be_a(Geocodio::StateLegislativeDistrict)
+      end
+
+      it 'has a unified school district' do
+        expect(address.unified_school_district).to be_a(Geocodio::SchoolDistrict)
+      end
+
+      it 'could have an elementary school district' do
+        expect(address.elementary_school_district).to be_nil
+      end
+
+      it 'could have a secondary school district' do
+        expect(address.secondary_school_district).to be_nil
+      end
+
+      it 'has a timezone' do
+        expect(address.timezone).to be_a(Geocodio::Timezone)
+      end
     end
   end
 end

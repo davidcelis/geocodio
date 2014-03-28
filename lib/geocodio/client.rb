@@ -29,17 +29,17 @@ module Geocodio
     # is submitted to http://api.geocod.io/v1/geocode. Multiple addresses will
     # instead submit a POST request.
     #
-    # @param addresses [Array<String>] one or more String addresses
+    # @param [Array<String>] addresses one or more String addresses
+    # @param [Hash] options an options hash
+    # @option options [Array] :fields a list of option fields to request (possible: "cd" or "cd113", "stateleg", "school", "timezone")
     # @return [Geocodio::Address, Array<Geocodio::AddressSet>] One or more Address Sets
-    def geocode(*addresses)
-      addresses = addresses.first if addresses.first.is_a?(Array)
-
+    def geocode(addresses, options = {})
       if addresses.size < 1
         raise ArgumentError, 'You must provide at least one address to geocode.'
       elsif addresses.size == 1
-        geocode_single(addresses.first)
+        geocode_single(addresses.first, options)
       else
-        geocode_batch(addresses)
+        geocode_batch(addresses, options)
       end
     end
 
@@ -50,17 +50,17 @@ module Geocodio
     # http://api.geocod.io/v1/reverse. Multiple pairs of coordinates will
     # instead submit a POST request.
     #
-    # @param coordinates [Array<String>, Array<Hash>] one or more pairs of coordinates
+    # @param [Array<String>, Array<Hash>] coordinates one or more pairs of coordinates
+    # @param [Hash] options an options hash
+    # @option options [Array] :fields a list of option fields to request (possible: "cd" or "cd113", "stateleg", "school", "timezone")
     # @return [Geocodio::Address, Array<Geocodio::AddressSet>] One or more Address Sets
-    def reverse_geocode(*coordinates)
-      coordinates = coordinates.first if coordinates.first.is_a?(Array)
-
+    def reverse_geocode(coordinates, options = {})
       if coordinates.size < 1
         raise ArgumentError, 'You must provide coordinates to reverse geocode.'
       elsif coordinates.size == 1
-        reverse_geocode_single(coordinates.first)
+        reverse_geocode_single(coordinates.first, options)
       else
-        reverse_geocode_batch(coordinates)
+        reverse_geocode_batch(coordinates, options)
       end
     end
     alias :reverse :reverse_geocode
@@ -84,31 +84,40 @@ module Geocodio
         end
       end
 
-      def geocode_single(address)
-        response  = get '/geocode', q: address
+      def geocode_single(address, options = {})
+        params = { q: address }
+        params[:fields] = options[:fields].join(',') if options[:fields]
+
+        response  = get '/geocode', params
         addresses = parse_results(response)
 
         AddressSet.new(address, *addresses)
       end
 
-      def reverse_geocode_single(pair)
+      def reverse_geocode_single(pair, options = {})
         pair = normalize_coordinates(pair)
+        params = { q: pair }
+        params[:fields] = options[:fields].join(',') if options[:fields]
 
-        response  = get '/reverse', q: pair
+        response  = get '/reverse', params
         addresses = parse_results(response)
 
         AddressSet.new(pair, *addresses)
       end
 
-      def geocode_batch(addresses)
-        response = post '/geocode', {}, body: addresses
+      def geocode_batch(addresses, options = {})
+        options[:fields] = options[:fields].join(',') if options[:fields]
+
+        response = post '/geocode', options, body: addresses
 
         parse_nested_results(response)
       end
 
-      def reverse_geocode_batch(pairs)
+      def reverse_geocode_batch(pairs, options = {})
         pairs.map! { |pair| normalize_coordinates(pair) }
-        response = post '/reverse', {}, body: pairs
+        options[:fields] = options[:fields].join(',') if options[:fields]
+
+        response = post '/reverse', options, body: pairs
 
         parse_nested_results(response)
       end
