@@ -23,47 +23,12 @@ module Geocodio
     attr_reader :accuracy
 
     def initialize(payload = {})
-      if payload['address_components']
-        @number         = payload['address_components']['number']
-        @predirectional = payload['address_components']['predirectional']
-        @street         = payload['address_components']['street']
-        @suffix         = payload['address_components']['suffix']
-        @city           = payload['address_components']['city']
-        @state          = payload['address_components']['state']
-        @zip            = payload['address_components']['zip']
-      end
-
-      if payload['location']
-        @latitude  = payload['location']['lat']
-        @longitude = payload['location']['lng']
-      end
+      set_attributes(payload['address_components']) if payload['address_components']
+      set_coordinates(payload['location'])          if payload['location']
+      set_additional_fields(payload['fields'])      if payload['fields']
 
       @accuracy          = payload['accuracy']
       @formatted_address = payload['formatted_address']
-
-      return self unless fields = payload['fields']
-
-      if fields['congressional_district'] && !fields['congressional_district'].empty?
-        @congressional_district = CongressionalDistrict.new(fields['congressional_district'])
-      end
-
-      if fields['state_legislative_districts'] && !fields['state_legislative_districts'].empty?
-        @house_district = StateLegislativeDistrict.new(fields['state_legislative_districts']['house'])
-        @senate_district = StateLegislativeDistrict.new(fields['state_legislative_districts']['senate'])
-      end
-
-      if (schools = fields['school_districts']) && !schools.empty?
-        if schools['unified']
-          @unified_school_district = SchoolDistrict.new(schools['unified'])
-        else
-          @elementary_school_district = SchoolDistrict.new(schools['elementary'])
-          @secondary_school_district = SchoolDistrict.new(schools['secondary'])
-        end
-      end
-
-      if fields['timezone'] && !fields['timezone'].empty?
-        @timezone = Timezone.new(fields['timezone'])
-      end
     end
 
     # Formats the address in the standard way.
@@ -71,6 +36,60 @@ module Geocodio
     # @return [String] a formatted address
     def to_s
       @formatted_address
+    end
+
+    private
+
+    def set_attributes(attributes)
+      @number         = attributes['number']
+      @predirectional = attributes['predirectional']
+      @street         = attributes['street']
+      @suffix         = attributes['suffix']
+      @city           = attributes['city']
+      @state          = attributes['state']
+      @zip            = attributes['zip']
+    end
+
+    def set_coordinates(coordinates)
+      @latitude  = coordinates['lat']
+      @longitude = coordinates['lng']
+    end
+
+    def set_additional_fields(fields)
+      set_congressional_district(fields['congressional_district'])     if fields['congressional_district']
+      set_legislative_districts(fields['state_legislative_districts']) if fields['state_legislative_districts']
+      set_school_districts(fields['school_districts'])                 if fields['school_districts']
+      set_timezone(fields['timezone'])                                 if fields['timezone']
+    end
+
+    def set_congressional_district(district)
+      return if district.empty?
+
+      @congressional_district = CongressionalDistrict.new(district)
+    end
+
+    def set_legislative_districts(districts)
+      return if districts.empty?
+
+      @house_district = StateLegislativeDistrict.new(districts['house'])
+      @senate_district = StateLegislativeDistrict.new(districts['senate'])
+    end
+
+    def set_school_districts(schools)
+      return if schools.empty?
+
+      if schools['unified']
+        @unified_school_district = SchoolDistrict.new(schools['unified'])
+      else
+        @elementary_school_district = SchoolDistrict.new(schools['elementary'])
+        @secondary_school_district = SchoolDistrict.new(schools['secondary'])
+      end
+    end
+
+    def set_timezone(timezone)
+      return if timezone.empty?
+
+      @timezone = Timezone.new(timezone)
     end
   end
 end
