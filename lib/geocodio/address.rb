@@ -91,5 +91,11 @@ module Geocodio
 
       @timezone = Timezone.new(timezone)
     end
+
+    def <=>(address)
+      return -1 if self.accuracy <  address.accuracy
+      return  0 if self.accuracy == address.accuracy
+      return  1 if self.accuracy >  address.accuracy
+    end
   end
 end

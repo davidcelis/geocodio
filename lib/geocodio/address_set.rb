@@ -33,5 +33,12 @@ module Geocodio
     def size
       @addresses.size
     end
+
+    # Returns whether or not there are any addresses in this result set.
+    #
+    # @return [Boolean] if there were any results returned by Geocodio
+    def empty?
+      @addresses.empty?
+    end
   end
 end

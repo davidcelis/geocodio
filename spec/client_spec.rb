@@ -38,6 +38,12 @@ describe Geocodio::Client do
       end
     end
 
+    it 'raises a client error when geocoding a bad address' do
+      VCR.use_cassette('geocode_bad_address') do
+        expect { geocodio.geocode([' , , ']) }.to raise_error(Geocodio::Client::Error)
+      end
+    end
+
     it 'geocodes multiple addresses' do
       VCR.use_cassette('batch_geocode') do
         addresses = [
@@ -50,6 +56,19 @@ describe Geocodio::Client do
 
         expect(addresses.size).to eq(3)
         addresses.each { |address| expect(address).to be_a(Geocodio::AddressSet) }
+      end
+    end
+
+    it 'will return empty AddressSets for bad addresses in a batch geocode' do
+      VCR.use_cassette('batch_geocode_with_bad_address') do
+        addresses = [
+          '1 Infinite Loop Cupertino CA 95014',
+          ' , , '
+        ]
+
+        addresses = geocodio.geocode(addresses)
+
+        expect(addresses.last).to be_empty
       end
     end
 

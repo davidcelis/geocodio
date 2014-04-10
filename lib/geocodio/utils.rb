@@ -9,8 +9,8 @@ module Geocodio
       results = response.body['results']
 
       results.map do |result_set|
-        results   = result_set['response']['results']
-        addresses = results.map { |result| Address.new(result) }
+        addresses = Array(result_set['response']['results'])
+        addresses.map! { |result| Address.new(result) }
 
         query = result_set['query']
 
