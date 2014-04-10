@@ -19,6 +19,11 @@ describe Geocodio::Client do
     end
   end
 
+  it 'sets the read_timeout on the underlying Net::HTTP request if passed an option' do
+    expect_any_instance_of(Net::HTTP).to receive(:read_timeout=).with(60 * 5)
+    VCR.use_cassette('geocode') { geocodio.geocode([address], timeout: 60 * 5) }
+  end
+
   describe '#geocode' do
     it 'geocodes a single address' do
       VCR.use_cassette('geocode') do

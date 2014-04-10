@@ -72,8 +72,11 @@ module Geocodio
     #
     # @param address [String] the full or partial address to parse
     # @return [Geocodio::Address] a parsed and formatted Address
-    def parse(address)
-      Address.new get('/parse', q: address).body
+    def parse(address, options = {})
+      params, options = normalize_params_and_options(options)
+      params[:q] = address
+
+      Address.new get('/parse', params, options).body
     end
 
     private
@@ -85,39 +88,40 @@ module Geocodio
       end
 
       def geocode_single(address, options = {})
-        params = { q: address }
-        params[:fields] = options[:fields].join(',') if options[:fields]
+        params, options = normalize_params_and_options(options)
+        params[:q] = address
 
-        response  = get '/geocode', params
+        response  = get '/geocode', params, options
         addresses = parse_results(response)
 
         AddressSet.new(address, *addresses)
       end
 
       def reverse_geocode_single(pair, options = {})
+        params, options = normalize_params_and_options(options)
         pair = normalize_coordinates(pair)
-        params = { q: pair }
-        params[:fields] = options[:fields].join(',') if options[:fields]
+        params[:q] = pair
 
-        response  = get '/reverse', params
+        response  = get '/reverse', params, options
         addresses = parse_results(response)
 
         AddressSet.new(pair, *addresses)
       end
 
       def geocode_batch(addresses, options = {})
-        options[:fields] = options[:fields].join(',') if options[:fields]
+        params, options = normalize_params_and_options(options)
+        options[:body] = addresses
 
-        response = post '/geocode', options, body: addresses
+        response = post '/geocode', params, options
 
         parse_nested_results(response)
       end
 
       def reverse_geocode_batch(pairs, options = {})
-        pairs.map! { |pair| normalize_coordinates(pair) }
-        options[:fields] = options[:fields].join(',') if options[:fields]
+        params, options = normalize_params_and_options(options)
+        options[:body] = pairs.map { |pair| normalize_coordinates(pair) }
 
-        response = post '/reverse', options, body: pairs
+        response = post '/reverse', params, options
 
         parse_nested_results(response)
       end
@@ -138,6 +142,7 @@ module Geocodio
         end
 
         http = Net::HTTP.new HOST, PORT
+        http.read_timeout = options[:timeout] if options[:timeout]
         res  = http.start { http.request(req) }
 
         case res
