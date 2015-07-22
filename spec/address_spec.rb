@@ -80,6 +80,10 @@ describe Geocodio::Address do
       expect(address.city).to eq('Pasadena')
     end
 
+    it 'has a county' do
+      expect(address.county).to eq('Los Angeles County')
+    end
+
     it 'has a state' do
       expect(address.state).to eq('CA')
     end
@@ -89,13 +93,13 @@ describe Geocodio::Address do
     end
 
     it 'has a latitude' do
-      expect(address.latitude).to eq(34.145760590909)
-      expect(address.lat).to      eq(34.145760590909)
+      expect(address.latitude).to eq(34.145764409091)
+      expect(address.lat).to      eq(34.145764409091)
     end
 
     it 'has a longitude' do
-      expect(address.longitude).to eq(-118.15204363636)
-      expect(address.lng).to       eq(-118.15204363636)
+      expect(address.longitude).to eq(-118.15159636364)
+      expect(address.lng).to       eq(-118.15159636364)
     end
 
     it 'has an accuracy' do

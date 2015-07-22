@@ -14,7 +14,7 @@ describe Geocodio::SchoolDistrict do
   end
 
   it 'has a lea_code' do
-    expect(district.lea_code).to eq('29940')
+    expect(district.lea_code).to eq('0629940')
   end
 
   it 'has a grade_low' do

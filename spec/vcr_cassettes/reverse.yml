@@ -18,28 +18,31 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Mon, 03 Feb 2014 16:12:36 GMT
       Server:
-      - Apache
-      X-Powered-By:
-      - PHP/5.4.24
-      Cache-Control:
-      - no-cache
-      Access-Control-Allow-Origin:
-      - "*"
-      Transfer-Encoding:
-      - chunked
+      - nginx/1.2.1
       Content-Type:
       - application/json
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - no-cache
+      Date:
+      - Wed, 22 Jul 2015 17:24:19 GMT
+      Access-Control-Allow-Origin:
+      - "*"
     body:
-      encoding: UTF-8
-      string: "{\"results\":[{\"address_components\":{\"number\":\"43\",\"predirectional\":\"W\",\"street\":\"Colorado\",\"suffix\":\"Blvd\",\"city\":\"Pasadena\",\"state\":\"CA\",\"zip\":\"91105\"},\"formatted_address\":\"43
-        W Colorado Blvd, Pasadena, CA 91105\",\"location\":{\"lat\":34.145766,\"lng\":-118.15141},\"accuracy\":1},{\"address_components\":{\"number\":\"1\",\"predirectional\":\"N\",\"street\":\"De
-        Lacey\",\"suffix\":\"Ave\",\"city\":\"Pasadena\",\"state\":\"CA\",\"zip\":\"91103\"},\"formatted_address\":\"1
-        N De Lacey Ave, Pasadena, CA 91103\",\"location\":{\"lat\":34.145759,\"lng\":-118.15223},\"accuracy\":0},{\"address_components\":{\"number\":\"1\",\"predirectional\":\"S\",\"street\":\"De
-        Lacey\",\"suffix\":\"Ave\",\"city\":\"Pasadena\",\"state\":\"CA\",\"zip\":\"91105\"},\"formatted_address\":\"1
-        S De Lacey Ave, Pasadena, CA 91105\",\"location\":{\"lat\":34.145759,\"lng\":-118.15223},\"accuracy\":0}]}"
+      encoding: ASCII-8BIT
+      string: '{"results":[{"address_components":{"number":"43","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105"},"formatted_address":"43
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145766,"lng":-118.15141},"accuracy":1,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau"},{"address_components":{"number":"1","predirectional":"N","street":"De
+        Lacey","suffix":"Ave","formatted_street":"N De Lacey Ave","city":"Pasadena","county":"Los
+        Angeles County","state":"CA","zip":"91103"},"formatted_address":"1 N De Lacey
+        Ave, Pasadena, CA 91103","location":{"lat":34.145759,"lng":-118.15223},"accuracy":0,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau"},{"address_components":{"number":"85","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105"},"formatted_address":"85
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145759,"lng":-118.15223},"accuracy":0,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau"}]}'
     http_version: 
-  recorded_at: Mon, 03 Feb 2014 16:12:38 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Wed, 22 Jul 2015 17:24:19 GMT
+recorded_with: VCR 2.9.3

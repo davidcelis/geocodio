@@ -18,11 +18,11 @@ describe Geocodio::CongressionalDistrict do
   end
 
   it 'has a congress_number' do
-    expect(district.congress_number).to eq(113)
+    expect(district.congress_number).to eq(114)
   end
 
   it 'has a congress_years' do
-    expect(district.congress_years).to eq(2013..2015)
+    expect(district.congress_years).to eq(2015..2017)
   end
 
 end

@@ -24,35 +24,37 @@ http_interactions:
       - application/json
       Transfer-Encoding:
       - chunked
-      Connection:
-      - keep-alive
       Cache-Control:
       - no-cache
       Date:
-      - Fri, 28 Mar 2014 16:27:32 GMT
+      - Wed, 22 Jul 2015 17:24:20 GMT
       Access-Control-Allow-Origin:
       - "*"
     body:
-      encoding: UTF-8
-      string: '{"results":[{"address_components":{"number":"43","predirectional":"W","street":"Colorado","suffix":"Blvd","city":"Pasadena","county":"Los
-        Angeles County","state":"CA","zip":"91105"},"formatted_address":"43 W Colorado
-        Blvd, Pasadena, CA 91105","location":{"lat":34.145766,"lng":-118.15141},"accuracy":1,"fields":{"congressional_district":{"name":"Congressional
-        District 27","district_number":27,"congress_number":"113th","congress_years":"2013-2015"},"state_legislative_districts":{"senate":{"name":"State
-        Senate District 25","district_number":25},"house":{"name":"Assembly District
-        41","district_number":41}},"school_districts":{"unified":{"name":"Pasadena
-        Unified School District","lea_code":"29940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"1","predirectional":"N","street":"De
-        Lacey","suffix":"Ave","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91103"},"formatted_address":"1
-        N De Lacey Ave, Pasadena, CA 91103","location":{"lat":34.145759,"lng":-118.15223},"accuracy":0,"fields":{"congressional_district":{"name":"Congressional
-        District 27","district_number":27,"congress_number":"113th","congress_years":"2013-2015"},"state_legislative_districts":{"senate":{"name":"State
-        Senate District 25","district_number":25},"house":{"name":"Assembly District
-        41","district_number":41}},"school_districts":{"unified":{"name":"Pasadena
-        Unified School District","lea_code":"29940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"1","predirectional":"S","street":"De
-        Lacey","suffix":"Ave","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105"},"formatted_address":"1
-        S De Lacey Ave, Pasadena, CA 91105","location":{"lat":34.145759,"lng":-118.15223},"accuracy":0,"fields":{"congressional_district":{"name":"Congressional
-        District 27","district_number":27,"congress_number":"113th","congress_years":"2013-2015"},"state_legislative_districts":{"senate":{"name":"State
-        Senate District 25","district_number":25},"house":{"name":"Assembly District
-        41","district_number":41}},"school_districts":{"unified":{"name":"Pasadena
-        Unified School District","lea_code":"29940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}}]}'
+      encoding: ASCII-8BIT
+      string: '{"results":[{"address_components":{"number":"43","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105"},"formatted_address":"43
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145766,"lng":-118.15141},"accuracy":1,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional
+        District 27","district_number":27,"congress_number":"114th","congress_years":"2015-2017"},"state_legislative_districts":{"house":{"name":"Assembly
+        District 41","district_number":41},"senate":{"name":"State Senate District
+        25","district_number":25}},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"1","predirectional":"N","street":"De
+        Lacey","suffix":"Ave","formatted_street":"N De Lacey Ave","city":"Pasadena","county":"Los
+        Angeles County","state":"CA","zip":"91103"},"formatted_address":"1 N De Lacey
+        Ave, Pasadena, CA 91103","location":{"lat":34.145759,"lng":-118.15223},"accuracy":0,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional
+        District 27","district_number":27,"congress_number":"114th","congress_years":"2015-2017"},"state_legislative_districts":{"house":{"name":"Assembly
+        District 41","district_number":41},"senate":{"name":"State Senate District
+        25","district_number":25}},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"85","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105"},"formatted_address":"85
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145759,"lng":-118.15223},"accuracy":0,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional
+        District 27","district_number":27,"congress_number":"114th","congress_years":"2015-2017"},"state_legislative_districts":{"house":{"name":"Assembly
+        District 41","district_number":41},"senate":{"name":"State Senate District
+        25","district_number":25}},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}}]}'
     http_version: 
-  recorded_at: Fri, 28 Mar 2014 16:27:32 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Wed, 22 Jul 2015 17:24:20 GMT
+recorded_with: VCR 2.9.3

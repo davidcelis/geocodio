@@ -18,24 +18,23 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Sun, 02 Feb 2014 17:40:52 GMT
       Server:
-      - Apache
-      X-Powered-By:
-      - PHP/5.4.24
-      Cache-Control:
-      - no-cache
-      Access-Control-Allow-Origin:
-      - "*"
-      Transfer-Encoding:
-      - chunked
+      - nginx/1.2.1
       Content-Type:
       - application/json
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - no-cache
+      Date:
+      - Wed, 22 Jul 2015 17:24:18 GMT
+      Access-Control-Allow-Origin:
+      - "*"
     body:
-      encoding: UTF-8
-      string: "{\"address_components\":{\"number\":\"54\",\"predirectional\":\"W\",\"street\":\"Colorado\",\"suffix\":\"Blvd\",\"city\":\"Pasadena\",\"state\":\"CA\",\"zip\":\"91105\"},\"formatted_address\":\"54
-        W Colorado Blvd, Pasadena, CA 91105\"}"
+      encoding: ASCII-8BIT
+      string: '{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","state":"CA","zip":"91105"},"formatted_address":"54
+        W Colorado Blvd, Pasadena, CA 91105"}'
     http_version: 
-  recorded_at: Sun, 02 Feb 2014 17:40:54 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Wed, 22 Jul 2015 17:24:18 GMT
+recorded_with: VCR 2.9.3

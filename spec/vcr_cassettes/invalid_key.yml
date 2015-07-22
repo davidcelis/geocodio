@@ -18,23 +18,21 @@ http_interactions:
       code: 403
       message: Forbidden
     headers:
-      Date:
-      - Sun, 02 Feb 2014 17:43:02 GMT
       Server:
-      - Apache
-      X-Powered-By:
-      - PHP/5.4.24
-      Cache-Control:
-      - no-cache
-      Access-Control-Allow-Origin:
-      - "*"
-      Transfer-Encoding:
-      - chunked
+      - nginx/1.2.1
       Content-Type:
       - application/json
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - no-cache
+      Date:
+      - Wed, 22 Jul 2015 17:25:10 GMT
+      Access-Control-Allow-Origin:
+      - "*"
     body:
-      encoding: UTF-8
-      string: "{\"error\":\"Invalid API key\"}"
+      encoding: ASCII-8BIT
+      string: '{"error":"Invalid API key"}'
     http_version: 
-  recorded_at: Sun, 02 Feb 2014 17:43:03 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Wed, 22 Jul 2015 17:25:10 GMT
+recorded_with: VCR 2.9.3

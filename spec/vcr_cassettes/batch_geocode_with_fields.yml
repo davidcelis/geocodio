@@ -27,52 +27,59 @@ http_interactions:
       - application/json
       Transfer-Encoding:
       - chunked
-      Connection:
-      - keep-alive
       Cache-Control:
       - no-cache
       Date:
-      - Fri, 28 Mar 2014 16:00:59 GMT
+      - Wed, 22 Jul 2015 17:24:24 GMT
       Access-Control-Allow-Origin:
       - "*"
     body:
-      encoding: UTF-8
-      string: '{"results":[{"query":"1 Infinite Loop Cupertino CA 95014","response":{"input":{"address_components":{"number":"1","street":"Infinite","suffix":"Loop","city":"Cupertino","state":"CA","zip":"95014"},"formatted_address":"1
-        Infinite Loop, Cupertino, CA 95014"},"results":[{"address_components":{"number":"1","street":"Infinite","suffix":"Loop","city":"Cupertino","county":"Santa
-        Clara County","state":"CA","zip":"95014"},"formatted_address":"1 Infinite
-        Loop, Cupertino, CA 95014","location":{"lat":37.331669,"lng":-122.03074},"accuracy":1,"fields":{"congressional_district":{"name":"Congressional
-        District 17","district_number":17,"congress_number":"113th","congress_years":"2013-2015"},"state_legislative_districts":{"senate":{"name":"State
-        Senate District 15","district_number":15},"house":{"name":"Assembly District
-        15","district_number":15}},"school_districts":{"secondary":{"name":"Fremont
-        Union High School District","lea_code":"14430","grade_low":"09","grade_high":"12"},"elementary":{"name":"Cupertino
-        Union Elementary School District","lea_code":"10290","grade_low":"KG","grade_high":"08"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}}]}},{"query":"54
-        West Colorado Boulevard Pasadena CA 91105","response":{"input":{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","city":"Pasadena","state":"CA","zip":"91105"},"formatted_address":"54
-        W Colorado Blvd, Pasadena, CA 91105"},"results":[{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","city":"Pasadena","county":"Los
-        Angeles County","state":"CA","zip":"91105"},"formatted_address":"54 W Colorado
-        Blvd, Pasadena, CA 91105","location":{"lat":34.145760590909,"lng":-118.15204363636},"accuracy":1,"fields":{"congressional_district":{"name":"Congressional
-        District 27","district_number":27,"congress_number":"113th","congress_years":"2013-2015"},"state_legislative_districts":{"senate":{"name":"State
-        Senate District 25","district_number":25},"house":{"name":"Assembly District
-        41","district_number":41}},"school_districts":{"unified":{"name":"Pasadena
-        Unified School District","lea_code":"29940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","city":"Pasadena","county":"Los
-        Angeles County","state":"CA","zip":"91105"},"formatted_address":"54 W Colorado
-        Blvd, Pasadena, CA 91105","location":{"lat":34.1457634625,"lng":-118.15170725},"accuracy":0.8,"fields":{"congressional_district":{"name":"Congressional
-        District 27","district_number":27,"congress_number":"113th","congress_years":"2013-2015"},"state_legislative_districts":{"senate":{"name":"State
-        Senate District 25","district_number":25},"house":{"name":"Assembly District
-        41","district_number":41}},"school_districts":{"unified":{"name":"Pasadena
-        Unified School District","lea_code":"29940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}}]}},{"query":"826
-        Howard Street San Francisco CA 94103","response":{"input":{"address_components":{"number":"826","street":"Howard","suffix":"St","city":"San
-        Francisco","state":"CA","zip":"94103"},"formatted_address":"826 Howard St,
-        San Francisco, CA 94103"},"results":[{"address_components":{"number":"826","street":"Howard","suffix":"St","city":"San
-        Francisco","county":"San Francisco County","state":"CA","zip":"94103"},"formatted_address":"826
-        Howard St, San Francisco, CA 94103","location":{"lat":37.7815,"lng":-122.404933},"accuracy":1,"fields":{"congressional_district":{"name":"Congressional
-        District 12","district_number":12,"congress_number":"113th","congress_years":"2013-2015"},"state_legislative_districts":{"senate":{"name":"State
-        Senate District 11","district_number":11},"house":{"name":"Assembly District
-        11","district_number":11}},"school_districts":[],"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"826","street":"Howard","suffix":"St","city":"San
-        Francisco","county":"San Francisco County","state":"CA","zip":"94103"},"formatted_address":"826
-        Howard St, San Francisco, CA 94103","location":{"lat":37.781552539474,"lng":-122.40486656579},"accuracy":0.8,"fields":{"congressional_district":{"name":"Congressional
-        District 12","district_number":12,"congress_number":"113th","congress_years":"2013-2015"},"state_legislative_districts":{"senate":{"name":"State
-        Senate District 11","district_number":11},"house":{"name":"Assembly District
-        11","district_number":11}},"school_districts":[],"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}}]}}]}'
+      encoding: ASCII-8BIT
+      string: '{"results":[{"query":"1 Infinite Loop Cupertino CA 95014","response":{"input":{"address_components":{"number":"1","street":"Infinite","suffix":"Loop","formatted_street":"Infinite
+        Loop","city":"Cupertino","state":"CA","zip":"95014"},"formatted_address":"1
+        Infinite Loop, Cupertino, CA 95014"},"results":[{"address_components":{"number":"1","street":"Infinite","suffix":"Loop","formatted_street":"Infinite
+        Loop","city":"Cupertino","county":"Santa Clara County","state":"CA","zip":"95014"},"formatted_address":"1
+        Infinite Loop, Cupertino, CA 95014","location":{"lat":37.330539,"lng":-122.02912},"accuracy":1,"accuracy_type":"range_interpolation","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional
+        District 17","district_number":17,"congress_number":"114th","congress_years":"2015-2017"},"state_legislative_districts":{"house":{"name":"Assembly
+        District 28","district_number":28},"senate":{"name":"State Senate District
+        15","district_number":15}},"school_districts":{"elementary":{"name":"Cupertino
+        Union Elementary School District","lea_code":"0610290","grade_low":"KG","grade_high":"08"},"secondary":{"name":"Fremont
+        Union High School District","lea_code":"0614430","grade_low":"09","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}}]}},{"query":"54
+        West Colorado Boulevard Pasadena CA 91105","response":{"input":{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","state":"CA","zip":"91105"},"formatted_address":"54
+        W Colorado Blvd, Pasadena, CA 91105"},"results":[{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105"},"formatted_address":"54
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145764409091,"lng":-118.15159636364},"accuracy":1,"accuracy_type":"range_interpolation","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional
+        District 27","district_number":27,"congress_number":"114th","congress_years":"2015-2017"},"state_legislative_districts":{"house":{"name":"Assembly
+        District 41","district_number":41},"senate":{"name":"State Senate District
+        25","district_number":25}},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105"},"formatted_address":"54
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.1457615375,"lng":-118.15193275},"accuracy":0.8,"accuracy_type":"range_interpolation","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional
+        District 27","district_number":27,"congress_number":"114th","congress_years":"2015-2017"},"state_legislative_districts":{"house":{"name":"Assembly
+        District 41","district_number":41},"senate":{"name":"State Senate District
+        25","district_number":25}},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}}]}},{"query":"826
+        Howard Street San Francisco CA 94103","response":{"input":{"address_components":{"number":"826","street":"Howard","suffix":"St","formatted_street":"Howard
+        St","city":"San Francisco","state":"CA","zip":"94103"},"formatted_address":"826
+        Howard St, San Francisco, CA 94103"},"results":[{"address_components":{"number":"826","street":"Howard","suffix":"St","formatted_street":"Howard
+        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103"},"formatted_address":"826
+        Howard St, San Francisco, CA 94103","location":{"lat":37.782831,"lng":-122.40325},"accuracy":1,"accuracy_type":"range_interpolation","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional
+        District 12","district_number":12,"congress_number":"114th","congress_years":"2015-2017"},"state_legislative_districts":{"house":{"name":"Assembly
+        District 17","district_number":17},"senate":{"name":"State Senate District
+        11","district_number":11}},"school_districts":{"unified":{"name":"San Francisco
+        Unified School District","lea_code":"0634410","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"826","street":"Howard","suffix":"St","formatted_street":"Howard
+        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103"},"formatted_address":"826
+        Howard St, San Francisco, CA 94103","location":{"lat":37.782778460526,"lng":-122.40331643421},"accuracy":0.8,"accuracy_type":"range_interpolation","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional
+        District 12","district_number":12,"congress_number":"114th","congress_years":"2015-2017"},"state_legislative_districts":{"house":{"name":"Assembly
+        District 17","district_number":17},"senate":{"name":"State Senate District
+        11","district_number":11}},"school_districts":{"unified":{"name":"San Francisco
+        Unified School District","lea_code":"0634410","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}}]}}]}'
     http_version: 
-  recorded_at: Fri, 28 Mar 2014 16:00:59 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Wed, 22 Jul 2015 17:24:24 GMT
+recorded_with: VCR 2.9.3
