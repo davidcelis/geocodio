@@ -5,7 +5,7 @@ require 'geocodio/timezone'
 
 module Geocodio
   class Address
-    attr_reader :number, :predirectional, :street, :suffix, :city, :state, :zip
+    attr_reader :number, :predirectional, :street, :suffix, :city, :state, :zip, :county
 
     attr_reader :latitude, :longitude
     alias :lat :latitude
@@ -48,6 +48,7 @@ module Geocodio
       @city           = attributes['city']
       @state          = attributes['state']
       @zip            = attributes['zip']
+      @county         = attributes['county']
     end
 
     def set_coordinates(coordinates)
