@@ -21,6 +21,7 @@ module Geocodio
     #
     # @return [Float] a number between 0 and 1
     attr_reader :accuracy
+    attr_reader :formatted_address
 
     def initialize(payload = {})
       set_attributes(payload['address_components']) if payload['address_components']
