@@ -21,6 +21,10 @@ describe Geocodio::Address do
     it 'has a street' do
       expect(address.street).to eq('Colorado')
     end
+    
+    it 'has a formatted_street' do
+      expect(address.formatted_street).to eq('W Colorado Blvd')
+    end
 
     it 'has a suffix' do
       expect(address.suffix).to eq('Blvd')
@@ -70,6 +74,10 @@ describe Geocodio::Address do
 
     it 'has a street' do
       expect(address.street).to eq('Colorado')
+    end
+    
+    it 'has a formatted_street' do
+      expect(address.formatted_street).to eq('W Colorado Blvd')
     end
 
     it 'has a suffix' do
