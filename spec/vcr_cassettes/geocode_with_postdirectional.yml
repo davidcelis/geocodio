@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.geocod.io/v1/geocode?api_key=secret_api_key&q=1600%20Pennsylvania%20Ave%20NW%20Washington%20DC%2020500
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.6.2
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - no-cache
+      Date:
+      - Mon, 26 Dec 2016 21:50:06 GMT
+      Request-Handler:
+      - api17
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Headers:
+      - Content-Type
+    body:
+      encoding: ASCII-8BIT
+      string: '{"input":{"address_components":{"number":"1600","street":"Pennsylvania","suffix":"Ave","postdirectional":"NW","formatted_street":"Pennsylvania
+        Ave NW","city":"Washington","state":"DC","zip":"20500","country":"US"},"formatted_address":"1600
+        Pennsylvania Ave NW, Washington, DC 20500"},"results":[{"address_components":{"number":"1600","street":"Pennsylvania","suffix":"Ave","postdirectional":"NW","formatted_street":"Pennsylvania
+        Ave NW","city":"Washington","county":"District of Columbia","state":"DC","zip":"20500","country":"US"},"formatted_address":"1600
+        Pennsylvania Ave NW, Washington, DC 20500","location":{"lat":38.897667,"lng":-77.036545},"accuracy":1,"accuracy_type":"rooftop","source":"DC
+        Geographic Information Systems Program (DC GIS)"}]}'
+    http_version: 
+  recorded_at: Mon, 26 Dec 2016 21:50:06 GMT
+recorded_with: VCR 3.0.3
