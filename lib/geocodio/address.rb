@@ -75,8 +75,8 @@ module Geocodio
     def set_legislative_districts(districts)
       return if districts.empty?
 
-      @house_district = StateLegislativeDistrict.new(districts['house'])
-      @senate_district = StateLegislativeDistrict.new(districts['senate'])
+      @house_district = StateLegislativeDistrict.new(districts['house']) if districts['house']
+      @senate_district = StateLegislativeDistrict.new(districts['senate']) if districts['senate']
     end
 
     def set_school_districts(schools)
