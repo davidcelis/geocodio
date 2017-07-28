@@ -32,29 +32,7 @@ http_interactions:
       - "*"
     body:
       encoding: ASCII-8BIT
-      string: '{"results":[{"address_components":{"number":"43","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
-        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105"},"formatted_address":"43
-        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145766,"lng":-118.15141},"accuracy":1,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
-        dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional
-        District 27","district_number":27,"congress_number":"114th","congress_years":"2015-2017"},"state_legislative_districts":{"house":{"name":"Assembly
-        District 41","district_number":41},"senate":{"name":"State Senate District
-        25","district_number":25}},"school_districts":{"unified":{"name":"Pasadena
-        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"1","predirectional":"N","street":"De
-        Lacey","suffix":"Ave","formatted_street":"N De Lacey Ave","city":"Pasadena","county":"Los
-        Angeles County","state":"CA","zip":"91103"},"formatted_address":"1 N De Lacey
-        Ave, Pasadena, CA 91103","location":{"lat":34.145759,"lng":-118.15223},"accuracy":0,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
-        dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional
-        District 27","district_number":27,"congress_number":"114th","congress_years":"2015-2017"},"state_legislative_districts":{"house":{"name":"Assembly
-        District 41","district_number":41},"senate":{"name":"State Senate District
-        25","district_number":25}},"school_districts":{"unified":{"name":"Pasadena
-        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"85","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
-        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105"},"formatted_address":"85
-        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145759,"lng":-118.15223},"accuracy":0,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
-        dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional
-        District 27","district_number":27,"congress_number":"114th","congress_years":"2015-2017"},"state_legislative_districts":{"house":{"name":"Assembly
-        District 41","district_number":41},"senate":{"name":"State Senate District
-        25","district_number":25}},"school_districts":{"unified":{"name":"Pasadena
-        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}}]}'
-    http_version: 
+      string: '{"results":[{"address_components":{"number":"1749","street":"1st","suffix":"Ave","formatted_street":"1st Ave","city":"Plattsmouth","county":"Cass County","state":"NE","zip":"68048","country":"US"},"formatted_address":"1749 1st Ave, Plattsmouth, NE 68048","location":{"lat":41.010259,"lng":-95.901405},"accuracy":1,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional District 1","district_number":1,"congress_number":"115th","congress_years":"2017-2019"},"state_legislative_districts":{"senate":{"name":"State Senate District 2","district_number":"2"}}}},{"address_components":{"number":"200","predirectional":"S","street":"17th","suffix":"St","formatted_street":"S 17th St","city":"Plattsmouth","county":"Cass County","state":"NE","zip":"68048","country":"US"},"formatted_address":"200 S 17th St, Plattsmouth, NE 68048","location":{"lat":41.010252,"lng":-95.899504},"accuracy":0.51,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional District 1","district_number":1,"congress_number":"115th","congress_years":"2017-2019"},"state_legislative_districts":{"senate":{"name":"State Senate District 2","district_number":"2"}}}},{"address_components":{"number":"1616","street":"1st","suffix":"Ave","formatted_street":"1st Ave","city":"Plattsmouth","county":"Cass County","state":"NE","zip":"68048","country":"US"},"formatted_address":"1616 1st Ave, Plattsmouth, NE 68048","location":{"lat":41.010252,"lng":-95.899504},"accuracy":0.46,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional District 1","district_number":1,"congress_number":"115th","congress_years":"2017-2019"},"state_legislative_districts":{"senate":{"name":"State Senate District 2","district_number":"2"}}}}]}'
+    http_version:
   recorded_at: Wed, 22 Jul 2015 17:24:20 GMT
 recorded_with: VCR 2.9.3
