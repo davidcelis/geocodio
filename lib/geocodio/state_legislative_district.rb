@@ -5,7 +5,7 @@ module Geocodio
 
     def initialize(payload = {})
       @name            = payload['name']
-      @district_number = payload['district_number'].to_i
+      @district_number = payload['district_number']
     end
   end
 end

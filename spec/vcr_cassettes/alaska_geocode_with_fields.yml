@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.geocod.io/v1/geocode?api_key=secret_api_key&fields=cd,stateleg&q=4141%20woronzof%20dr%20anchorage%20ak%2099517
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.2
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - no-cache
+      Date:
+      - Tue, 01 Aug 2017 17:54:13 GMT
+      Request-Handler:
+      - api19
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Headers:
+      - Content-Type
+    body:
+      encoding: UTF-8
+      string: '{"input":{"address_components":{"number":"4141","street":"Woronzof","suffix":"Dr","formatted_street":"Woronzof
+        Dr","city":"Anchorage","state":"AK","zip":"99517","country":"US"},"formatted_address":"4141
+        Woronzof Dr, Anchorage, AK 99517"},"results":[{"address_components":{"number":"4141","street":"Woronzof","suffix":"Dr","formatted_street":"Woronzof
+        Dr","city":"Anchorage","county":"Anchorage Municipality","state":"AK","zip":"99517","country":"US"},"formatted_address":"4141
+        Woronzof Dr, Anchorage, AK 99517","location":{"lat":61.193733,"lng":-149.959449},"accuracy":0.8,"accuracy_type":"range_interpolation","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional
+        District (at Large)","district_number":0,"congress_number":"115th","congress_years":"2017-2019"},"state_legislative_districts":{"senate":{"name":"State
+        Senate District K","district_number":"K"},"house":{"name":"State House District
+        21","district_number":"21"}}}}]}'
+    http_version: 
+  recorded_at: Tue, 01 Aug 2017 17:54:13 GMT
+recorded_with: VCR 3.0.3
