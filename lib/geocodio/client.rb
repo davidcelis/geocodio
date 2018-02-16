@@ -92,9 +92,9 @@ module Geocodio
         params[:q] = address
 
         response  = get '/geocode', params, options
-        addresses = parse_results(response)
+        addresses, input = parse_results(response)
 
-        AddressSet.new(address, *addresses)
+        AddressSet.new(address, *addresses, input: input)
       end
 
       def reverse_geocode_single(pair, options = {})
@@ -103,9 +103,9 @@ module Geocodio
         params[:q] = pair
 
         response  = get '/reverse', params, options
-        addresses = parse_results(response)
+        addresses, input = parse_results(response)
 
-        AddressSet.new(pair, *addresses)
+        AddressSet.new(pair, *addresses, input: input)
       end
 
       def geocode_batch(addresses, options = {})

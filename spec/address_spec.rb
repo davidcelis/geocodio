@@ -21,7 +21,7 @@ describe Geocodio::Address do
     it 'has a street' do
       expect(address.street).to eq('Colorado')
     end
-    
+
     it 'has a formatted_street' do
       expect(address.formatted_street).to eq('W Colorado Blvd')
     end
@@ -76,7 +76,7 @@ describe Geocodio::Address do
       it 'has a street' do
         expect(address.street).to eq('Colorado')
       end
-      
+
       it 'has a formatted_street' do
         expect(address.formatted_street).to eq('W Colorado Blvd')
       end
@@ -102,20 +102,20 @@ describe Geocodio::Address do
       end
 
       it 'has a latitude' do
-        expect(address.latitude).to eq(34.145764409091)
-        expect(address.lat).to      eq(34.145764409091)
+        expect(address.latitude).to eq(34.145375)
+        expect(address.lat).to      eq(34.145375)
       end
 
       it 'has a longitude' do
-        expect(address.longitude).to eq(-118.15159636364)
-        expect(address.lng).to       eq(-118.15159636364)
+        expect(address.longitude).to eq(-118.151622)
+        expect(address.lng).to       eq(-118.151622)
       end
 
       it 'has an accuracy' do
         expect(address.accuracy).to eq(1)
       end
     end
-    
+
     context 'has postdirectional' do
       subject(:address) do
         VCR.use_cassette('geocode_with_postdirectional') do
@@ -130,11 +130,11 @@ describe Geocodio::Address do
       it 'has a street' do
         expect(address.street).to eq('Pennsylvania')
       end
-      
+
       it 'has a formatted_street' do
         expect(address.formatted_street).to eq('Pennsylvania Ave NW')
       end
-      
+
       it 'has a postdirectional' do
         expect(address.postdirectional).to eq('NW')
       end
@@ -160,13 +160,13 @@ describe Geocodio::Address do
       end
 
       it 'has a latitude' do
-        expect(address.latitude).to eq(38.897667)
-        expect(address.lat).to      eq(38.897667)
+        expect(address.latitude).to eq(38.897675)
+        expect(address.lat).to      eq(38.897675)
       end
 
       it 'has a longitude' do
-        expect(address.longitude).to eq(-77.036545)
-        expect(address.lng).to       eq(-77.036545)
+        expect(address.longitude).to eq(-77.036547)
+        expect(address.lng).to       eq(-77.036547)
       end
 
       it 'has an accuracy' do
@@ -181,8 +181,10 @@ describe Geocodio::Address do
         end
       end
 
-      it 'has a congressional district' do
-        expect(address.congressional_district).to be_a(Geocodio::CongressionalDistrict)
+      it 'has congressional districts' do
+        address.congressional_districts.each do |district|
+          expect(district).to be_a(Geocodio::CongressionalDistrict)
+        end
       end
 
       it 'has a house district' do

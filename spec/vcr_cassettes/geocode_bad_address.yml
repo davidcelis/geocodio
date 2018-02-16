@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.geocod.io/v1/geocode?api_key=secret_api_key&q=%20,%20,%20
+    uri: http://api.geocod.io/v1.2/geocode?api_key=secret_api_key&q=%20,%20,%20
     body:
       encoding: US-ASCII
       string: ''
@@ -19,20 +19,26 @@ http_interactions:
       message: Unprocessable Entity
     headers:
       Server:
-      - nginx/1.2.1
+      - nginx/1.12.2
       Content-Type:
       - application/json
       Transfer-Encoding:
       - chunked
+      X-Powered-By:
+      - PHP/7.1.14
       Cache-Control:
       - no-cache
       Date:
-      - Wed, 22 Jul 2015 17:24:22 GMT
+      - Fri, 16 Feb 2018 17:35:11 GMT
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Headers:
+      - Content-Type
     body:
       encoding: UTF-8
       string: '{"error":"Could not geocode address. Postal code or city required."}'
     http_version: 
-  recorded_at: Wed, 22 Jul 2015 17:24:22 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Fri, 16 Feb 2018 17:35:11 GMT
+recorded_with: VCR 4.0.0

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://api.geocod.io/v1/reverse?api_key=secret_api_key
+    uri: http://api.geocod.io/v1.2/reverse?api_key=secret_api_key
     body:
       encoding: UTF-8
       string: '["37.331669,-122.03074","34.145760590909,-118.15204363636","37.7815,-122.404933"]'
@@ -21,48 +21,79 @@ http_interactions:
       message: OK
     headers:
       Server:
-      - nginx/1.2.1
+      - nginx/1.12.2
       Content-Type:
       - application/json
       Transfer-Encoding:
       - chunked
+      X-Powered-By:
+      - PHP/7.1.14
       Cache-Control:
       - no-cache
       Date:
-      - Wed, 22 Jul 2015 17:24:20 GMT
+      - Fri, 16 Feb 2018 17:35:13 GMT
+      Request-Handler:
+      - api35
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Expose-Headers:
+      - Request-Handler
     body:
-      encoding: ASCII-8BIT
-      string: '{"results":[{"query":"37.331669,-122.03074","response":{"results":[{"address_components":{"number":"91","street":"Infinite","suffix":"Loop","formatted_street":"Infinite
-        Loop","city":"Cupertino","county":"Santa Clara County","state":"CA","zip":"95014"},"formatted_address":"91
-        Infinite Loop, Cupertino, CA 95014","location":{"lat":37.332709,"lng":-122.03071},"accuracy":1,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
-        dataset from the US Census Bureau"},{"address_components":{"number":"19118","street":"Mariani","suffix":"Ave","formatted_street":"Mariani
-        Ave","city":"Cupertino","county":"Santa Clara County","state":"CA","zip":"95014"},"formatted_address":"19118
-        Mariani Ave, Cupertino, CA 95014","location":{"lat":37.330489,"lng":-122.0305},"accuracy":0.28,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
-        dataset from the US Census Bureau"},{"address_components":{"number":"19116","street":"Mariani","suffix":"Ave","formatted_street":"Mariani
-        Ave","city":"Cupertino","county":"Santa Clara County","state":"CA","zip":"95014"},"formatted_address":"19116
-        Mariani Ave, Cupertino, CA 95014","location":{"lat":37.330407,"lng":-122.030873},"accuracy":0.28,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
-        dataset from the US Census Bureau"}]}},{"query":"34.145760590909,-118.15204363636","response":{"results":[{"address_components":{"number":"43","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
-        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105"},"formatted_address":"43
-        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145766,"lng":-118.15141},"accuracy":1,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
-        dataset from the US Census Bureau"},{"address_components":{"number":"1","predirectional":"N","street":"De
-        Lacey","suffix":"Ave","formatted_street":"N De Lacey Ave","city":"Pasadena","county":"Los
-        Angeles County","state":"CA","zip":"91103"},"formatted_address":"1 N De Lacey
-        Ave, Pasadena, CA 91103","location":{"lat":34.145759,"lng":-118.15223},"accuracy":0,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
-        dataset from the US Census Bureau"},{"address_components":{"number":"85","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
-        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105"},"formatted_address":"85
-        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145759,"lng":-118.15223},"accuracy":0,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
-        dataset from the US Census Bureau"}]}},{"query":"37.7815,-122.404933","response":{"results":[{"address_components":{"number":"177","street":"5th","suffix":"St","formatted_street":"5th
-        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94102"},"formatted_address":"177
-        5th St, San Francisco, CA 94102","location":{"lat":37.781925,"lng":-122.405466},"accuracy":0,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
-        dataset from the US Census Bureau"},{"address_components":{"number":"900","street":"Howard","suffix":"St","formatted_street":"Howard
-        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103"},"formatted_address":"900
-        Howard St, San Francisco, CA 94103","location":{"lat":37.7815,"lng":-122.404933},"accuracy":0,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
-        dataset from the US Census Bureau"},{"address_components":{"number":"861","street":"Howard","suffix":"St","formatted_street":"Howard
-        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103"},"formatted_address":"861
-        Howard St, San Francisco, CA 94103","location":{"lat":37.782831,"lng":-122.40325},"accuracy":0,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
-        dataset from the US Census Bureau"}]}}]}'
+      encoding: UTF-8
+      string: '{"results":[{"query":"37.331669,-122.03074","response":{"results":[{"address_components":{"number":"10700","predirectional":"N","street":"De
+        Anza","suffix":"Blvd","formatted_street":"N De Anza Blvd","city":"Cupertino","county":"Santa
+        Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"10700
+        N De Anza Blvd, Cupertino, CA 95014","location":{"lat":37.331686,"lng":-122.030223},"accuracy":1,"accuracy_type":"rooftop","source":"Santa
+        Clara County"},{"address_components":{"number":"10690","predirectional":"N","street":"De
+        Anza","suffix":"Blvd","formatted_street":"N De Anza Blvd","city":"Cupertino","county":"Santa
+        Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"10690
+        N De Anza Blvd, Cupertino, CA 95014","location":{"lat":37.331293,"lng":-122.031735},"accuracy":0.89,"accuracy_type":"rooftop","source":"Santa
+        Clara County"},{"address_components":{"number":"2","street":"Infinite","suffix":"Loop","formatted_street":"Infinite
+        Loop","city":"Cupertino","county":"Santa Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"2
+        Infinite Loop, Cupertino, CA 95014","location":{"lat":37.332633,"lng":-122.030273},"accuracy":0.89,"accuracy_type":"rooftop","source":"Santa
+        Clara County"},{"address_components":{"number":"6","street":"Infinite","suffix":"Loop","formatted_street":"Infinite
+        Loop","city":"Cupertino","county":"Santa Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"6
+        Infinite Loop, Cupertino, CA 95014","location":{"lat":37.330944,"lng":-122.029633},"accuracy":0.89,"accuracy_type":"rooftop","source":"Santa
+        Clara County"},{"address_components":{"number":"10600","predirectional":"N","street":"De
+        Anza","suffix":"Blvd","formatted_street":"N De Anza Blvd","city":"Cupertino","county":"Santa
+        Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"10600
+        N De Anza Blvd, Cupertino, CA 95014","location":{"lat":37.330648,"lng":-122.031701},"accuracy":0.89,"accuracy_type":"rooftop","source":"Santa
+        Clara County"}]}},{"query":"34.145760590909,-118.15204363636","response":{"results":[{"address_components":{"number":"68","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"68
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":1,"accuracy_type":"rooftop","source":"Los
+        Angeles"},{"address_components":{"number":"58","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"58
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.9,"accuracy_type":"rooftop","source":"Los
+        Angeles"},{"address_components":{"number":"60","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"60
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.9,"accuracy_type":"rooftop","source":"Los
+        Angeles"},{"address_components":{"number":"10","predirectional":"S","street":"De
+        Lacey","suffix":"Ave","formatted_street":"S De Lacey Ave","city":"Pasadena","county":"Los
+        Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"10
+        S De Lacey Ave, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.9,"accuracy_type":"rooftop","source":"Los
+        Angeles"},{"address_components":{"number":"69","street":"Mc Cormick","suffix":"Aly","formatted_street":"Mc
+        Cormick Aly","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"69
+        Mc Cormick Aly, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.9,"accuracy_type":"rooftop","source":"Los
+        Angeles"}]}},{"query":"37.7815,-122.404933","response":{"results":[{"address_components":{"number":"198","street":"05th","suffix":"St","formatted_street":"05th
+        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103","country":"US"},"formatted_address":"198
+        05th St, San Francisco, CA 94103","location":{"lat":37.781458,"lng":-122.405257},"accuracy":1,"accuracy_type":"rooftop","source":"San
+        Francisco"},{"address_components":{"number":"194","street":"05th","suffix":"St","formatted_street":"05th
+        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103","country":"US"},"formatted_address":"194
+        05th St, San Francisco, CA 94103","location":{"lat":37.781458,"lng":-122.405257},"accuracy":0.9,"accuracy_type":"rooftop","source":"San
+        Francisco"},{"address_components":{"number":"906","street":"Howard","suffix":"St","formatted_street":"Howard
+        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103","country":"US"},"formatted_address":"906
+        Howard St, San Francisco, CA 94103","location":{"lat":37.781458,"lng":-122.405257},"accuracy":0.9,"accuracy_type":"rooftop","source":"San
+        Francisco"},{"address_components":{"number":"206","street":"05th","suffix":"St","formatted_street":"05th
+        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103","country":"US"},"formatted_address":"206
+        05th St, San Francisco, CA 94103","location":{"lat":37.781187,"lng":-122.404925},"accuracy":0.9,"accuracy_type":"rooftop","source":"San
+        Francisco"},{"address_components":{"number":"190","street":"05th","suffix":"St","formatted_street":"05th
+        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103","country":"US"},"formatted_address":"190
+        05th St, San Francisco, CA 94103","location":{"lat":37.781508,"lng":-122.405329},"accuracy":0.9,"accuracy_type":"rooftop","source":"San
+        Francisco"}]}}]}'
     http_version: 
-  recorded_at: Wed, 22 Jul 2015 17:24:21 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Fri, 16 Feb 2018 17:35:13 GMT
+recorded_with: VCR 4.0.0

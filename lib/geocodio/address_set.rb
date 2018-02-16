@@ -11,9 +11,10 @@ module Geocodio
     # @return [String] the original query
     attr_reader :query
 
-    def initialize(query, *addresses)
-      @query     = query
-      @addresses = addresses
+    def initialize(query, *addresses, input: nil)
+      @query           = query
+      @addresses       = addresses
+      @formatted_input = input
     end
 
     def each(&block)
@@ -24,6 +25,9 @@ module Geocodio
     #
     # @return [Geocodio::Address] the most accurate address
     def best
+      best = @addresses.find { |address| address.to_s == @formatted_input }
+      return best if best
+
       max_by(&:accuracy)
     end
 

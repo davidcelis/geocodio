@@ -2,19 +2,20 @@ module Geocodio
   module Utils
     def parse_results(response)
       results   = response.body['results']
-      addresses = results.map { |result| Address.new(result) }
+      input     = response.body.dig('input', 'formatted_address')
+      [results.map { |result| Address.new(result) }, input]
     end
 
     def parse_nested_results(response)
       results = response.body['results']
 
-      results.map do |result_set|
+      results = results.map do |result_set|
         addresses = Array(result_set['response']['results'])
         addresses.map! { |result| Address.new(result) }
 
         query = result_set['query']
 
-        AddressSet.new(query, *addresses)
+        AddressSet.new(query, *addresses, input: result_set.dig('response', 'input', 'formatted_address'))
       end
     end
 
