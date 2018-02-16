@@ -1,7 +1,7 @@
 module Geocodio
   class Version
-    MAJOR = 2
-    MINOR = 1
+    MAJOR = 3
+    MINOR = 0
     PATCH = 0
 
     def self.to_s
