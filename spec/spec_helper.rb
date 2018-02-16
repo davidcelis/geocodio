@@ -21,3 +21,5 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = 'random'
 end
+
+RSpec::Expectations.configuration.on_potential_false_positives = :nothing

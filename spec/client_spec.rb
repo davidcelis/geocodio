@@ -106,7 +106,7 @@ describe Geocodio::Client do
 
       it 'handles a response without legislator house info' do
         VCR.use_cassette('reverse_with_fields_no_house_info') do
-          expect{geocodio.reverse_geocode(["41.25,-96.00"], fields: %w[cd stateleg school timezone])}.to_not raise_error(NoMethodError)
+          expect { geocodio.reverse_geocode(["41.25,-96.00"], fields: %w[cd stateleg school timezone]) }.not_to raise_error(NoMethodError)
         end
       end
 
