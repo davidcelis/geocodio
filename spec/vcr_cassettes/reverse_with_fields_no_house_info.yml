@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.geocod.io/v1/reverse?api_key=secret_api_key&fields=cd,stateleg,school,timezone&q=41.25,-96.00
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.2
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 28 Jul 2017 19:34:00 GMT
+      Request-Handler:
+      - api19
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Headers:
+      - Content-Type
+    body:
+      encoding: UTF-8
+      string: '{"results":[{"address_components":{"number":"5599","street":"Mayberry","suffix":"St","formatted_street":"Mayberry
+        St","city":"Omaha","county":"Douglas County","state":"NE","zip":"68106","country":"US"},"formatted_address":"5599
+        Mayberry St, Omaha, NE 68106","location":{"lat":41.250585,"lng":-95.997945},"accuracy":1,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional
+        District 2","district_number":2,"congress_number":"115th","congress_years":"2017-2019"},"state_legislative_districts":{"senate":{"name":"State
+        Senate District 9","district_number":"9"}},"school_districts":{"unified":{"name":"Omaha
+        Public Schools","lea_code":"3174820","grade_low":"PK","grade_high":"12"}},"timezone":{"name":"CST","utc_offset":-6,"observes_dst":true}}},{"address_components":{"number":"975","predirectional":"S","street":"57th","suffix":"St","formatted_street":"S
+        57th St","city":"Omaha","county":"Douglas County","state":"NE","zip":"68106","country":"US"},"formatted_address":"975
+        S 57th St, Omaha, NE 68106","location":{"lat":41.250211,"lng":-96.001138},"accuracy":0.51,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional
+        District 2","district_number":2,"congress_number":"115th","congress_years":"2017-2019"},"state_legislative_districts":{"senate":{"name":"State
+        Senate District 9","district_number":"9"}},"school_districts":{"unified":{"name":"Omaha
+        Public Schools","lea_code":"3174820","grade_low":"PK","grade_high":"12"}},"timezone":{"name":"CST","utc_offset":-6,"observes_dst":true}}},{"address_components":{"number":"5700","street":"Mason","suffix":"St","formatted_street":"Mason
+        St","city":"Omaha","county":"Douglas County","state":"NE","zip":"68106","country":"US"},"formatted_address":"5700
+        Mason St, Omaha, NE 68106","location":{"lat":41.250211,"lng":-96.001138},"accuracy":0.5,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_district":{"name":"Congressional
+        District 2","district_number":2,"congress_number":"115th","congress_years":"2017-2019"},"state_legislative_districts":{"senate":{"name":"State
+        Senate District 9","district_number":"9"}},"school_districts":{"unified":{"name":"Omaha
+        Public Schools","lea_code":"3174820","grade_low":"PK","grade_high":"12"}},"timezone":{"name":"CST","utc_offset":-6,"observes_dst":true}}}]}'
+    http_version: 
+  recorded_at: Fri, 28 Jul 2017 19:34:00 GMT
+recorded_with: VCR 3.0.3
