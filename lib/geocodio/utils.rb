@@ -2,7 +2,7 @@ module Geocodio
   module Utils
     def parse_results(response)
       results   = response.body['results']
-      input     = response.body.dig('input', 'formatted_address')
+      input     = response.body['input']['formatted_address'] if response.body['input']
       [results.map { |result| Address.new(result) }, input]
     end
 
@@ -14,8 +14,9 @@ module Geocodio
         addresses.map! { |result| Address.new(result) }
 
         query = result_set['query']
+        input = result_set['response']['input']['formatted_address'] if result_set['response']['input']
 
-        AddressSet.new(query, *addresses, input: result_set.dig('response', 'input', 'formatted_address'))
+        AddressSet.new(query, *addresses, input: input)
       end
     end
 
