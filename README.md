@@ -99,7 +99,7 @@ Geocodio has added support for retrieving [additional fields][fields] when geoco
 ```ruby
 address = geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd stateleg school timezone]).best
 
-address.congressional_district
+address.congressional_districts
 # => #<Geocodio::CongressionalDistrict:0x007fa3c15f41c0 @name="Congressional District 27" @district_number=27 @congress_number=113 @congress_years=2013..2015>
 
 address.house_district
