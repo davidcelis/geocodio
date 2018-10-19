@@ -18,6 +18,8 @@ module Geocodio
 
     attr_reader :timezone
 
+    attr_reader :census
+
     # How accurate geocod.io deemed this result to be given the original query.
     #
     # @return [Float] a number between 0 and 1
@@ -64,6 +66,7 @@ module Geocodio
       set_legislative_districts(fields['state_legislative_districts']) if fields['state_legislative_districts']
       set_school_districts(fields['school_districts'])                 if fields['school_districts']
       set_timezone(fields['timezone'])                                 if fields['timezone']
+      set_census(fields['census'])                                 if fields['census']
     end
 
     def set_congressional_districts(districts)
@@ -94,6 +97,12 @@ module Geocodio
       return if timezone.empty?
 
       @timezone = Timezone.new(timezone)
+    end
+
+    def set_census(census)
+      return if census.empty?
+
+      @census = Census.new(census)
     end
 
     def <=>(address)
