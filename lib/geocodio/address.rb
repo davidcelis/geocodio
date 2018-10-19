@@ -2,6 +2,7 @@ require 'geocodio/congressional_district'
 require 'geocodio/school_district'
 require 'geocodio/state_legislative_district'
 require 'geocodio/timezone'
+require 'geocodio/census'
 
 module Geocodio
   class Address
