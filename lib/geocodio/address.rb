@@ -29,7 +29,7 @@ module Geocodio
     def initialize(payload = {})
       set_attributes(payload['address_components']) if payload['address_components']
       set_coordinates(payload['location'])          if payload['location']
-      set_additional_fields(payload['fields'])      if payload['fields']
+      set_additional_fields(payload['fields'])      if payload['fields'].present?
 
       @accuracy          = payload['accuracy']
       @formatted_address = payload['formatted_address']
