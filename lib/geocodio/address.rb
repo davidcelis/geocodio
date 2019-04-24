@@ -21,7 +21,7 @@ module Geocodio
     # How accurate geocod.io deemed this result to be given the original query.
     #
     # @return [Float] a number between 0 and 1
-    attr_reader :accuracy
+    attr_reader :accuracy, :accuracy_type
 
     def initialize(payload = {})
       set_attributes(payload['address_components']) if payload['address_components']
@@ -29,6 +29,7 @@ module Geocodio
       set_additional_fields(payload['fields'])      if payload['fields']
 
       @accuracy          = payload['accuracy']
+      @accuracy_type     = payload['accuracy_type']
       @formatted_address = payload['formatted_address']
     end
 

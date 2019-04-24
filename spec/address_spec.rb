@@ -55,6 +55,10 @@ describe Geocodio::Address do
     it 'does not have an accuracy' do
       expect(address.accuracy).to be_nil
     end
+
+    it 'does not have an accuracy_type' do
+      expect(address.accuracy_type).to be_nil
+    end
   end
 
   context 'when geocoded' do
@@ -114,6 +118,10 @@ describe Geocodio::Address do
       it 'has an accuracy' do
         expect(address.accuracy).to eq(1)
       end
+
+      it 'has an accuracy_type' do
+        expect(address.accuracy_type).to eq("rooftop")
+      end
     end
 
     context 'has postdirectional' do
@@ -171,6 +179,10 @@ describe Geocodio::Address do
 
       it 'has an accuracy' do
         expect(address.accuracy).to eq(1)
+      end
+
+      it 'has an accuracy_type' do
+        expect(address.accuracy_type).to eq("rooftop")
       end
     end
 
