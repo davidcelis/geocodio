@@ -85,8 +85,8 @@ module Geocodio
       if schools['unified']
         @unified_school_district = SchoolDistrict.new(schools['unified'])
       else
-        @elementary_school_district = SchoolDistrict.new(schools['elementary'])
-        @secondary_school_district = SchoolDistrict.new(schools['secondary'])
+        @elementary_school_district = SchoolDistrict.new(schools['elementary']) if schools['elementary']
+        @secondary_school_district = SchoolDistrict.new(schools['secondary']) if schools['secondary']
       end
     end
 
