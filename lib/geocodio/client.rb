@@ -18,7 +18,7 @@ module Geocodio
       :delete => Net::HTTP::Delete
     }
     HOST = 'api.geocod.io'
-    BASE_PATH = '/v1.5'
+    BASE_PATH = '/v1.6'
     PORT = 80
 
     def initialize(api_key = ENV['GEOCODIO_API_KEY'])
