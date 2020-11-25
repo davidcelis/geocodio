@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.geocod.io/v1.2/geocode?api_key=secret_api_key&q=54%20West%20Colorado%20Boulevard%20Pasadena%20CA%2091105
+    uri: https://api.geocod.io/v1.6/geocode?api_key=secret_api_key&q=54%20West%20Colorado%20Boulevard%20Pasadena%20CA%2091105
     body:
       encoding: US-ASCII
       string: ''
@@ -18,27 +18,40 @@ http_interactions:
       code: 403
       message: Forbidden
     headers:
-      Server:
-      - nginx/1.12.2
       Content-Type:
       - application/json
       Transfer-Encoding:
       - chunked
-      X-Powered-By:
-      - PHP/7.1.14
       Cache-Control:
-      - no-cache
+      - no-cache, private
       Date:
-      - Fri, 16 Feb 2018 19:20:32 GMT
+      - Tue, 24 Nov 2020 16:45:33 GMT
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
       - GET, POST
       Access-Control-Allow-Headers:
-      - Content-Type
+      - Content-Type, User-Agent
+      X-Billable-Lookups-Count:
+      - '0'
+      X-Billable-Fields-Count:
+      - '0'
+      Access-Control-Expose-Headers:
+      - Request-Handler
+      Request-Handler:
+      - api93
+      Server:
+      - Unicorns with magic wands (https://www.geocod.io)
+      X-Ratelimit-Remaining:
+      - '999'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Period:
+      - '60'
+      Connection:
+      - close
     body:
       encoding: UTF-8
       string: '{"error":"Invalid API key"}'
-    http_version: 
-  recorded_at: Fri, 16 Feb 2018 19:20:32 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Tue, 24 Nov 2020 16:45:33 GMT
+recorded_with: VCR 6.0.0

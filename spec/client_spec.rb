@@ -36,7 +36,7 @@ describe Geocodio::Client do
 
     it 'geocodes a single address with an options hash' do
       VCR.use_cassette('geocode_with_fields') do
-        addresses = geocodio.geocode([address], fields: %w[cd stateleg school timezone])
+        addresses = geocodio.geocode([address], fields: %w[cd stateleg school census timezone])
 
         expect(addresses.size).to eq(2)
         expect(addresses).to be_a(Geocodio::AddressSet)
@@ -85,7 +85,7 @@ describe Geocodio::Client do
           '826 Howard Street San Francisco CA 94103'
         ]
 
-        addresses = geocodio.geocode(addresses, fields: %w[cd stateleg school timezone])
+        addresses = geocodio.geocode(addresses, fields: %w[cd stateleg school census timezone])
 
         expect(addresses.size).to eq(3)
         addresses.each { |address| expect(address).to be_a(Geocodio::AddressSet) }
@@ -99,14 +99,14 @@ describe Geocodio::Client do
         VCR.use_cassette('reverse') do
           addresses = geocodio.reverse_geocode([coordinates])
 
-          expect(addresses.size).to eq(5)
+          expect(addresses.size).to eq(8)
           expect(addresses).to be_a(Geocodio::AddressSet)
         end
       end
 
       it 'handles a response without legislator house info' do
         VCR.use_cassette('reverse_with_fields_no_house_info') do
-          expect { geocodio.reverse_geocode(["41.25,-96.00"], fields: %w[cd stateleg school timezone]) }.not_to raise_error(NoMethodError)
+          expect { geocodio.reverse_geocode(["41.25,-96.00"], fields: %w[cd stateleg school census timezone]) }.not_to raise_error(NoMethodError)
         end
       end
 
@@ -115,7 +115,7 @@ describe Geocodio::Client do
           lat, lng = coordinates.split(',')
           addresses = geocodio.reverse_geocode([{ latitude: lat, longitude: lng }])
 
-          expect(addresses.size).to eq(5)
+          expect(addresses.size).to eq(8)
           expect(addresses).to be_a(Geocodio::AddressSet)
         end
       end
@@ -123,9 +123,9 @@ describe Geocodio::Client do
       it 'accepts an options hash' do
         VCR.use_cassette('reverse_with_fields') do
           lat, lng = coordinates.split(',')
-          addresses = geocodio.reverse_geocode([{ latitude: lat, longitude: lng} ], fields: %w[cd stateleg school timezone])
+          addresses = geocodio.reverse_geocode([{ latitude: lat, longitude: lng} ], fields: %w[cd stateleg school census timezone])
 
-          expect(addresses.size).to eq(5)
+          expect(addresses.size).to eq(8)
           expect(addresses).to be_a(Geocodio::AddressSet)
         end
       end
@@ -185,7 +185,7 @@ describe Geocodio::Client do
             { latitude: 37.7815,   longitude: -122.404933 }
           ]
 
-          addresses = geocodio.reverse_geocode(coordinate_pairs, fields: %w[cd stateleg school timezone])
+          addresses = geocodio.reverse_geocode(coordinate_pairs, fields: %w[cd stateleg school census timezone])
 
           expect(addresses.size).to eq(3)
           addresses.each { |address| expect(address).to be_a(Geocodio::AddressSet) }

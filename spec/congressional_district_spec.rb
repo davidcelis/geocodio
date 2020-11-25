@@ -5,7 +5,7 @@ describe Geocodio::CongressionalDistrict do
 
   subject(:district) do
     VCR.use_cassette('geocode_with_fields') do
-      geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd stateleg school timezone]).
+      geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd stateleg school census timezone]).
         best.
         congressional_districts.
         first
@@ -21,11 +21,11 @@ describe Geocodio::CongressionalDistrict do
   end
 
   it 'has a congress_number' do
-    expect(district.congress_number).to eq(115)
+    expect(district.congress_number).to eq(116)
   end
 
   it 'has a congress_years' do
-    expect(district.congress_years).to eq(2017..2019)
+    expect(district.congress_years).to eq(2019..2021)
   end
 
   it 'has a proportion' do

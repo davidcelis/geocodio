@@ -94,10 +94,10 @@ Note that this endpoint performs no geocoding; it merely formats a single provid
 
 ### Additional fields
 
-Geocodio has added support for retrieving [additional fields][fields] when geocoding or reverse geocoding. To request these fields, pass an options hash to either `#geocode` or `#reverse_geocode`. Possible fields include `cd` or `cd113`, `stateleg`, `school`, and `timezone`:
+Geocodio supports retrieval of [additional fields][fields] when geocoding or reverse geocoding. To request these fields, pass an options hash to either `#geocode` or `#reverse_geocode`. Possible fields include `cd`, `stateleg`, `school`, `census`, and `timezone`:
 
 ```ruby
-address = geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd stateleg school timezone]).best
+address = geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd stateleg school census timezone]).best
 
 address.congressional_districts
 # => #<Geocodio::CongressionalDistrict:0x007fa3c15f41c0 @name="Congressional District 27" @district_number=27 @congress_number=113 @congress_years=2013..2015>
@@ -115,7 +115,24 @@ address.timezone
 # => #<Geocodio::Timezone:0x007fa3c15f41c0 @name="PST" @utc_offset=-8 @observes_dst=true>
 address.timezone.observes_dst?
 # => true
+
+address.census
+# => {"2019"=>#<Geocodio::CensusYear:0x00007ff59a24a800 ...>}
+address.census.years
+# => ["2019"]
+address.census.latest
+# => #<Geocodio::CensusYear:0x00007ff59a24a800 @census_year=2019, @state_fips="06", @county_fips="06037", @tract_code="463700", @block_code="2001", @block_group="2", @full_fips="060374637002001", @source="US Census Bureau", @place, @metro_micro_statistical_area, @combined_statistical_area, @metropolitan_division>
+address.census.latest.place
+# => #<Geocodio::Place:0x00007ff59a24a7b0 @name="Pasadena", @fips="0656000">
+address.census.latest.metro_micro_statistical_area # or the shorthand alias .msa
+# => #<Geocodio::StatisticalArea:0x00007ff59a24a788 @name="Los Angeles-Long Beach-Anaheim, CA", @area_code="31080", @type="metropolitan">
+address.census.latest.combined_statistical_area # or the shorthand alias .csa
+# => #<Geocodio::StatisticalArea:0x00007ff59a24a738 @name="Los Angeles-Long Beach, CA", @area_code="348", @type=nil>
+address.census.latest.metropolitan_division
+# => #<Geocodio::StatisticalArea:0x00007ff59a24a710 @name="Los Angeles-Long Beach-Glendale, CA", @area_code="31084", @type=nil>
 ```
+
+The `cd` field requests district information for the current congress (116th as of November 2020). Information for a specific congress can be retrieved by specifying `cd113`, `cd114`, ... `cd117` (see the [Geocod.io documentation][districts] for details). Similarly, the `census` field requests information for the most recent census year (2019 as of November 2020), but one or more specific vintages of census data can be retrieved by specifying `census2010`, `census2011`, ... `census2019` (see the [Geocod.io documentation][census] for details).
 
 ## Contributing
 
@@ -125,5 +142,7 @@ address.timezone.observes_dst?
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-[geocod.io]: http://geocod.io/
-[fields]: http://geocod.io/docs/?ruby#toc_17
+[geocod.io]: https://www.geocod.io/
+[fields]: https://www.geocod.io/docs/?ruby#fields
+[districts]: https://www.geocod.io/docs/?ruby#congressional-districts
+[census]: https://www.geocod.io/docs/?ruby#census-block-tract-fips-codes-amp-msa-csa-codes

@@ -5,12 +5,12 @@ describe Geocodio::Timezone do
 
   subject(:timezone) do
     VCR.use_cassette('geocode_with_fields') do
-      geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd stateleg school timezone]).best.timezone
+      geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd stateleg school census timezone]).best.timezone
     end
   end
 
   it 'has a name' do
-    expect(timezone.name).to eq('PST')
+    expect(timezone.name).to eq('America/Los_Angeles')
   end
 
   it 'has a utc_offset' do

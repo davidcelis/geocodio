@@ -189,7 +189,7 @@ describe Geocodio::Address do
     context 'with additional fields' do
       subject(:address) do
         VCR.use_cassette('geocode_with_fields') do
-          geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd stateleg school timezone]).best
+          geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd stateleg school census timezone]).best
         end
       end
 
@@ -217,6 +217,10 @@ describe Geocodio::Address do
 
       it 'could have a secondary school district' do
         expect(address.secondary_school_district).to be_nil
+      end
+
+      it 'has census msa/csa/fips codes' do
+        expect(address.census).to be_a(Geocodio::Census)
       end
 
       it 'has a timezone' do
