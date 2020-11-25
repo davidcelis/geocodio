@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.geocod.io/v1.6/geocode?api_key=secret_api_key&fields=census2010,census2019&q=54%20West%20Colorado%20Boulevard%20Pasadena%20CA%2091105
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - no-cache, private
+      Date:
+      - Wed, 25 Nov 2020 02:57:56 GMT
+      X-Billable-Lookups-Count:
+      - '1'
+      X-Billable-Fields-Count:
+      - '2'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Headers:
+      - Content-Type, User-Agent
+      Access-Control-Expose-Headers:
+      - Request-Handler
+      Request-Handler:
+      - api82
+      Server:
+      - Unicorns with magic wands (https://www.geocod.io)
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Ratelimit-Remaining:
+      - '999'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Period:
+      - '60'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"input":{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","state":"CA","zip":"91105","country":"US"},"formatted_address":"54
+        W Colorado Blvd, Pasadena, CA 91105"},"results":[{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"54
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145375,"lng":-118.151622},"accuracy":1,"accuracy_type":"rooftop","source":"Los
+        Angeles","fields":{"census":{"2010":{"census_year":2010,"state_fips":"06","county_fips":"06037","tract_code":"463700","block_code":"2001","block_group":"2","full_fips":"060374637002001","place":{"name":"Pasadena","fips":"0656000"},"metro_micro_statistical_area":{"name":"Los
+        Angeles-Long Beach-Santa Ana, CA","area_code":"31100","type":"metropolitan"},"combined_statistical_area":{"name":"Los
+        Angeles-Long Beach-Riverside, CA","area_code":"06348"},"metropolitan_division":{"name":"Los
+        Angeles-Long Beach-Glendale, CA","area_code":"31084"},"source":"US Census
+        Bureau"},"2019":{"census_year":2019,"state_fips":"06","county_fips":"06037","tract_code":"463700","block_code":"2001","block_group":"2","full_fips":"060374637002001","place":{"name":"Pasadena","fips":"0656000"},"metro_micro_statistical_area":{"name":"Los
+        Angeles-Long Beach-Anaheim, CA","area_code":"31080","type":"metropolitan"},"combined_statistical_area":{"name":"Los
+        Angeles-Long Beach, CA","area_code":"348"},"metropolitan_division":{"name":"Los
+        Angeles-Long Beach-Glendale, CA","area_code":"31084"},"source":"US Census
+        Bureau"}}}},{"address_components":{"number":"54","predirectional":"E","street":"Colorado","suffix":"Blvd","formatted_street":"E
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"54
+        E Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145499,"lng":-118.14932},"accuracy":0.8,"accuracy_type":"rooftop","source":"Los
+        Angeles","fields":{"census":{"2010":{"census_year":2010,"state_fips":"06","county_fips":"06037","tract_code":"463602","block_code":"1003","block_group":"1","full_fips":"060374636021003","place":{"name":"Pasadena","fips":"0656000"},"metro_micro_statistical_area":{"name":"Los
+        Angeles-Long Beach-Santa Ana, CA","area_code":"31100","type":"metropolitan"},"combined_statistical_area":{"name":"Los
+        Angeles-Long Beach-Riverside, CA","area_code":"06348"},"metropolitan_division":{"name":"Los
+        Angeles-Long Beach-Glendale, CA","area_code":"31084"},"source":"US Census
+        Bureau"},"2019":{"census_year":2019,"state_fips":"06","county_fips":"06037","tract_code":"463602","block_code":"1003","block_group":"1","full_fips":"060374636021003","place":{"name":"Pasadena","fips":"0656000"},"metro_micro_statistical_area":{"name":"Los
+        Angeles-Long Beach-Anaheim, CA","area_code":"31080","type":"metropolitan"},"combined_statistical_area":{"name":"Los
+        Angeles-Long Beach, CA","area_code":"348"},"metropolitan_division":{"name":"Los
+        Angeles-Long Beach-Glendale, CA","area_code":"31084"},"source":"US Census
+        Bureau"}}}}]}'
+  recorded_at: Wed, 25 Nov 2020 02:57:56 GMT
+recorded_with: VCR 6.0.0

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.geocod.io/v1.2/reverse?api_key=secret_api_key&q=34.145760590909,-118.15204363636
+    uri: https://api.geocod.io/v1.6/reverse?api_key=secret_api_key&q=34.145760590909,-118.15204363636
     body:
       encoding: US-ASCII
       string: ''
@@ -18,47 +18,75 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx/1.12.2
       Content-Type:
       - application/json
       Transfer-Encoding:
       - chunked
-      X-Powered-By:
-      - PHP/7.1.14
       Cache-Control:
-      - no-cache
+      - no-cache, private
       Date:
-      - Fri, 16 Feb 2018 17:35:12 GMT
-      Request-Handler:
-      - api19
+      - Tue, 24 Nov 2020 16:31:17 GMT
+      X-Billable-Lookups-Count:
+      - '1'
+      X-Billable-Fields-Count:
+      - '0'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
       - GET, POST
       Access-Control-Allow-Headers:
-      - Content-Type
+      - Content-Type, User-Agent
       Access-Control-Expose-Headers:
       - Request-Handler
+      Request-Handler:
+      - api82
+      Server:
+      - Unicorns with magic wands (https://www.geocod.io)
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Ratelimit-Remaining:
+      - '986'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Period:
+      - '60'
+      Connection:
+      - close
     body:
       encoding: UTF-8
-      string: '{"results":[{"address_components":{"number":"68","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
-        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"68
-        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":1,"accuracy_type":"rooftop","source":"Los
-        Angeles"},{"address_components":{"number":"58","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+      string: '{"results":[{"address_components":{"number":"58","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
         Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"58
-        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.9,"accuracy_type":"rooftop","source":"Los
-        Angeles"},{"address_components":{"number":"60","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
-        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"60
-        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.9,"accuracy_type":"rooftop","source":"Los
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":1,"accuracy_type":"rooftop","source":"Los
         Angeles"},{"address_components":{"number":"10","predirectional":"S","street":"De
         Lacey","suffix":"Ave","formatted_street":"S De Lacey Ave","city":"Pasadena","county":"Los
         Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"10
-        S De Lacey Ave, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.9,"accuracy_type":"rooftop","source":"Los
+        S De Lacey Ave, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":1,"accuracy_type":"rooftop","source":"Los
+        Angeles"},{"address_components":{"number":"68","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"68
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":1,"accuracy_type":"rooftop","source":"Los
+        Angeles"},{"address_components":{"number":"60","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"60
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":1,"accuracy_type":"rooftop","source":"Los
         Angeles"},{"address_components":{"number":"69","street":"Mc Cormick","suffix":"Aly","formatted_street":"Mc
         Cormick Aly","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"69
-        Mc Cormick Aly, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.9,"accuracy_type":"rooftop","source":"Los
-        Angeles"}]}'
-    http_version: 
-  recorded_at: Fri, 16 Feb 2018 17:35:12 GMT
-recorded_with: VCR 4.0.0
+        Mc Cormick Aly, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":1,"accuracy_type":"rooftop","source":"Los
+        Angeles"},{"address_components":{"number":"1","predirectional":"N","street":"De
+        Lacey","suffix":"Ave","formatted_street":"N De Lacey Ave","city":"Pasadena","county":"Los
+        Angeles County","state":"CA","zip":"91103","country":"US"},"formatted_address":"1
+        N De Lacey Ave, Pasadena, CA 91103","location":{"lat":34.145759,"lng":-118.15223},"accuracy":0.99,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau"},{"address_components":{"number":"25","predirectional":"N","street":"De
+        Lacey","suffix":"Ave","formatted_street":"N De Lacey Ave","city":"Pasadena","county":"Los
+        Angeles County","state":"CA","zip":"91103","country":"US"},"formatted_address":"25
+        N De Lacey Ave, Pasadena, CA 91103","location":{"lat":34.146409,"lng":-118.152234},"accuracy":0.98,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau"},{"address_components":{"number":"110","street":"Martin","suffix":"Aly","formatted_street":"Martin
+        Aly","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"110
+        Martin Aly, Pasadena, CA 91105","location":{"lat":34.145007,"lng":-118.153104},"accuracy":0.97,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau"}]}'
+  recorded_at: Tue, 24 Nov 2020 16:31:17 GMT
+recorded_with: VCR 6.0.0

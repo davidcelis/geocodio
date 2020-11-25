@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://api.geocod.io/v1.2/reverse?api_key=secret_api_key&fields=cd,stateleg,school,timezone
+    uri: https://api.geocod.io/v1.6/reverse?api_key=secret_api_key&fields=cd,stateleg,school,census,timezone
     body:
       encoding: UTF-8
       string: '["37.331669,-122.03074","34.145760590909,-118.15204363636","37.7815,-122.404933"]'
@@ -20,226 +20,430 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx/1.12.2
       Content-Type:
       - application/json
       Transfer-Encoding:
       - chunked
-      X-Powered-By:
-      - PHP/7.1.14
       Cache-Control:
-      - no-cache
+      - no-cache, private
       Date:
-      - Fri, 16 Feb 2018 17:35:14 GMT
-      Request-Handler:
-      - api19
+      - Tue, 24 Nov 2020 16:31:15 GMT
+      X-Billable-Lookups-Count:
+      - '3'
+      X-Billable-Fields-Count:
+      - '15'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
       - GET, POST
       Access-Control-Allow-Headers:
-      - Content-Type
+      - Content-Type, User-Agent
       Access-Control-Expose-Headers:
       - Request-Handler
+      Request-Handler:
+      - api79
+      Server:
+      - Unicorns with magic wands (https://www.geocod.io)
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Ratelimit-Remaining:
+      - '988'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Period:
+      - '60'
+      Connection:
+      - close
     body:
       encoding: UTF-8
-      string: '{"results":[{"query":"37.331669,-122.03074","response":{"results":[{"address_components":{"number":"10700","predirectional":"N","street":"De
+      string: '{"results":[{"query":"37.331669,-122.03074","response":{"results":[{"address_components":{"number":"10700","street":"De
+        Anza","formatted_street":"De Anza","city":"Cupertino","county":"Santa Clara
+        County","state":"CA","zip":"95014","country":"US"},"formatted_address":"10700
+        De Anza, Cupertino, CA 95014","location":{"lat":37.331692,"lng":-122.030239},"accuracy":1,"accuracy_type":"rooftop","source":"Santa
+        Clara","fields":{"congressional_districts":[{"name":"Congressional District
+        17","district_number":17,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Khanna","first_name":"Ro","birthday":"1976-09-13","gender":"M","party":"Democrat"},"contact":{"url":"https:\/\/khanna.house.gov","address":"221
+        Cannon House Office Building Washington DC 20515-0517","phone":"202-225-2631","contact_form":null},"social":{"rss_url":null,"twitter":"RepRoKhanna","facebook":"RepRoKhanna","youtube":null,"youtube_id":"UCr4KOYv1o1oEQhy1jhhm3pQ"},"references":{"bioguide_id":"K000389","thomas_id":null,"opensecrets_id":"N00026427","lis_id":null,"cspan_id":"31129","govtrack_id":"412684","votesmart_id":"29473","ballotpedia_id":null,"washington_post_id":null,"icpsr_id":"21728","wikipedia_id":"Ro
+        Khanna"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
+        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
+        Feinstein"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
+        Harris"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 28","district_number":"28","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 15","district_number":"15","is_upcoming_state_legislative_district":false}},"school_districts":{"elementary":{"name":"Cupertino
+        Union Elementary School District","lea_code":"0610290","grade_low":"KG","grade_high":"08"},"secondary":{"name":"Fremont
+        Union High School District","lea_code":"0614430","grade_low":"09","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06085","tract_code":"508101","block_code":"2002","block_group":"2","full_fips":"060855081012002","place":{"name":"Cupertino","fips":"0617610"},"metro_micro_statistical_area":{"name":"San
+        Jose-Sunnyvale-Santa Clara, CA","area_code":"41940","type":"metropolitan"},"combined_statistical_area":{"name":"San
+        Jose-San Francisco-Oakland, CA","area_code":"488"},"metropolitan_division":null,"source":"US
+        Census Bureau"}}}},{"address_components":{"number":"10700","predirectional":"N","street":"De
         Anza","suffix":"Blvd","formatted_street":"N De Anza Blvd","city":"Cupertino","county":"Santa
         Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"10700
-        N De Anza Blvd, Cupertino, CA 95014","location":{"lat":37.331686,"lng":-122.030223},"accuracy":1,"accuracy_type":"rooftop","source":"Santa
-        Clara County","fields":{"congressional_districts":[{"name":"Congressional
-        District 17","district_number":17,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Khanna","first_name":"Ro","birthday":"1976-09-13","gender":"M","party":"Democrat"},"contact":{"url":"https:\/\/khanna.house.gov","address":"513
-        Cannon HOB; Washington DC 20515-0517","phone":"202-225-2631","contact_form":null},"social":{"rss_url":null,"twitter":"RepRoKhanna","facebook":"RepRoKhanna","youtube":null,"youtube_id":"UCr4KOYv1o1oEQhy1jhhm3pQ"},"references":{"bioguide_id":"K000389","thomas_id":null,"opensecrets_id":"N00026427","lis_id":null,"cspan_id":"31129","govtrack_id":"412684","votesmart_id":"29473","ballotpedia_id":null,"washington_post_id":null,"icpsr_id":"21728","wikipedia_id":"Ro
+        N De Anza Blvd, Cupertino, CA 95014","location":{"lat":37.331966,"lng":-122.030416},"accuracy":0.99,"accuracy_type":"rooftop","source":"City
+        of Cupertino","fields":{"congressional_districts":[{"name":"Congressional
+        District 17","district_number":17,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Khanna","first_name":"Ro","birthday":"1976-09-13","gender":"M","party":"Democrat"},"contact":{"url":"https:\/\/khanna.house.gov","address":"221
+        Cannon House Office Building Washington DC 20515-0517","phone":"202-225-2631","contact_form":null},"social":{"rss_url":null,"twitter":"RepRoKhanna","facebook":"RepRoKhanna","youtube":null,"youtube_id":"UCr4KOYv1o1oEQhy1jhhm3pQ"},"references":{"bioguide_id":"K000389","thomas_id":null,"opensecrets_id":"N00026427","lis_id":null,"cspan_id":"31129","govtrack_id":"412684","votesmart_id":"29473","ballotpedia_id":null,"washington_post_id":null,"icpsr_id":"21728","wikipedia_id":"Ro
         Khanna"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
         Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
         Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
         Feinstein"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
         Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
         Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 15","district_number":"15"},"house":{"name":"Assembly District
-        28","district_number":"28"}},"school_districts":{"elementary":{"name":"Cupertino
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 28","district_number":"28","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 15","district_number":"15","is_upcoming_state_legislative_district":false}},"school_districts":{"elementary":{"name":"Cupertino
         Union Elementary School District","lea_code":"0610290","grade_low":"KG","grade_high":"08"},"secondary":{"name":"Fremont
-        Union High School District","lea_code":"0614430","grade_low":"09","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"10690","predirectional":"N","street":"De
+        Union High School District","lea_code":"0614430","grade_low":"09","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06085","tract_code":"508101","block_code":"2002","block_group":"2","full_fips":"060855081012002","place":{"name":"Cupertino","fips":"0617610"},"metro_micro_statistical_area":{"name":"San
+        Jose-Sunnyvale-Santa Clara, CA","area_code":"41940","type":"metropolitan"},"combined_statistical_area":{"name":"San
+        Jose-San Francisco-Oakland, CA","area_code":"488"},"metropolitan_division":null,"source":"US
+        Census Bureau"}}}},{"address_components":{"number":"1","street":"Infinite","suffix":"Loop","formatted_street":"Infinite
+        Loop","city":"Cupertino","county":"Santa Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"1
+        Infinite Loop, Cupertino, CA 95014","location":{"lat":37.331524,"lng":-122.030231},"accuracy":0.99,"accuracy_type":"rooftop","source":"City
+        of Cupertino","fields":{"congressional_districts":[{"name":"Congressional
+        District 17","district_number":17,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Khanna","first_name":"Ro","birthday":"1976-09-13","gender":"M","party":"Democrat"},"contact":{"url":"https:\/\/khanna.house.gov","address":"221
+        Cannon House Office Building Washington DC 20515-0517","phone":"202-225-2631","contact_form":null},"social":{"rss_url":null,"twitter":"RepRoKhanna","facebook":"RepRoKhanna","youtube":null,"youtube_id":"UCr4KOYv1o1oEQhy1jhhm3pQ"},"references":{"bioguide_id":"K000389","thomas_id":null,"opensecrets_id":"N00026427","lis_id":null,"cspan_id":"31129","govtrack_id":"412684","votesmart_id":"29473","ballotpedia_id":null,"washington_post_id":null,"icpsr_id":"21728","wikipedia_id":"Ro
+        Khanna"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
+        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
+        Feinstein"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
+        Harris"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 28","district_number":"28","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 15","district_number":"15","is_upcoming_state_legislative_district":false}},"school_districts":{"elementary":{"name":"Cupertino
+        Union Elementary School District","lea_code":"0610290","grade_low":"KG","grade_high":"08"},"secondary":{"name":"Fremont
+        Union High School District","lea_code":"0614430","grade_low":"09","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06085","tract_code":"508101","block_code":"2002","block_group":"2","full_fips":"060855081012002","place":{"name":"Cupertino","fips":"0617610"},"metro_micro_statistical_area":{"name":"San
+        Jose-Sunnyvale-Santa Clara, CA","area_code":"41940","type":"metropolitan"},"combined_statistical_area":{"name":"San
+        Jose-San Francisco-Oakland, CA","area_code":"488"},"metropolitan_division":null,"source":"US
+        Census Bureau"}}}},{"address_components":{"number":"10690","predirectional":"N","street":"De
         Anza","suffix":"Blvd","formatted_street":"N De Anza Blvd","city":"Cupertino","county":"Santa
         Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"10690
-        N De Anza Blvd, Cupertino, CA 95014","location":{"lat":37.331293,"lng":-122.031735},"accuracy":0.89,"accuracy_type":"rooftop","source":"Santa
-        Clara County","fields":{"congressional_districts":[{"name":"Congressional
-        District 17","district_number":17,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Khanna","first_name":"Ro","birthday":"1976-09-13","gender":"M","party":"Democrat"},"contact":{"url":"https:\/\/khanna.house.gov","address":"513
-        Cannon HOB; Washington DC 20515-0517","phone":"202-225-2631","contact_form":null},"social":{"rss_url":null,"twitter":"RepRoKhanna","facebook":"RepRoKhanna","youtube":null,"youtube_id":"UCr4KOYv1o1oEQhy1jhhm3pQ"},"references":{"bioguide_id":"K000389","thomas_id":null,"opensecrets_id":"N00026427","lis_id":null,"cspan_id":"31129","govtrack_id":"412684","votesmart_id":"29473","ballotpedia_id":null,"washington_post_id":null,"icpsr_id":"21728","wikipedia_id":"Ro
+        N De Anza Blvd, Cupertino, CA 95014","location":{"lat":37.331177,"lng":-122.031641},"accuracy":0.98,"accuracy_type":"rooftop","source":"Santa
+        Clara","fields":{"congressional_districts":[{"name":"Congressional District
+        17","district_number":17,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Khanna","first_name":"Ro","birthday":"1976-09-13","gender":"M","party":"Democrat"},"contact":{"url":"https:\/\/khanna.house.gov","address":"221
+        Cannon House Office Building Washington DC 20515-0517","phone":"202-225-2631","contact_form":null},"social":{"rss_url":null,"twitter":"RepRoKhanna","facebook":"RepRoKhanna","youtube":null,"youtube_id":"UCr4KOYv1o1oEQhy1jhhm3pQ"},"references":{"bioguide_id":"K000389","thomas_id":null,"opensecrets_id":"N00026427","lis_id":null,"cspan_id":"31129","govtrack_id":"412684","votesmart_id":"29473","ballotpedia_id":null,"washington_post_id":null,"icpsr_id":"21728","wikipedia_id":"Ro
         Khanna"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
         Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
         Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
         Feinstein"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
         Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
         Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 15","district_number":"15"},"house":{"name":"Assembly District
-        28","district_number":"28"}},"school_districts":{"elementary":{"name":"Cupertino
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 28","district_number":"28","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 15","district_number":"15","is_upcoming_state_legislative_district":false}},"school_districts":{"elementary":{"name":"Cupertino
         Union Elementary School District","lea_code":"0610290","grade_low":"KG","grade_high":"08"},"secondary":{"name":"Fremont
-        Union High School District","lea_code":"0614430","grade_low":"09","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"2","street":"Infinite","suffix":"Loop","formatted_street":"Infinite
-        Loop","city":"Cupertino","county":"Santa Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"2
-        Infinite Loop, Cupertino, CA 95014","location":{"lat":37.332633,"lng":-122.030273},"accuracy":0.89,"accuracy_type":"rooftop","source":"Santa
-        Clara County","fields":{"congressional_districts":[{"name":"Congressional
-        District 17","district_number":17,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Khanna","first_name":"Ro","birthday":"1976-09-13","gender":"M","party":"Democrat"},"contact":{"url":"https:\/\/khanna.house.gov","address":"513
-        Cannon HOB; Washington DC 20515-0517","phone":"202-225-2631","contact_form":null},"social":{"rss_url":null,"twitter":"RepRoKhanna","facebook":"RepRoKhanna","youtube":null,"youtube_id":"UCr4KOYv1o1oEQhy1jhhm3pQ"},"references":{"bioguide_id":"K000389","thomas_id":null,"opensecrets_id":"N00026427","lis_id":null,"cspan_id":"31129","govtrack_id":"412684","votesmart_id":"29473","ballotpedia_id":null,"washington_post_id":null,"icpsr_id":"21728","wikipedia_id":"Ro
-        Khanna"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
-        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
-        Feinstein"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
-        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
-        Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 15","district_number":"15"},"house":{"name":"Assembly District
-        28","district_number":"28"}},"school_districts":{"elementary":{"name":"Cupertino
-        Union Elementary School District","lea_code":"0610290","grade_low":"KG","grade_high":"08"},"secondary":{"name":"Fremont
-        Union High School District","lea_code":"0614430","grade_low":"09","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"6","street":"Infinite","suffix":"Loop","formatted_street":"Infinite
-        Loop","city":"Cupertino","county":"Santa Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"6
-        Infinite Loop, Cupertino, CA 95014","location":{"lat":37.330944,"lng":-122.029633},"accuracy":0.89,"accuracy_type":"rooftop","source":"Santa
-        Clara County","fields":{"congressional_districts":[{"name":"Congressional
-        District 17","district_number":17,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Khanna","first_name":"Ro","birthday":"1976-09-13","gender":"M","party":"Democrat"},"contact":{"url":"https:\/\/khanna.house.gov","address":"513
-        Cannon HOB; Washington DC 20515-0517","phone":"202-225-2631","contact_form":null},"social":{"rss_url":null,"twitter":"RepRoKhanna","facebook":"RepRoKhanna","youtube":null,"youtube_id":"UCr4KOYv1o1oEQhy1jhhm3pQ"},"references":{"bioguide_id":"K000389","thomas_id":null,"opensecrets_id":"N00026427","lis_id":null,"cspan_id":"31129","govtrack_id":"412684","votesmart_id":"29473","ballotpedia_id":null,"washington_post_id":null,"icpsr_id":"21728","wikipedia_id":"Ro
-        Khanna"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
-        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
-        Feinstein"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
-        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
-        Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 15","district_number":"15"},"house":{"name":"Assembly District
-        28","district_number":"28"}},"school_districts":{"elementary":{"name":"Cupertino
-        Union Elementary School District","lea_code":"0610290","grade_low":"KG","grade_high":"08"},"secondary":{"name":"Fremont
-        Union High School District","lea_code":"0614430","grade_low":"09","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"10600","predirectional":"N","street":"De
+        Union High School District","lea_code":"0614430","grade_low":"09","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06085","tract_code":"508101","block_code":"2005","block_group":"2","full_fips":"060855081012005","place":{"name":"Cupertino","fips":"0617610"},"metro_micro_statistical_area":{"name":"San
+        Jose-Sunnyvale-Santa Clara, CA","area_code":"41940","type":"metropolitan"},"combined_statistical_area":{"name":"San
+        Jose-San Francisco-Oakland, CA","area_code":"488"},"metropolitan_division":null,"source":"US
+        Census Bureau"}}}},{"address_components":{"number":"10690","predirectional":"N","street":"De
         Anza","suffix":"Blvd","formatted_street":"N De Anza Blvd","city":"Cupertino","county":"Santa
-        Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"10600
-        N De Anza Blvd, Cupertino, CA 95014","location":{"lat":37.330648,"lng":-122.031701},"accuracy":0.89,"accuracy_type":"rooftop","source":"Santa
-        Clara County","fields":{"congressional_districts":[{"name":"Congressional
-        District 17","district_number":17,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Khanna","first_name":"Ro","birthday":"1976-09-13","gender":"M","party":"Democrat"},"contact":{"url":"https:\/\/khanna.house.gov","address":"513
-        Cannon HOB; Washington DC 20515-0517","phone":"202-225-2631","contact_form":null},"social":{"rss_url":null,"twitter":"RepRoKhanna","facebook":"RepRoKhanna","youtube":null,"youtube_id":"UCr4KOYv1o1oEQhy1jhhm3pQ"},"references":{"bioguide_id":"K000389","thomas_id":null,"opensecrets_id":"N00026427","lis_id":null,"cspan_id":"31129","govtrack_id":"412684","votesmart_id":"29473","ballotpedia_id":null,"washington_post_id":null,"icpsr_id":"21728","wikipedia_id":"Ro
+        Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"10690
+        N De Anza Blvd, Cupertino, CA 95014","location":{"lat":37.331279,"lng":-122.031906},"accuracy":0.98,"accuracy_type":"rooftop","source":"City
+        of Cupertino","fields":{"congressional_districts":[{"name":"Congressional
+        District 17","district_number":17,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Khanna","first_name":"Ro","birthday":"1976-09-13","gender":"M","party":"Democrat"},"contact":{"url":"https:\/\/khanna.house.gov","address":"221
+        Cannon House Office Building Washington DC 20515-0517","phone":"202-225-2631","contact_form":null},"social":{"rss_url":null,"twitter":"RepRoKhanna","facebook":"RepRoKhanna","youtube":null,"youtube_id":"UCr4KOYv1o1oEQhy1jhhm3pQ"},"references":{"bioguide_id":"K000389","thomas_id":null,"opensecrets_id":"N00026427","lis_id":null,"cspan_id":"31129","govtrack_id":"412684","votesmart_id":"29473","ballotpedia_id":null,"washington_post_id":null,"icpsr_id":"21728","wikipedia_id":"Ro
         Khanna"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
         Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
         Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
         Feinstein"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
         Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
         Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 15","district_number":"15"},"house":{"name":"Assembly District
-        28","district_number":"28"}},"school_districts":{"elementary":{"name":"Cupertino
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 28","district_number":"28","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 15","district_number":"15","is_upcoming_state_legislative_district":false}},"school_districts":{"elementary":{"name":"Cupertino
         Union Elementary School District","lea_code":"0610290","grade_low":"KG","grade_high":"08"},"secondary":{"name":"Fremont
-        Union High School District","lea_code":"0614430","grade_low":"09","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}}]}},{"query":"34.145760590909,-118.15204363636","response":{"results":[{"address_components":{"number":"68","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Union High School District","lea_code":"0614430","grade_low":"09","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06085","tract_code":"508101","block_code":"2005","block_group":"2","full_fips":"060855081012005","place":{"name":"Cupertino","fips":"0617610"},"metro_micro_statistical_area":{"name":"San
+        Jose-Sunnyvale-Santa Clara, CA","area_code":"41940","type":"metropolitan"},"combined_statistical_area":{"name":"San
+        Jose-San Francisco-Oakland, CA","area_code":"488"},"metropolitan_division":null,"source":"US
+        Census Bureau"}}}},{"address_components":{"number":"91","street":"Infinite","suffix":"Loop","formatted_street":"Infinite
+        Loop","city":"Cupertino","county":"Santa Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"91
+        Infinite Loop, Cupertino, CA 95014","location":{"lat":37.332709,"lng":-122.03071},"accuracy":0.97,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_districts":[{"name":"Congressional
+        District 17","district_number":17,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Khanna","first_name":"Ro","birthday":"1976-09-13","gender":"M","party":"Democrat"},"contact":{"url":"https:\/\/khanna.house.gov","address":"221
+        Cannon House Office Building Washington DC 20515-0517","phone":"202-225-2631","contact_form":null},"social":{"rss_url":null,"twitter":"RepRoKhanna","facebook":"RepRoKhanna","youtube":null,"youtube_id":"UCr4KOYv1o1oEQhy1jhhm3pQ"},"references":{"bioguide_id":"K000389","thomas_id":null,"opensecrets_id":"N00026427","lis_id":null,"cspan_id":"31129","govtrack_id":"412684","votesmart_id":"29473","ballotpedia_id":null,"washington_post_id":null,"icpsr_id":"21728","wikipedia_id":"Ro
+        Khanna"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
+        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
+        Feinstein"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
+        Harris"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 28","district_number":"28","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 15","district_number":"15","is_upcoming_state_legislative_district":false}},"school_districts":{"elementary":{"name":"Cupertino
+        Union Elementary School District","lea_code":"0610290","grade_low":"KG","grade_high":"08"},"secondary":{"name":"Fremont
+        Union High School District","lea_code":"0614430","grade_low":"09","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06085","tract_code":"508101","block_code":"2002","block_group":"2","full_fips":"060855081012002","place":{"name":"Cupertino","fips":"0617610"},"metro_micro_statistical_area":{"name":"San
+        Jose-Sunnyvale-Santa Clara, CA","area_code":"41940","type":"metropolitan"},"combined_statistical_area":{"name":"San
+        Jose-San Francisco-Oakland, CA","area_code":"488"},"metropolitan_division":null,"source":"US
+        Census Bureau"}}}},{"address_components":{"number":"10698","predirectional":"N","street":"De
+        Anza","suffix":"Blvd","formatted_street":"N De Anza Blvd","city":"Cupertino","county":"Santa
+        Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"10698
+        N De Anza Blvd, Cupertino, CA 95014","location":{"lat":37.330219,"lng":-122.03238},"accuracy":0.96,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_districts":[{"name":"Congressional
+        District 17","district_number":17,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Khanna","first_name":"Ro","birthday":"1976-09-13","gender":"M","party":"Democrat"},"contact":{"url":"https:\/\/khanna.house.gov","address":"221
+        Cannon House Office Building Washington DC 20515-0517","phone":"202-225-2631","contact_form":null},"social":{"rss_url":null,"twitter":"RepRoKhanna","facebook":"RepRoKhanna","youtube":null,"youtube_id":"UCr4KOYv1o1oEQhy1jhhm3pQ"},"references":{"bioguide_id":"K000389","thomas_id":null,"opensecrets_id":"N00026427","lis_id":null,"cspan_id":"31129","govtrack_id":"412684","votesmart_id":"29473","ballotpedia_id":null,"washington_post_id":null,"icpsr_id":"21728","wikipedia_id":"Ro
+        Khanna"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
+        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
+        Feinstein"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
+        Harris"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 28","district_number":"28","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 15","district_number":"15","is_upcoming_state_legislative_district":false}},"school_districts":{"elementary":{"name":"Cupertino
+        Union Elementary School District","lea_code":"0610290","grade_low":"KG","grade_high":"08"},"secondary":{"name":"Fremont
+        Union High School District","lea_code":"0614430","grade_low":"09","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06085","tract_code":"507806","block_code":"2022","block_group":"2","full_fips":"060855081012022","place":{"name":"Cupertino","fips":"0617610"},"metro_micro_statistical_area":{"name":"San
+        Jose-Sunnyvale-Santa Clara, CA","area_code":"41940","type":"metropolitan"},"combined_statistical_area":{"name":"San
+        Jose-San Francisco-Oakland, CA","area_code":"488"},"metropolitan_division":null,"source":"US
+        Census Bureau"}}}},{"address_components":{"number":"20320","street":"Mariani","suffix":"Ave","formatted_street":"Mariani
+        Ave","city":"Cupertino","county":"Santa Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"20320
+        Mariani Ave, Cupertino, CA 95014","location":{"lat":37.330244,"lng":-122.028505},"accuracy":0.96,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_districts":[{"name":"Congressional
+        District 17","district_number":17,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Khanna","first_name":"Ro","birthday":"1976-09-13","gender":"M","party":"Democrat"},"contact":{"url":"https:\/\/khanna.house.gov","address":"221
+        Cannon House Office Building Washington DC 20515-0517","phone":"202-225-2631","contact_form":null},"social":{"rss_url":null,"twitter":"RepRoKhanna","facebook":"RepRoKhanna","youtube":null,"youtube_id":"UCr4KOYv1o1oEQhy1jhhm3pQ"},"references":{"bioguide_id":"K000389","thomas_id":null,"opensecrets_id":"N00026427","lis_id":null,"cspan_id":"31129","govtrack_id":"412684","votesmart_id":"29473","ballotpedia_id":null,"washington_post_id":null,"icpsr_id":"21728","wikipedia_id":"Ro
+        Khanna"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
+        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
+        Feinstein"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
+        Harris"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 28","district_number":"28","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 15","district_number":"15","is_upcoming_state_legislative_district":false}},"school_districts":{"elementary":{"name":"Cupertino
+        Union Elementary School District","lea_code":"0610290","grade_low":"KG","grade_high":"08"},"secondary":{"name":"Fremont
+        Union High School District","lea_code":"0614430","grade_low":"09","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06085","tract_code":"508101","block_code":"2000","block_group":"2","full_fips":"060855081012000","place":{"name":"Cupertino","fips":"0617610"},"metro_micro_statistical_area":{"name":"San
+        Jose-Sunnyvale-Santa Clara, CA","area_code":"41940","type":"metropolitan"},"combined_statistical_area":{"name":"San
+        Jose-San Francisco-Oakland, CA","area_code":"488"},"metropolitan_division":null,"source":"US
+        Census Bureau"}}}}]}},{"query":"34.145760590909,-118.15204363636","response":{"results":[{"address_components":{"number":"58","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"58
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":1,"accuracy_type":"rooftop","source":"Los
+        Angeles","fields":{"congressional_districts":[{"name":"Congressional District
+        27","district_number":27,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Chu","first_name":"Judy","birthday":"1953-07-07","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/chu.house.gov","address":"2423
+        Rayburn House Office Building Washington DC 20515-0527","phone":"202-225-5464","contact_form":null},"social":{"rss_url":"http:\/\/chu.house.gov\/rss.xml","twitter":"RepJudyChu","facebook":"RepJudyChu","youtube":"RepJudyChu","youtube_id":"UCfcbYOvdEXZNelM8T05nK-w"},"references":{"bioguide_id":"C001080","thomas_id":"01970","opensecrets_id":"N00030600","lis_id":null,"cspan_id":"92573","govtrack_id":"412379","votesmart_id":"16539","ballotpedia_id":"Judy
+        Chu","washington_post_id":null,"icpsr_id":"20955","wikipedia_id":"Judy Chu"},"source":"Legislator
+        data is originally collected and aggregated by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
+        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
+        Feinstein"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
+        Harris"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 41","district_number":"41","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 25","district_number":"25","is_upcoming_state_legislative_district":false}},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06037","tract_code":"463700","block_code":"2001","block_group":"2","full_fips":"060374637002001","place":{"name":"Pasadena","fips":"0656000"},"metro_micro_statistical_area":{"name":"Los
+        Angeles-Long Beach-Anaheim, CA","area_code":"31080","type":"metropolitan"},"combined_statistical_area":{"name":"Los
+        Angeles-Long Beach, CA","area_code":"348"},"metropolitan_division":{"name":"Los
+        Angeles-Long Beach-Glendale, CA","area_code":"31084"},"source":"US Census
+        Bureau"}}}},{"address_components":{"number":"10","predirectional":"S","street":"De
+        Lacey","suffix":"Ave","formatted_street":"S De Lacey Ave","city":"Pasadena","county":"Los
+        Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"10
+        S De Lacey Ave, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":1,"accuracy_type":"rooftop","source":"Los
+        Angeles","fields":{"congressional_districts":[{"name":"Congressional District
+        27","district_number":27,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Chu","first_name":"Judy","birthday":"1953-07-07","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/chu.house.gov","address":"2423
+        Rayburn House Office Building Washington DC 20515-0527","phone":"202-225-5464","contact_form":null},"social":{"rss_url":"http:\/\/chu.house.gov\/rss.xml","twitter":"RepJudyChu","facebook":"RepJudyChu","youtube":"RepJudyChu","youtube_id":"UCfcbYOvdEXZNelM8T05nK-w"},"references":{"bioguide_id":"C001080","thomas_id":"01970","opensecrets_id":"N00030600","lis_id":null,"cspan_id":"92573","govtrack_id":"412379","votesmart_id":"16539","ballotpedia_id":"Judy
+        Chu","washington_post_id":null,"icpsr_id":"20955","wikipedia_id":"Judy Chu"},"source":"Legislator
+        data is originally collected and aggregated by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
+        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
+        Feinstein"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
+        Harris"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 41","district_number":"41","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 25","district_number":"25","is_upcoming_state_legislative_district":false}},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06037","tract_code":"463700","block_code":"2001","block_group":"2","full_fips":"060374637002001","place":{"name":"Pasadena","fips":"0656000"},"metro_micro_statistical_area":{"name":"Los
+        Angeles-Long Beach-Anaheim, CA","area_code":"31080","type":"metropolitan"},"combined_statistical_area":{"name":"Los
+        Angeles-Long Beach, CA","area_code":"348"},"metropolitan_division":{"name":"Los
+        Angeles-Long Beach-Glendale, CA","area_code":"31084"},"source":"US Census
+        Bureau"}}}},{"address_components":{"number":"68","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
         Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"68
         W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":1,"accuracy_type":"rooftop","source":"Los
         Angeles","fields":{"congressional_districts":[{"name":"Congressional District
-        27","district_number":27,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Chu","first_name":"Judy","birthday":"1953-07-07","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/chu.house.gov","address":"2423
-        Rayburn HOB; Washington DC 20515-0527","phone":"202-225-5464","contact_form":null},"social":{"rss_url":"http:\/\/chu.house.gov\/rss.xml","twitter":"RepJudyChu","facebook":"RepJudyChu","youtube":"RepJudyChu","youtube_id":"UCfcbYOvdEXZNelM8T05nK-w"},"references":{"bioguide_id":"C001080","thomas_id":"01970","opensecrets_id":"N00030600","lis_id":null,"cspan_id":"92573","govtrack_id":"412379","votesmart_id":"16539","ballotpedia_id":"Judy
+        27","district_number":27,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Chu","first_name":"Judy","birthday":"1953-07-07","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/chu.house.gov","address":"2423
+        Rayburn House Office Building Washington DC 20515-0527","phone":"202-225-5464","contact_form":null},"social":{"rss_url":"http:\/\/chu.house.gov\/rss.xml","twitter":"RepJudyChu","facebook":"RepJudyChu","youtube":"RepJudyChu","youtube_id":"UCfcbYOvdEXZNelM8T05nK-w"},"references":{"bioguide_id":"C001080","thomas_id":"01970","opensecrets_id":"N00030600","lis_id":null,"cspan_id":"92573","govtrack_id":"412379","votesmart_id":"16539","ballotpedia_id":"Judy
         Chu","washington_post_id":null,"icpsr_id":"20955","wikipedia_id":"Judy Chu"},"source":"Legislator
         data is originally collected and aggregated by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
         Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
         Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
         Feinstein"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
         Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
         Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 25","district_number":"25"},"house":{"name":"Assembly District
-        41","district_number":"41"}},"school_districts":{"unified":{"name":"Pasadena
-        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"58","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
-        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"58
-        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.9,"accuracy_type":"rooftop","source":"Los
-        Angeles","fields":{"congressional_districts":[{"name":"Congressional District
-        27","district_number":27,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Chu","first_name":"Judy","birthday":"1953-07-07","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/chu.house.gov","address":"2423
-        Rayburn HOB; Washington DC 20515-0527","phone":"202-225-5464","contact_form":null},"social":{"rss_url":"http:\/\/chu.house.gov\/rss.xml","twitter":"RepJudyChu","facebook":"RepJudyChu","youtube":"RepJudyChu","youtube_id":"UCfcbYOvdEXZNelM8T05nK-w"},"references":{"bioguide_id":"C001080","thomas_id":"01970","opensecrets_id":"N00030600","lis_id":null,"cspan_id":"92573","govtrack_id":"412379","votesmart_id":"16539","ballotpedia_id":"Judy
-        Chu","washington_post_id":null,"icpsr_id":"20955","wikipedia_id":"Judy Chu"},"source":"Legislator
-        data is originally collected and aggregated by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
-        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
-        Feinstein"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
-        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
-        Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 25","district_number":"25"},"house":{"name":"Assembly District
-        41","district_number":"41"}},"school_districts":{"unified":{"name":"Pasadena
-        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"60","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 41","district_number":"41","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 25","district_number":"25","is_upcoming_state_legislative_district":false}},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06037","tract_code":"463700","block_code":"2001","block_group":"2","full_fips":"060374637002001","place":{"name":"Pasadena","fips":"0656000"},"metro_micro_statistical_area":{"name":"Los
+        Angeles-Long Beach-Anaheim, CA","area_code":"31080","type":"metropolitan"},"combined_statistical_area":{"name":"Los
+        Angeles-Long Beach, CA","area_code":"348"},"metropolitan_division":{"name":"Los
+        Angeles-Long Beach-Glendale, CA","area_code":"31084"},"source":"US Census
+        Bureau"}}}},{"address_components":{"number":"60","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
         Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"60
-        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.9,"accuracy_type":"rooftop","source":"Los
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":1,"accuracy_type":"rooftop","source":"Los
         Angeles","fields":{"congressional_districts":[{"name":"Congressional District
-        27","district_number":27,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Chu","first_name":"Judy","birthday":"1953-07-07","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/chu.house.gov","address":"2423
-        Rayburn HOB; Washington DC 20515-0527","phone":"202-225-5464","contact_form":null},"social":{"rss_url":"http:\/\/chu.house.gov\/rss.xml","twitter":"RepJudyChu","facebook":"RepJudyChu","youtube":"RepJudyChu","youtube_id":"UCfcbYOvdEXZNelM8T05nK-w"},"references":{"bioguide_id":"C001080","thomas_id":"01970","opensecrets_id":"N00030600","lis_id":null,"cspan_id":"92573","govtrack_id":"412379","votesmart_id":"16539","ballotpedia_id":"Judy
+        27","district_number":27,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Chu","first_name":"Judy","birthday":"1953-07-07","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/chu.house.gov","address":"2423
+        Rayburn House Office Building Washington DC 20515-0527","phone":"202-225-5464","contact_form":null},"social":{"rss_url":"http:\/\/chu.house.gov\/rss.xml","twitter":"RepJudyChu","facebook":"RepJudyChu","youtube":"RepJudyChu","youtube_id":"UCfcbYOvdEXZNelM8T05nK-w"},"references":{"bioguide_id":"C001080","thomas_id":"01970","opensecrets_id":"N00030600","lis_id":null,"cspan_id":"92573","govtrack_id":"412379","votesmart_id":"16539","ballotpedia_id":"Judy
         Chu","washington_post_id":null,"icpsr_id":"20955","wikipedia_id":"Judy Chu"},"source":"Legislator
         data is originally collected and aggregated by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
         Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
         Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
         Feinstein"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
         Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
         Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 25","district_number":"25"},"house":{"name":"Assembly District
-        41","district_number":"41"}},"school_districts":{"unified":{"name":"Pasadena
-        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"10","predirectional":"S","street":"De
-        Lacey","suffix":"Ave","formatted_street":"S De Lacey Ave","city":"Pasadena","county":"Los
-        Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"10
-        S De Lacey Ave, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.9,"accuracy_type":"rooftop","source":"Los
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 41","district_number":"41","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 25","district_number":"25","is_upcoming_state_legislative_district":false}},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06037","tract_code":"463700","block_code":"2001","block_group":"2","full_fips":"060374637002001","place":{"name":"Pasadena","fips":"0656000"},"metro_micro_statistical_area":{"name":"Los
+        Angeles-Long Beach-Anaheim, CA","area_code":"31080","type":"metropolitan"},"combined_statistical_area":{"name":"Los
+        Angeles-Long Beach, CA","area_code":"348"},"metropolitan_division":{"name":"Los
+        Angeles-Long Beach-Glendale, CA","area_code":"31084"},"source":"US Census
+        Bureau"}}}},{"address_components":{"number":"69","street":"Mc Cormick","suffix":"Aly","formatted_street":"Mc
+        Cormick Aly","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"69
+        Mc Cormick Aly, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":1,"accuracy_type":"rooftop","source":"Los
         Angeles","fields":{"congressional_districts":[{"name":"Congressional District
-        27","district_number":27,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Chu","first_name":"Judy","birthday":"1953-07-07","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/chu.house.gov","address":"2423
-        Rayburn HOB; Washington DC 20515-0527","phone":"202-225-5464","contact_form":null},"social":{"rss_url":"http:\/\/chu.house.gov\/rss.xml","twitter":"RepJudyChu","facebook":"RepJudyChu","youtube":"RepJudyChu","youtube_id":"UCfcbYOvdEXZNelM8T05nK-w"},"references":{"bioguide_id":"C001080","thomas_id":"01970","opensecrets_id":"N00030600","lis_id":null,"cspan_id":"92573","govtrack_id":"412379","votesmart_id":"16539","ballotpedia_id":"Judy
+        27","district_number":27,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Chu","first_name":"Judy","birthday":"1953-07-07","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/chu.house.gov","address":"2423
+        Rayburn House Office Building Washington DC 20515-0527","phone":"202-225-5464","contact_form":null},"social":{"rss_url":"http:\/\/chu.house.gov\/rss.xml","twitter":"RepJudyChu","facebook":"RepJudyChu","youtube":"RepJudyChu","youtube_id":"UCfcbYOvdEXZNelM8T05nK-w"},"references":{"bioguide_id":"C001080","thomas_id":"01970","opensecrets_id":"N00030600","lis_id":null,"cspan_id":"92573","govtrack_id":"412379","votesmart_id":"16539","ballotpedia_id":"Judy
         Chu","washington_post_id":null,"icpsr_id":"20955","wikipedia_id":"Judy Chu"},"source":"Legislator
         data is originally collected and aggregated by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
         Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
         Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
         Feinstein"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
         Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
         Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 25","district_number":"25"},"house":{"name":"Assembly District
-        41","district_number":"41"}},"school_districts":{"unified":{"name":"Pasadena
-        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"69","street":"Mc
-        Cormick","suffix":"Aly","formatted_street":"Mc Cormick Aly","city":"Pasadena","county":"Los
-        Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"69
-        Mc Cormick Aly, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.9,"accuracy_type":"rooftop","source":"Los
-        Angeles","fields":{"congressional_districts":[{"name":"Congressional District
-        27","district_number":27,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Chu","first_name":"Judy","birthday":"1953-07-07","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/chu.house.gov","address":"2423
-        Rayburn HOB; Washington DC 20515-0527","phone":"202-225-5464","contact_form":null},"social":{"rss_url":"http:\/\/chu.house.gov\/rss.xml","twitter":"RepJudyChu","facebook":"RepJudyChu","youtube":"RepJudyChu","youtube_id":"UCfcbYOvdEXZNelM8T05nK-w"},"references":{"bioguide_id":"C001080","thomas_id":"01970","opensecrets_id":"N00030600","lis_id":null,"cspan_id":"92573","govtrack_id":"412379","votesmart_id":"16539","ballotpedia_id":"Judy
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 41","district_number":"41","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 25","district_number":"25","is_upcoming_state_legislative_district":false}},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06037","tract_code":"463700","block_code":"2001","block_group":"2","full_fips":"060374637002001","place":{"name":"Pasadena","fips":"0656000"},"metro_micro_statistical_area":{"name":"Los
+        Angeles-Long Beach-Anaheim, CA","area_code":"31080","type":"metropolitan"},"combined_statistical_area":{"name":"Los
+        Angeles-Long Beach, CA","area_code":"348"},"metropolitan_division":{"name":"Los
+        Angeles-Long Beach-Glendale, CA","area_code":"31084"},"source":"US Census
+        Bureau"}}}},{"address_components":{"number":"1","predirectional":"N","street":"De
+        Lacey","suffix":"Ave","formatted_street":"N De Lacey Ave","city":"Pasadena","county":"Los
+        Angeles County","state":"CA","zip":"91103","country":"US"},"formatted_address":"1
+        N De Lacey Ave, Pasadena, CA 91103","location":{"lat":34.145759,"lng":-118.15223},"accuracy":0.99,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_districts":[{"name":"Congressional
+        District 27","district_number":27,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Chu","first_name":"Judy","birthday":"1953-07-07","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/chu.house.gov","address":"2423
+        Rayburn House Office Building Washington DC 20515-0527","phone":"202-225-5464","contact_form":null},"social":{"rss_url":"http:\/\/chu.house.gov\/rss.xml","twitter":"RepJudyChu","facebook":"RepJudyChu","youtube":"RepJudyChu","youtube_id":"UCfcbYOvdEXZNelM8T05nK-w"},"references":{"bioguide_id":"C001080","thomas_id":"01970","opensecrets_id":"N00030600","lis_id":null,"cspan_id":"92573","govtrack_id":"412379","votesmart_id":"16539","ballotpedia_id":"Judy
         Chu","washington_post_id":null,"icpsr_id":"20955","wikipedia_id":"Judy Chu"},"source":"Legislator
         data is originally collected and aggregated by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
         Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
         Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
         Feinstein"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
         Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
         Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 25","district_number":"25"},"house":{"name":"Assembly District
-        41","district_number":"41"}},"school_districts":{"unified":{"name":"Pasadena
-        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}}]}},{"query":"37.7815,-122.404933","response":{"results":[{"address_components":{"number":"198","street":"05th","suffix":"St","formatted_street":"05th
-        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103","country":"US"},"formatted_address":"198
-        05th St, San Francisco, CA 94103","location":{"lat":37.781458,"lng":-122.405257},"accuracy":1,"accuracy_type":"rooftop","source":"San
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 41","district_number":"41","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 25","district_number":"25","is_upcoming_state_legislative_district":false}},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06037","tract_code":"463700","block_code":"2002","block_group":"2","full_fips":"060374637002002","place":{"name":"Pasadena","fips":"0656000"},"metro_micro_statistical_area":{"name":"Los
+        Angeles-Long Beach-Anaheim, CA","area_code":"31080","type":"metropolitan"},"combined_statistical_area":{"name":"Los
+        Angeles-Long Beach, CA","area_code":"348"},"metropolitan_division":{"name":"Los
+        Angeles-Long Beach-Glendale, CA","area_code":"31084"},"source":"US Census
+        Bureau"}}}},{"address_components":{"number":"25","predirectional":"N","street":"De
+        Lacey","suffix":"Ave","formatted_street":"N De Lacey Ave","city":"Pasadena","county":"Los
+        Angeles County","state":"CA","zip":"91103","country":"US"},"formatted_address":"25
+        N De Lacey Ave, Pasadena, CA 91103","location":{"lat":34.146409,"lng":-118.152234},"accuracy":0.98,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_districts":[{"name":"Congressional
+        District 27","district_number":27,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Chu","first_name":"Judy","birthday":"1953-07-07","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/chu.house.gov","address":"2423
+        Rayburn House Office Building Washington DC 20515-0527","phone":"202-225-5464","contact_form":null},"social":{"rss_url":"http:\/\/chu.house.gov\/rss.xml","twitter":"RepJudyChu","facebook":"RepJudyChu","youtube":"RepJudyChu","youtube_id":"UCfcbYOvdEXZNelM8T05nK-w"},"references":{"bioguide_id":"C001080","thomas_id":"01970","opensecrets_id":"N00030600","lis_id":null,"cspan_id":"92573","govtrack_id":"412379","votesmart_id":"16539","ballotpedia_id":"Judy
+        Chu","washington_post_id":null,"icpsr_id":"20955","wikipedia_id":"Judy Chu"},"source":"Legislator
+        data is originally collected and aggregated by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
+        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
+        Feinstein"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
+        Harris"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 41","district_number":"41","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 25","district_number":"25","is_upcoming_state_legislative_district":false}},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06037","tract_code":"461902","block_code":"2036","block_group":"2","full_fips":"060374619022036","place":{"name":"Pasadena","fips":"0656000"},"metro_micro_statistical_area":{"name":"Los
+        Angeles-Long Beach-Anaheim, CA","area_code":"31080","type":"metropolitan"},"combined_statistical_area":{"name":"Los
+        Angeles-Long Beach, CA","area_code":"348"},"metropolitan_division":{"name":"Los
+        Angeles-Long Beach-Glendale, CA","area_code":"31084"},"source":"US Census
+        Bureau"}}}},{"address_components":{"number":"110","street":"Martin","suffix":"Aly","formatted_street":"Martin
+        Aly","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"110
+        Martin Aly, Pasadena, CA 91105","location":{"lat":34.145007,"lng":-118.153104},"accuracy":0.97,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_districts":[{"name":"Congressional
+        District 27","district_number":27,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Chu","first_name":"Judy","birthday":"1953-07-07","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/chu.house.gov","address":"2423
+        Rayburn House Office Building Washington DC 20515-0527","phone":"202-225-5464","contact_form":null},"social":{"rss_url":"http:\/\/chu.house.gov\/rss.xml","twitter":"RepJudyChu","facebook":"RepJudyChu","youtube":"RepJudyChu","youtube_id":"UCfcbYOvdEXZNelM8T05nK-w"},"references":{"bioguide_id":"C001080","thomas_id":"01970","opensecrets_id":"N00030600","lis_id":null,"cspan_id":"92573","govtrack_id":"412379","votesmart_id":"16539","ballotpedia_id":"Judy
+        Chu","washington_post_id":null,"icpsr_id":"20955","wikipedia_id":"Judy Chu"},"source":"Legislator
+        data is originally collected and aggregated by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
+        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
+        Feinstein"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
+        Harris"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 41","district_number":"41","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 25","district_number":"25","is_upcoming_state_legislative_district":false}},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06037","tract_code":"463700","block_code":"2014","block_group":"2","full_fips":"060374637002014","place":{"name":"Pasadena","fips":"0656000"},"metro_micro_statistical_area":{"name":"Los
+        Angeles-Long Beach-Anaheim, CA","area_code":"31080","type":"metropolitan"},"combined_statistical_area":{"name":"Los
+        Angeles-Long Beach, CA","area_code":"348"},"metropolitan_division":{"name":"Los
+        Angeles-Long Beach-Glendale, CA","area_code":"31084"},"source":"US Census
+        Bureau"}}}}]}},{"query":"37.7815,-122.404933","response":{"results":[{"address_components":{"number":"206","street":"05th","suffix":"St","formatted_street":"05th
+        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94102","country":"US"},"formatted_address":"206
+        05th St, San Francisco, CA 94102","location":{"lat":37.781187,"lng":-122.404925},"accuracy":1,"accuracy_type":"rooftop","source":"San
         Francisco","fields":{"congressional_districts":[{"name":"Congressional District
-        12","district_number":12,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Pelosi","first_name":"Nancy","birthday":"1940-03-26","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/pelosi.house.gov","address":"233
-        Cannon HOB; Washington DC 20515-0512","phone":"202-225-4965","contact_form":null},"social":{"rss_url":"http:\/\/pelosi.house.gov\/atom.xml","twitter":"NancyPelosi","facebook":"NancyPelosi","youtube":"nancypelosi","youtube_id":"UCxPeEcH0xaCK9nBK98EFhDg"},"references":{"bioguide_id":"P000197","thomas_id":"00905","opensecrets_id":"N00007360","lis_id":null,"cspan_id":"6153","govtrack_id":"400314","votesmart_id":"26732","ballotpedia_id":"Nancy
+        12","district_number":12,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Pelosi","first_name":"Nancy","birthday":"1940-03-26","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/pelosi.house.gov","address":"1236
+        Longworth House Office Building Washington DC 20515-0512","phone":"202-225-4965","contact_form":null},"social":{"rss_url":"http:\/\/pelosi.house.gov\/atom.xml","twitter":"SpeakerPelosi","facebook":"NancyPelosi","youtube":"nancypelosi","youtube_id":"UCxPeEcH0xaCK9nBK98EFhDg"},"references":{"bioguide_id":"P000197","thomas_id":"00905","opensecrets_id":"N00007360","lis_id":null,"cspan_id":"6153","govtrack_id":"400314","votesmart_id":"26732","ballotpedia_id":"Nancy
         Pelosi","washington_post_id":null,"icpsr_id":"15448","wikipedia_id":"Nancy
         Pelosi"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
@@ -247,18 +451,24 @@ http_interactions:
         Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
         Feinstein"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
         Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
         Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 11","district_number":"11"},"house":{"name":"Assembly District
-        17","district_number":"17"}},"school_districts":{"unified":{"name":"San Francisco
-        Unified School District","lea_code":"0634410","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"194","street":"05th","suffix":"St","formatted_street":"05th
-        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103","country":"US"},"formatted_address":"194
-        05th St, San Francisco, CA 94103","location":{"lat":37.781458,"lng":-122.405257},"accuracy":0.9,"accuracy_type":"rooftop","source":"San
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 17","district_number":"17","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 11","district_number":"11","is_upcoming_state_legislative_district":false}},"school_districts":{"unified":{"name":"San
+        Francisco Unified School District","lea_code":"0634410","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06075","tract_code":"017802","block_code":"1000","block_group":"1","full_fips":"060750178021000","place":{"name":"San
+        Francisco","fips":"0667000"},"metro_micro_statistical_area":{"name":"San Francisco-Oakland-Berkeley,
+        CA","area_code":"41860","type":"metropolitan"},"combined_statistical_area":{"name":"San
+        Jose-San Francisco-Oakland, CA","area_code":"488"},"metropolitan_division":{"name":"San
+        Francisco-San Mateo-Redwood City, CA","area_code":"41884"},"source":"US Census
+        Bureau"}}}},{"address_components":{"number":"901","street":"Howard","suffix":"St","formatted_street":"Howard
+        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94102","country":"US"},"formatted_address":"901
+        Howard St, San Francisco, CA 94102","location":{"lat":37.781185,"lng":-122.404921},"accuracy":1,"accuracy_type":"rooftop","source":"San
         Francisco","fields":{"congressional_districts":[{"name":"Congressional District
-        12","district_number":12,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Pelosi","first_name":"Nancy","birthday":"1940-03-26","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/pelosi.house.gov","address":"233
-        Cannon HOB; Washington DC 20515-0512","phone":"202-225-4965","contact_form":null},"social":{"rss_url":"http:\/\/pelosi.house.gov\/atom.xml","twitter":"NancyPelosi","facebook":"NancyPelosi","youtube":"nancypelosi","youtube_id":"UCxPeEcH0xaCK9nBK98EFhDg"},"references":{"bioguide_id":"P000197","thomas_id":"00905","opensecrets_id":"N00007360","lis_id":null,"cspan_id":"6153","govtrack_id":"400314","votesmart_id":"26732","ballotpedia_id":"Nancy
+        12","district_number":12,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Pelosi","first_name":"Nancy","birthday":"1940-03-26","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/pelosi.house.gov","address":"1236
+        Longworth House Office Building Washington DC 20515-0512","phone":"202-225-4965","contact_form":null},"social":{"rss_url":"http:\/\/pelosi.house.gov\/atom.xml","twitter":"SpeakerPelosi","facebook":"NancyPelosi","youtube":"nancypelosi","youtube_id":"UCxPeEcH0xaCK9nBK98EFhDg"},"references":{"bioguide_id":"P000197","thomas_id":"00905","opensecrets_id":"N00007360","lis_id":null,"cspan_id":"6153","govtrack_id":"400314","votesmart_id":"26732","ballotpedia_id":"Nancy
         Pelosi","washington_post_id":null,"icpsr_id":"15448","wikipedia_id":"Nancy
         Pelosi"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
@@ -266,18 +476,24 @@ http_interactions:
         Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
         Feinstein"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
         Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
         Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 11","district_number":"11"},"house":{"name":"Assembly District
-        17","district_number":"17"}},"school_districts":{"unified":{"name":"San Francisco
-        Unified School District","lea_code":"0634410","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"906","street":"Howard","suffix":"St","formatted_street":"Howard
-        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103","country":"US"},"formatted_address":"906
-        Howard St, San Francisco, CA 94103","location":{"lat":37.781458,"lng":-122.405257},"accuracy":0.9,"accuracy_type":"rooftop","source":"San
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 17","district_number":"17","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 11","district_number":"11","is_upcoming_state_legislative_district":false}},"school_districts":{"unified":{"name":"San
+        Francisco Unified School District","lea_code":"0634410","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06075","tract_code":"017802","block_code":"1000","block_group":"1","full_fips":"060750178021000","place":{"name":"San
+        Francisco","fips":"0667000"},"metro_micro_statistical_area":{"name":"San Francisco-Oakland-Berkeley,
+        CA","area_code":"41860","type":"metropolitan"},"combined_statistical_area":{"name":"San
+        Jose-San Francisco-Oakland, CA","area_code":"488"},"metropolitan_division":{"name":"San
+        Francisco-San Mateo-Redwood City, CA","area_code":"41884"},"source":"US Census
+        Bureau"}}}},{"address_components":{"number":"909","street":"Howard","suffix":"St","formatted_street":"Howard
+        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94102","country":"US"},"formatted_address":"909
+        Howard St, San Francisco, CA 94102","location":{"lat":37.781082,"lng":-122.405058},"accuracy":1,"accuracy_type":"rooftop","source":"San
         Francisco","fields":{"congressional_districts":[{"name":"Congressional District
-        12","district_number":12,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Pelosi","first_name":"Nancy","birthday":"1940-03-26","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/pelosi.house.gov","address":"233
-        Cannon HOB; Washington DC 20515-0512","phone":"202-225-4965","contact_form":null},"social":{"rss_url":"http:\/\/pelosi.house.gov\/atom.xml","twitter":"NancyPelosi","facebook":"NancyPelosi","youtube":"nancypelosi","youtube_id":"UCxPeEcH0xaCK9nBK98EFhDg"},"references":{"bioguide_id":"P000197","thomas_id":"00905","opensecrets_id":"N00007360","lis_id":null,"cspan_id":"6153","govtrack_id":"400314","votesmart_id":"26732","ballotpedia_id":"Nancy
+        12","district_number":12,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Pelosi","first_name":"Nancy","birthday":"1940-03-26","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/pelosi.house.gov","address":"1236
+        Longworth House Office Building Washington DC 20515-0512","phone":"202-225-4965","contact_form":null},"social":{"rss_url":"http:\/\/pelosi.house.gov\/atom.xml","twitter":"SpeakerPelosi","facebook":"NancyPelosi","youtube":"nancypelosi","youtube_id":"UCxPeEcH0xaCK9nBK98EFhDg"},"references":{"bioguide_id":"P000197","thomas_id":"00905","opensecrets_id":"N00007360","lis_id":null,"cspan_id":"6153","govtrack_id":"400314","votesmart_id":"26732","ballotpedia_id":"Nancy
         Pelosi","washington_post_id":null,"icpsr_id":"15448","wikipedia_id":"Nancy
         Pelosi"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
@@ -285,18 +501,24 @@ http_interactions:
         Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
         Feinstein"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
         Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
         Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 11","district_number":"11"},"house":{"name":"Assembly District
-        17","district_number":"17"}},"school_districts":{"unified":{"name":"San Francisco
-        Unified School District","lea_code":"0634410","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"206","street":"05th","suffix":"St","formatted_street":"05th
-        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103","country":"US"},"formatted_address":"206
-        05th St, San Francisco, CA 94103","location":{"lat":37.781187,"lng":-122.404925},"accuracy":0.9,"accuracy_type":"rooftop","source":"San
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 17","district_number":"17","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 11","district_number":"11","is_upcoming_state_legislative_district":false}},"school_districts":{"unified":{"name":"San
+        Francisco Unified School District","lea_code":"0634410","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06075","tract_code":"017802","block_code":"1000","block_group":"1","full_fips":"060750178021000","place":{"name":"San
+        Francisco","fips":"0667000"},"metro_micro_statistical_area":{"name":"San Francisco-Oakland-Berkeley,
+        CA","area_code":"41860","type":"metropolitan"},"combined_statistical_area":{"name":"San
+        Jose-San Francisco-Oakland, CA","area_code":"488"},"metropolitan_division":{"name":"San
+        Francisco-San Mateo-Redwood City, CA","area_code":"41884"},"source":"US Census
+        Bureau"}}}},{"address_components":{"number":"216","street":"05th","suffix":"St","formatted_street":"05th
+        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103","country":"US"},"formatted_address":"216
+        05th St, San Francisco, CA 94103","location":{"lat":37.781067,"lng":-122.404819},"accuracy":1,"accuracy_type":"rooftop","source":"San
         Francisco","fields":{"congressional_districts":[{"name":"Congressional District
-        12","district_number":12,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Pelosi","first_name":"Nancy","birthday":"1940-03-26","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/pelosi.house.gov","address":"233
-        Cannon HOB; Washington DC 20515-0512","phone":"202-225-4965","contact_form":null},"social":{"rss_url":"http:\/\/pelosi.house.gov\/atom.xml","twitter":"NancyPelosi","facebook":"NancyPelosi","youtube":"nancypelosi","youtube_id":"UCxPeEcH0xaCK9nBK98EFhDg"},"references":{"bioguide_id":"P000197","thomas_id":"00905","opensecrets_id":"N00007360","lis_id":null,"cspan_id":"6153","govtrack_id":"400314","votesmart_id":"26732","ballotpedia_id":"Nancy
+        12","district_number":12,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Pelosi","first_name":"Nancy","birthday":"1940-03-26","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/pelosi.house.gov","address":"1236
+        Longworth House Office Building Washington DC 20515-0512","phone":"202-225-4965","contact_form":null},"social":{"rss_url":"http:\/\/pelosi.house.gov\/atom.xml","twitter":"SpeakerPelosi","facebook":"NancyPelosi","youtube":"nancypelosi","youtube_id":"UCxPeEcH0xaCK9nBK98EFhDg"},"references":{"bioguide_id":"P000197","thomas_id":"00905","opensecrets_id":"N00007360","lis_id":null,"cspan_id":"6153","govtrack_id":"400314","votesmart_id":"26732","ballotpedia_id":"Nancy
         Pelosi","washington_post_id":null,"icpsr_id":"15448","wikipedia_id":"Nancy
         Pelosi"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
@@ -304,18 +526,24 @@ http_interactions:
         Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
         Feinstein"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
         Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
         Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 11","district_number":"11"},"house":{"name":"Assembly District
-        17","district_number":"17"}},"school_districts":{"unified":{"name":"San Francisco
-        Unified School District","lea_code":"0634410","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"190","street":"05th","suffix":"St","formatted_street":"05th
-        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103","country":"US"},"formatted_address":"190
-        05th St, San Francisco, CA 94103","location":{"lat":37.781508,"lng":-122.405329},"accuracy":0.9,"accuracy_type":"rooftop","source":"San
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 17","district_number":"17","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 11","district_number":"11","is_upcoming_state_legislative_district":false}},"school_districts":{"unified":{"name":"San
+        Francisco Unified School District","lea_code":"0634410","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06075","tract_code":"017802","block_code":"1000","block_group":"1","full_fips":"060750178021000","place":{"name":"San
+        Francisco","fips":"0667000"},"metro_micro_statistical_area":{"name":"San Francisco-Oakland-Berkeley,
+        CA","area_code":"41860","type":"metropolitan"},"combined_statistical_area":{"name":"San
+        Jose-San Francisco-Oakland, CA","area_code":"488"},"metropolitan_division":{"name":"San
+        Francisco-San Mateo-Redwood City, CA","area_code":"41884"},"source":"US Census
+        Bureau"}}}},{"address_components":{"number":"912","street":"Howard","suffix":"St","formatted_street":"Howard
+        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94102","country":"US"},"formatted_address":"912
+        Howard St, San Francisco, CA 94102","location":{"lat":37.781356,"lng":-122.405509},"accuracy":1,"accuracy_type":"rooftop","source":"San
         Francisco","fields":{"congressional_districts":[{"name":"Congressional District
-        12","district_number":12,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Pelosi","first_name":"Nancy","birthday":"1940-03-26","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/pelosi.house.gov","address":"233
-        Cannon HOB; Washington DC 20515-0512","phone":"202-225-4965","contact_form":null},"social":{"rss_url":"http:\/\/pelosi.house.gov\/atom.xml","twitter":"NancyPelosi","facebook":"NancyPelosi","youtube":"nancypelosi","youtube_id":"UCxPeEcH0xaCK9nBK98EFhDg"},"references":{"bioguide_id":"P000197","thomas_id":"00905","opensecrets_id":"N00007360","lis_id":null,"cspan_id":"6153","govtrack_id":"400314","votesmart_id":"26732","ballotpedia_id":"Nancy
+        12","district_number":12,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Pelosi","first_name":"Nancy","birthday":"1940-03-26","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/pelosi.house.gov","address":"1236
+        Longworth House Office Building Washington DC 20515-0512","phone":"202-225-4965","contact_form":null},"social":{"rss_url":"http:\/\/pelosi.house.gov\/atom.xml","twitter":"SpeakerPelosi","facebook":"NancyPelosi","youtube":"nancypelosi","youtube_id":"UCxPeEcH0xaCK9nBK98EFhDg"},"references":{"bioguide_id":"P000197","thomas_id":"00905","opensecrets_id":"N00007360","lis_id":null,"cspan_id":"6153","govtrack_id":"400314","votesmart_id":"26732","ballotpedia_id":"Nancy
         Pelosi","washington_post_id":null,"icpsr_id":"15448","wikipedia_id":"Nancy
         Pelosi"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
@@ -323,13 +551,93 @@ http_interactions:
         Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
         Feinstein"},"source":"Legislator data is originally collected and aggregated
         by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
         Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
         Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 11","district_number":"11"},"house":{"name":"Assembly District
-        17","district_number":"17"}},"school_districts":{"unified":{"name":"San Francisco
-        Unified School District","lea_code":"0634410","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}}]}}]}'
-    http_version: 
-  recorded_at: Fri, 16 Feb 2018 17:35:15 GMT
-recorded_with: VCR 4.0.0
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 17","district_number":"17","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 11","district_number":"11","is_upcoming_state_legislative_district":false}},"school_districts":{"unified":{"name":"San
+        Francisco Unified School District","lea_code":"0634410","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06075","tract_code":"017601","block_code":"1010","block_group":"1","full_fips":"060750176011010","place":{"name":"San
+        Francisco","fips":"0667000"},"metro_micro_statistical_area":{"name":"San Francisco-Oakland-Berkeley,
+        CA","area_code":"41860","type":"metropolitan"},"combined_statistical_area":{"name":"San
+        Jose-San Francisco-Oakland, CA","area_code":"488"},"metropolitan_division":{"name":"San
+        Francisco-San Mateo-Redwood City, CA","area_code":"41884"},"source":"US Census
+        Bureau"}}}},{"address_components":{"number":"357","street":"Minna","suffix":"St","formatted_street":"Minna
+        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103","country":"US"},"formatted_address":"357
+        Minna St, San Francisco, CA 94103","location":{"lat":37.783769,"lng":-122.404061},"accuracy":0.96,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_districts":[{"name":"Congressional
+        District 12","district_number":12,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Pelosi","first_name":"Nancy","birthday":"1940-03-26","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/pelosi.house.gov","address":"1236
+        Longworth House Office Building Washington DC 20515-0512","phone":"202-225-4965","contact_form":null},"social":{"rss_url":"http:\/\/pelosi.house.gov\/atom.xml","twitter":"SpeakerPelosi","facebook":"NancyPelosi","youtube":"nancypelosi","youtube_id":"UCxPeEcH0xaCK9nBK98EFhDg"},"references":{"bioguide_id":"P000197","thomas_id":"00905","opensecrets_id":"N00007360","lis_id":null,"cspan_id":"6153","govtrack_id":"400314","votesmart_id":"26732","ballotpedia_id":"Nancy
+        Pelosi","washington_post_id":null,"icpsr_id":"15448","wikipedia_id":"Nancy
+        Pelosi"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
+        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
+        Feinstein"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
+        Harris"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 17","district_number":"17","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 11","district_number":"11","is_upcoming_state_legislative_district":false}},"school_districts":{"unified":{"name":"San
+        Francisco Unified School District","lea_code":"0634410","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06075","tract_code":"017601","block_code":"1004","block_group":"1","full_fips":"060750176011004","place":{"name":"San
+        Francisco","fips":"0667000"},"metro_micro_statistical_area":{"name":"San Francisco-Oakland-Berkeley,
+        CA","area_code":"41860","type":"metropolitan"},"combined_statistical_area":{"name":"San
+        Jose-San Francisco-Oakland, CA","area_code":"488"},"metropolitan_division":{"name":"San
+        Francisco-San Mateo-Redwood City, CA","area_code":"41884"},"source":"US Census
+        Bureau"}}}},{"address_components":{"number":"1000","street":"Howard","suffix":"St","formatted_street":"Howard
+        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103","country":"US"},"formatted_address":"1000
+        Howard St, San Francisco, CA 94103","location":{"lat":37.779739,"lng":-122.407159},"accuracy":0.96,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_districts":[{"name":"Congressional
+        District 12","district_number":12,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Pelosi","first_name":"Nancy","birthday":"1940-03-26","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/pelosi.house.gov","address":"1236
+        Longworth House Office Building Washington DC 20515-0512","phone":"202-225-4965","contact_form":null},"social":{"rss_url":"http:\/\/pelosi.house.gov\/atom.xml","twitter":"SpeakerPelosi","facebook":"NancyPelosi","youtube":"nancypelosi","youtube_id":"UCxPeEcH0xaCK9nBK98EFhDg"},"references":{"bioguide_id":"P000197","thomas_id":"00905","opensecrets_id":"N00007360","lis_id":null,"cspan_id":"6153","govtrack_id":"400314","votesmart_id":"26732","ballotpedia_id":"Nancy
+        Pelosi","washington_post_id":null,"icpsr_id":"15448","wikipedia_id":"Nancy
+        Pelosi"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
+        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
+        Feinstein"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
+        Harris"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 17","district_number":"17","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 11","district_number":"11","is_upcoming_state_legislative_district":false}},"school_districts":{"unified":{"name":"San
+        Francisco Unified School District","lea_code":"0634410","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06075","tract_code":"017802","block_code":"1000","block_group":"1","full_fips":"060750178021000","place":{"name":"San
+        Francisco","fips":"0667000"},"metro_micro_statistical_area":{"name":"San Francisco-Oakland-Berkeley,
+        CA","area_code":"41860","type":"metropolitan"},"combined_statistical_area":{"name":"San
+        Jose-San Francisco-Oakland, CA","area_code":"488"},"metropolitan_division":{"name":"San
+        Francisco-San Mateo-Redwood City, CA","area_code":"41884"},"source":"US Census
+        Bureau"}}}},{"address_components":{"number":"1023","street":"Howard","suffix":"St","formatted_street":"Howard
+        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103","country":"US"},"formatted_address":"1023
+        Howard St, San Francisco, CA 94103","location":{"lat":37.779318,"lng":-122.407691},"accuracy":0.95,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau","fields":{"congressional_districts":[{"name":"Congressional
+        District 12","district_number":12,"congress_number":"116th","congress_years":"2019-2021","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Pelosi","first_name":"Nancy","birthday":"1940-03-26","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/pelosi.house.gov","address":"1236
+        Longworth House Office Building Washington DC 20515-0512","phone":"202-225-4965","contact_form":null},"social":{"rss_url":"http:\/\/pelosi.house.gov\/atom.xml","twitter":"SpeakerPelosi","facebook":"NancyPelosi","youtube":"nancypelosi","youtube_id":"UCxPeEcH0xaCK9nBK98EFhDg"},"references":{"bioguide_id":"P000197","thomas_id":"00905","opensecrets_id":"N00007360","lis_id":null,"cspan_id":"6153","govtrack_id":"400314","votesmart_id":"26732","ballotpedia_id":"Nancy
+        Pelosi","washington_post_id":null,"icpsr_id":"15448","wikipedia_id":"Nancy
+        Pelosi"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
+        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
+        Feinstein"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
+        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":"UCe1ciA1TDa5F9K6Ufr_6Fsw"},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
+        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
+        Harris"},"source":"Legislator data is originally collected and aggregated
+        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"house":{"name":"Assembly
+        District 17","district_number":"17","is_upcoming_state_legislative_district":false},"senate":{"name":"State
+        Senate District 11","district_number":"11","is_upcoming_state_legislative_district":false}},"school_districts":{"unified":{"name":"San
+        Francisco Unified School District","lea_code":"0634410","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"},"census":{"2019":{"census_year":2019,"state_fips":"06","county_fips":"06075","tract_code":"017601","block_code":"2005","block_group":"2","full_fips":"060750176012005","place":{"name":"San
+        Francisco","fips":"0667000"},"metro_micro_statistical_area":{"name":"San Francisco-Oakland-Berkeley,
+        CA","area_code":"41860","type":"metropolitan"},"combined_statistical_area":{"name":"San
+        Jose-San Francisco-Oakland, CA","area_code":"488"},"metropolitan_division":{"name":"San
+        Francisco-San Mateo-Redwood City, CA","area_code":"41884"},"source":"US Census
+        Bureau"}}}}]}}]}'
+  recorded_at: Tue, 24 Nov 2020 16:31:16 GMT
+recorded_with: VCR 6.0.0

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://api.geocod.io/v1.2/geocode?api_key=secret_api_key
+    uri: https://api.geocod.io/v1.6/geocode?api_key=secret_api_key
     body:
       encoding: UTF-8
       string: '["1 Infinite Loop Cupertino CA 95014","54 West Colorado Boulevard Pasadena
@@ -21,44 +21,39 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx/1.12.2
       Content-Type:
       - application/json
       Transfer-Encoding:
       - chunked
-      X-Powered-By:
-      - PHP/7.1.14
       Cache-Control:
-      - no-cache
+      - no-cache, private
       Date:
-      - Fri, 16 Feb 2018 17:35:11 GMT
-      Request-Handler:
-      - api19
+      - Tue, 24 Nov 2020 16:31:09 GMT
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
       - GET, POST
       Access-Control-Allow-Headers:
-      - Content-Type
+      - Content-Type, User-Agent
       Access-Control-Expose-Headers:
       - Request-Handler
+      Request-Handler:
+      - api47
     body:
       encoding: UTF-8
       string: '{"results":[{"query":"1 Infinite Loop Cupertino CA 95014","response":{"input":{"address_components":{"number":"1","street":"Infinite","suffix":"Loop","formatted_street":"Infinite
         Loop","city":"Cupertino","state":"CA","zip":"95014","country":"US"},"formatted_address":"1
         Infinite Loop, Cupertino, CA 95014"},"results":[{"address_components":{"number":"1","street":"Infinite","suffix":"Loop","formatted_street":"Infinite
         Loop","city":"Cupertino","county":"Santa Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"1
-        Infinite Loop, Cupertino, CA 95014","location":{"lat":37.330689,"lng":-122.02912},"accuracy":1,"accuracy_type":"range_interpolation","source":"TIGER\/Line\u00ae
-        dataset from the US Census Bureau"}]}},{"query":"54 West Colorado Boulevard
-        Pasadena CA 91105","response":{"input":{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Infinite Loop, Cupertino, CA 95014","location":{"lat":37.331524,"lng":-122.030231},"accuracy":1,"accuracy_type":"rooftop","source":"City
+        of Cupertino"}]}},{"query":"54 West Colorado Boulevard Pasadena CA 91105","response":{"input":{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
         Colorado Blvd","city":"Pasadena","state":"CA","zip":"91105","country":"US"},"formatted_address":"54
-        W Colorado Blvd, Pasadena, CA 91105"},"results":[{"address_components":{"number":"54","predirectional":"E","street":"Colorado","suffix":"Blvd","formatted_street":"E
-        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"54
-        E Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145499,"lng":-118.14932},"accuracy":1,"accuracy_type":"rooftop","source":"Los
-        Angeles"},{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        W Colorado Blvd, Pasadena, CA 91105"},"results":[{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
         Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"54
         W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145375,"lng":-118.151622},"accuracy":1,"accuracy_type":"rooftop","source":"Los
+        Angeles"},{"address_components":{"number":"54","predirectional":"E","street":"Colorado","suffix":"Blvd","formatted_street":"E
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"54
+        E Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145499,"lng":-118.14932},"accuracy":0.8,"accuracy_type":"rooftop","source":"Los
         Angeles"}]}},{"query":"826 Howard Street San Francisco CA 94103","response":{"input":{"address_components":{"number":"826","street":"Howard","suffix":"St","formatted_street":"Howard
         St","city":"San Francisco","state":"CA","zip":"94103","country":"US"},"formatted_address":"826
         Howard St, San Francisco, CA 94103"},"results":[{"address_components":{"number":"826","street":"Howard","suffix":"St","formatted_street":"Howard
@@ -66,8 +61,10 @@ http_interactions:
         Howard St, San Francisco, CA 94103","location":{"lat":37.782681,"lng":-122.40325},"accuracy":1,"accuracy_type":"range_interpolation","source":"TIGER\/Line\u00ae
         dataset from the US Census Bureau"},{"address_components":{"number":"826","street":"Howard","suffix":"St","formatted_street":"Howard
         St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103","country":"US"},"formatted_address":"826
-        Howard St, San Francisco, CA 94103","location":{"lat":37.782672,"lng":-122.403196},"accuracy":0.8,"accuracy_type":"range_interpolation","source":"TIGER\/Line\u00ae
-        dataset from the US Census Bureau"}]}}]}'
-    http_version: 
-  recorded_at: Fri, 16 Feb 2018 17:35:11 GMT
-recorded_with: VCR 4.0.0
+        Howard St, San Francisco, CA 94103","location":{"lat":37.782672,"lng":-122.403196},"accuracy":0.9,"accuracy_type":"range_interpolation","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau"},{"address_components":{"number":"800","street":"Howard","suffix":"St","formatted_street":"Howard
+        St","city":"San Francisco","county":"San Francisco County","state":"CA","zip":"94103","country":"US"},"formatted_address":"800
+        Howard St, San Francisco, CA 94103","location":{"lat":37.783251,"lng":-122.403286},"accuracy":0.77,"accuracy_type":"nearest_rooftop_match","source":"San
+        Francisco"}]}}]}'
+  recorded_at: Tue, 24 Nov 2020 16:31:09 GMT
+recorded_with: VCR 6.0.0
