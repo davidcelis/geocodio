@@ -1,6 +1,7 @@
 require 'geocodio/congressional_district'
 require 'geocodio/school_district'
 require 'geocodio/state_legislative_district'
+require 'geocodio/census'
 require 'geocodio/timezone'
 
 module Geocodio
@@ -15,6 +16,8 @@ module Geocodio
     attr_reader :congressional_districts, :house_district, :senate_district,
                 :unified_school_district, :elementary_school_district,
                 :secondary_school_district
+
+    attr_reader :census
 
     attr_reader :timezone
 
@@ -64,6 +67,7 @@ module Geocodio
       set_congressional_districts(fields['congressional_districts'])   if fields['congressional_districts']
       set_legislative_districts(fields['state_legislative_districts']) if fields['state_legislative_districts']
       set_school_districts(fields['school_districts'])                 if fields['school_districts']
+      set_census(fields['census'])                                     if fields['census']
       set_timezone(fields['timezone'])                                 if fields['timezone']
     end
 
@@ -89,6 +93,12 @@ module Geocodio
         @elementary_school_district = SchoolDistrict.new(schools['elementary']) if schools['elementary']
         @secondary_school_district = SchoolDistrict.new(schools['secondary']) if schools['secondary']
       end
+    end
+
+    def set_census(census)
+      return if census.empty?
+
+      @census = Census.new(census)
     end
 
     def set_timezone(timezone)

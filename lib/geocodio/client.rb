@@ -18,8 +18,8 @@ module Geocodio
       :delete => Net::HTTP::Delete
     }
     HOST = 'api.geocod.io'
-    BASE_PATH = '/v1.2'
-    PORT = 80
+    BASE_PATH = '/v1.6'
+    PORT = 443
 
     def initialize(api_key = ENV['GEOCODIO_API_KEY'])
       @api_key = api_key
@@ -31,7 +31,7 @@ module Geocodio
     #
     # @param [Array<String>] addresses one or more String addresses
     # @param [Hash] options an options hash
-    # @option options [Array] :fields a list of option fields to request (possible: "cd" or "cd113", "stateleg", "school", "timezone")
+    # @option options [Array] :fields a list of option fields to request (possible: "cd" or "cd113", "stateleg", "school", "census", "timezone")
     # @return [Geocodio::Address, Array<Geocodio::AddressSet>] One or more Address Sets
     def geocode(addresses, options = {})
       if addresses.size < 1
@@ -52,7 +52,7 @@ module Geocodio
     #
     # @param [Array<String>, Array<Hash>] coordinates one or more pairs of coordinates
     # @param [Hash] options an options hash
-    # @option options [Array] :fields a list of option fields to request (possible: "cd" or "cd113", "stateleg", "school", "timezone")
+    # @option options [Array] :fields a list of option fields to request (possible: "cd" or "cd113", "stateleg", "school", "census", "timezone")
     # @return [Geocodio::Address, Array<Geocodio::AddressSet>] One or more Address Sets
     def reverse_geocode(coordinates, options = {})
       if coordinates.size < 1
@@ -142,6 +142,7 @@ module Geocodio
         end
 
         http = Net::HTTP.new HOST, PORT
+        http.use_ssl = true
         http.read_timeout = options[:timeout] if options[:timeout]
         res  = http.start { http.request(req) }
 
