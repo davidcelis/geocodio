@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.geocod.io/v1.2/geocode?api_key=secret_api_key&fields=cd,stateleg,school,timezone&q=54%20West%20Colorado%20Boulevard%20Pasadena%20CA%2091105
+    uri: http://api.geocod.io/v1.7/geocode?api_key=secret_api_key&fields=cd118,stateleg-next,school,timezone&q=54%20West%20Colorado%20Boulevard%20Pasadena%20CA%2091105
     body:
       encoding: US-ASCII
       string: ''
@@ -18,69 +18,54 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx/1.12.2
       Content-Type:
       - application/json
       Transfer-Encoding:
       - chunked
-      X-Powered-By:
-      - PHP/7.1.14
       Cache-Control:
-      - no-cache
+      - no-cache, private
       Date:
-      - Fri, 16 Feb 2018 17:35:07 GMT
-      Request-Handler:
-      - api19
+      - Tue, 05 Jul 2022 22:21:35 GMT
+      X-Billable-Lookups-Count:
+      - '1'
+      X-Billable-Fields-Count:
+      - '4'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
       - GET, POST
       Access-Control-Allow-Headers:
-      - Content-Type
+      - Content-Type, User-Agent
       Access-Control-Expose-Headers:
       - Request-Handler
+      Request-Handler:
+      - api228
+      Server:
+      - Unicorns with magic wands (https://www.geocod.io)
+      X-Request-Id:
+      - 6167D31F:FDE1_05A15419:0050_62C4B96F_53AB7:3D82
+      Connection:
+      - close
     body:
       encoding: UTF-8
       string: '{"input":{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
         Colorado Blvd","city":"Pasadena","state":"CA","zip":"91105","country":"US"},"formatted_address":"54
-        W Colorado Blvd, Pasadena, CA 91105"},"results":[{"address_components":{"number":"54","predirectional":"E","street":"Colorado","suffix":"Blvd","formatted_street":"E
-        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"54
-        E Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145499,"lng":-118.14932},"accuracy":1,"accuracy_type":"rooftop","source":"Los
-        Angeles","fields":{"congressional_districts":[{"name":"Congressional District
-        27","district_number":27,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Chu","first_name":"Judy","birthday":"1953-07-07","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/chu.house.gov","address":"2423
-        Rayburn HOB; Washington DC 20515-0527","phone":"202-225-5464","contact_form":null},"social":{"rss_url":"http:\/\/chu.house.gov\/rss.xml","twitter":"RepJudyChu","facebook":"RepJudyChu","youtube":"RepJudyChu","youtube_id":"UCfcbYOvdEXZNelM8T05nK-w"},"references":{"bioguide_id":"C001080","thomas_id":"01970","opensecrets_id":"N00030600","lis_id":null,"cspan_id":"92573","govtrack_id":"412379","votesmart_id":"16539","ballotpedia_id":"Judy
-        Chu","washington_post_id":null,"icpsr_id":"20955","wikipedia_id":"Judy Chu"},"source":"Legislator
-        data is originally collected and aggregated by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
-        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
-        Feinstein"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
-        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
-        Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 25","district_number":"25"},"house":{"name":"Assembly District
-        41","district_number":"41"}},"school_districts":{"unified":{"name":"Pasadena
-        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}},{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        W Colorado Blvd, Pasadena, CA 91105"},"results":[{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
         Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"54
         W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145375,"lng":-118.151622},"accuracy":1,"accuracy_type":"rooftop","source":"Los
         Angeles","fields":{"congressional_districts":[{"name":"Congressional District
-        27","district_number":27,"congress_number":"115th","congress_years":"2017-2019","proportion":1,"current_legislators":[{"type":"representative","bio":{"last_name":"Chu","first_name":"Judy","birthday":"1953-07-07","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/chu.house.gov","address":"2423
-        Rayburn HOB; Washington DC 20515-0527","phone":"202-225-5464","contact_form":null},"social":{"rss_url":"http:\/\/chu.house.gov\/rss.xml","twitter":"RepJudyChu","facebook":"RepJudyChu","youtube":"RepJudyChu","youtube_id":"UCfcbYOvdEXZNelM8T05nK-w"},"references":{"bioguide_id":"C001080","thomas_id":"01970","opensecrets_id":"N00030600","lis_id":null,"cspan_id":"92573","govtrack_id":"412379","votesmart_id":"16539","ballotpedia_id":"Judy
-        Chu","washington_post_id":null,"icpsr_id":"20955","wikipedia_id":"Judy Chu"},"source":"Legislator
-        data is originally collected and aggregated by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Feinstein","first_name":"Dianne","birthday":"1933-06-22","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.feinstein.senate.gov","address":"331
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3841","contact_form":"https:\/\/www.feinstein.senate.gov\/public\/index.cfm\/e-mail-me"},"social":{"rss_url":"http:\/\/www.feinstein.senate.gov\/public\/?a=rss.feed","twitter":"SenFeinstein","facebook":"senatorfeinstein","youtube":"SenatorFeinstein","youtube_id":"UCtVC--6LR0ff2aOP8THpuEw"},"references":{"bioguide_id":"F000062","thomas_id":"01332","opensecrets_id":"N00007364","lis_id":"S221","cspan_id":"13061","govtrack_id":"300043","votesmart_id":"53273","ballotpedia_id":"Dianne
-        Feinstein","washington_post_id":null,"icpsr_id":"49300","wikipedia_id":"Dianne
-        Feinstein"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"},{"type":"senator","bio":{"last_name":"Harris","first_name":"Kamala","birthday":"1964-10-20","gender":"F","party":"Democrat"},"contact":{"url":"https:\/\/www.harris.senate.gov","address":"112
-        Hart Senate Office Building Washington DC 20510","phone":"202-224-3553","contact_form":"https:\/\/www.harris.senate.gov\/contact"},"social":{"rss_url":null,"twitter":"SenKamalaHarris","facebook":"SenatorKamalaHarris","youtube":null,"youtube_id":null},"references":{"bioguide_id":"H001075","thomas_id":null,"opensecrets_id":"N00036915","lis_id":"S387","cspan_id":"1018696","govtrack_id":"412678","votesmart_id":"120012","ballotpedia_id":"Kamala
-        Harris","washington_post_id":null,"icpsr_id":"41701","wikipedia_id":"Kamala
-        Harris"},"source":"Legislator data is originally collected and aggregated
-        by https:\/\/github.com\/unitedstates\/"}]}],"state_legislative_districts":{"senate":{"name":"State
-        Senate District 25","district_number":"25"},"house":{"name":"Assembly District
-        41","district_number":"41"}},"school_districts":{"unified":{"name":"Pasadena
-        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"PST","utc_offset":-8,"observes_dst":true}}}]}'
-    http_version:
-  recorded_at: Fri, 16 Feb 2018 17:35:07 GMT
-recorded_with: VCR 4.0.0
+        28","district_number":28,"ocd_id":"ocd-division\/country:us\/state:ca\/cd:28","congress_number":"118th","congress_years":"2023-2025","proportion":1}],"state_legislative_districts":{"house":[{"name":"Assembly
+        District 41","district_number":"41","ocd_id":"ocd-division\/country:us\/state:ca\/sldl:41","is_upcoming_state_legislative_district":true,"proportion":1}],"senate":[{"name":"State
+        Senate District 25","district_number":"25","ocd_id":"ocd-division\/country:us\/state:ca\/sldu:25","is_upcoming_state_legislative_district":true,"proportion":1}]},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"}}},{"address_components":{"number":"54","predirectional":"E","street":"Colorado","suffix":"Blvd","formatted_street":"E
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"54
+        E Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145499,"lng":-118.14932},"accuracy":0.8,"accuracy_type":"rooftop","source":"Los
+        Angeles","fields":{"congressional_districts":[{"name":"Congressional District
+        28","district_number":28,"ocd_id":"ocd-division\/country:us\/state:ca\/cd:28","congress_number":"118th","congress_years":"2023-2025","proportion":1}],"state_legislative_districts":{"house":[{"name":"Assembly
+        District 41","district_number":"41","ocd_id":"ocd-division\/country:us\/state:ca\/sldl:41","is_upcoming_state_legislative_district":true,"proportion":1}],"senate":[{"name":"State
+        Senate District 25","district_number":"25","ocd_id":"ocd-division\/country:us\/state:ca\/sldu:25","is_upcoming_state_legislative_district":true,"proportion":1}]},"school_districts":{"unified":{"name":"Pasadena
+        Unified School District","lea_code":"0629940","grade_low":"KG","grade_high":"12"}},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"}}}]}'
+  recorded_at: Tue, 05 Jul 2022 22:21:35 GMT
+recorded_with: VCR 6.1.0

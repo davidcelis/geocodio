@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.geocod.io/v1.7/geocode?api_key=secret_api_key&fields=timezone,cd118,provriding,riding,stateleg-next
+    body:
+      encoding: UTF-8
+      string: '["1 Infinite Loop Cupertino CA 95014","356 Yonge St, Toronto, ON M5G,
+        Canada","3475 Bd Sainte-Anne, Beauport, QC G1E 3L5, Canada"]'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - no-cache, private
+      Date:
+      - Tue, 05 Jul 2022 23:16:29 GMT
+      X-Billable-Lookups-Count:
+      - '3'
+      X-Billable-Fields-Count:
+      - '9'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Headers:
+      - Content-Type, User-Agent
+      Access-Control-Expose-Headers:
+      - Request-Handler
+      Request-Handler:
+      - api228
+      Server:
+      - Unicorns with magic wands (https://www.geocod.io)
+      X-Request-Id:
+      - 6167D31F:C52C_05A15419:0050_62C4C64C_372DA:3D9A
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"results":[{"query":"1 Infinite Loop Cupertino CA 95014","response":{"input":{"address_components":{"number":"1","street":"Infinite","suffix":"Loop","formatted_street":"Infinite
+        Loop","city":"Cupertino","state":"CA","zip":"95014","country":"US"},"formatted_address":"1
+        Infinite Loop, Cupertino, CA 95014"},"results":[{"address_components":{"number":"1","street":"Infinite","suffix":"Loop","formatted_street":"Infinite
+        Loop","city":"Cupertino","county":"Santa Clara County","state":"CA","zip":"95014","country":"US"},"formatted_address":"1
+        Infinite Loop, Cupertino, CA 95014","location":{"lat":37.331524,"lng":-122.030231},"accuracy":1,"accuracy_type":"rooftop","source":"City
+        of Cupertino","fields":{"congressional_districts":[{"name":"Congressional
+        District 17","district_number":17,"ocd_id":"ocd-division\/country:us\/state:ca\/cd:17","congress_number":"118th","congress_years":"2023-2025","proportion":1}],"state_legislative_districts":{"house":[{"name":"Assembly
+        District 26","district_number":"26","ocd_id":"ocd-division\/country:us\/state:ca\/sldl:26","is_upcoming_state_legislative_district":true,"proportion":1}],"senate":[{"name":"State
+        Senate District 13","district_number":"13","ocd_id":"ocd-division\/country:us\/state:ca\/sldu:13","is_upcoming_state_legislative_district":true,"proportion":1}]},"timezone":{"name":"America\/Los_Angeles","utc_offset":-8,"observes_dst":true,"abbreviation":"PST","source":"\u00a9
+        OpenStreetMap contributors"}}}]}},{"query":"356 Yonge St, Toronto, ON M5G,
+        Canada","response":{"input":{"address_components":{"number":"356","street":"Yonge","suffix":"St","formatted_street":"Yonge
+        St","city":"Toronto","state":"ON","zip":"M5G","country":"CA"},"formatted_address":"356
+        Yonge St, Toronto, ON M5G"},"results":[{"address_components":{"number":"356","street":"Yonge","suffix":"St","formatted_street":"Yonge
+        St","city":"Toronto","state":"ON","zip":"M5G","country":"CA"},"formatted_address":"356
+        Yonge St, Toronto, ON M5G","location":{"lat":43.658192,"lng":-79.382046},"accuracy":1,"accuracy_type":"rooftop","source":"City
+        of Toronto","fields":{"timezone":{"name":"America\/Toronto","utc_offset":-5,"observes_dst":true,"abbreviation":"EST","source":"\u00a9
+        OpenStreetMap contributors"},"riding":{"code":"35110","ocd_id":"ocd-division\/country:ca\/ed:35110-2013","name_french":"University--Rosedale","name_english":"University--Rosedale","source":"Statistics
+        Canada"},"provincial_riding":{"ocd_id":"ocd-division\/country:ca\/province:on\/ed:112-2015","name_french":"University
+        - Rosedale","name_english":"University - Rosedale","source":"Elections Ontario"}}}]}},{"query":"3475
+        Bd Sainte-Anne, Beauport, QC G1E 3L5, Canada","response":{"input":{"address_components":{"number":"3475","city":"Beauport","state":"QC","zip":"G1E","country":"CA"},"formatted_address":"3475,
+        Beauport, QC G1E"},"results":[{"address_components":{"city":"Beauport","state":"QC","zip":"G1E","country":"CA"},"formatted_address":"Beauport,
+        QC G1E","location":{"lat":46.8588,"lng":-71.192},"accuracy":0.35,"accuracy_type":"place","source":"CanVec+
+        by Natural Resources Canada","fields":{"timezone":{"name":"America\/Toronto","utc_offset":-5,"observes_dst":true,"abbreviation":"EST","source":"\u00a9
+        OpenStreetMap contributors"},"riding":{"code":"24008","ocd_id":"ocd-division\/country:ca\/ed:24008-2013","name_french":"Beauport--Limoilou","name_english":"Beauport--Limoilou","source":"Statistics
+        Canada"},"provincial_riding":{"ocd_id":"ocd-division\/country:ca\/province:qc\/ed:742-2017","name_french":"Montmorency","name_english":"Montmorency","source":"Contains
+        open data granted under the Chief Electoral Officer''s Open Data User Licence
+        available at http:\/\/dgeq.org\/en\/. The fact of granting the licence in
+        no way implies that the Chief Electoral Officer approves the use made of the
+        open data."}}},{"address_components":{"city":"Beauport","state":"QC","zip":"G1B","country":"CA"},"formatted_address":"Beauport,
+        QC G1B","location":{"lat":46.9263,"lng":-71.2258},"accuracy":0.25,"accuracy_type":"place","source":"CanVec+
+        by Natural Resources Canada","fields":{"timezone":{"name":"America\/Toronto","utc_offset":-5,"observes_dst":true,"abbreviation":"EST","source":"\u00a9
+        OpenStreetMap contributors"},"riding":{"code":"24020","ocd_id":"ocd-division\/country:ca\/ed:24020-2013","name_french":"Beauport--C\u00f4te-de-Beaupr\u00e9--\u00cele
+        d\u2019Orl\u00e9ans--Charlevoix","name_english":"Beauport--C\u00f4te-de-Beaupr\u00e9--\u00cele
+        d\u2019Orl\u00e9ans--Charlevoix","source":"Statistics Canada"},"provincial_riding":{"ocd_id":"ocd-division\/country:ca\/province:qc\/ed:742-2017","name_french":"Montmorency","name_english":"Montmorency","source":"Contains
+        open data granted under the Chief Electoral Officer''s Open Data User Licence
+        available at http:\/\/dgeq.org\/en\/. The fact of granting the licence in
+        no way implies that the Chief Electoral Officer approves the use made of the
+        open data."}}},{"address_components":{"city":"Beauport","state":"QC","zip":"G1C","country":"CA"},"formatted_address":"Beauport,
+        QC G1C","location":{"lat":46.8801,"lng":-71.196},"accuracy":0.25,"accuracy_type":"place","source":"CanVec+
+        by Natural Resources Canada","fields":{"timezone":{"name":"America\/Toronto","utc_offset":-5,"observes_dst":true,"abbreviation":"EST","source":"\u00a9
+        OpenStreetMap contributors"},"riding":{"code":"24008","ocd_id":"ocd-division\/country:ca\/ed:24008-2013","name_french":"Beauport--Limoilou","name_english":"Beauport--Limoilou","source":"Statistics
+        Canada"},"provincial_riding":{"ocd_id":"ocd-division\/country:ca\/province:qc\/ed:742-2017","name_french":"Montmorency","name_english":"Montmorency","source":"Contains
+        open data granted under the Chief Electoral Officer''s Open Data User Licence
+        available at http:\/\/dgeq.org\/en\/. The fact of granting the licence in
+        no way implies that the Chief Electoral Officer approves the use made of the
+        open data."}}}]}}]}'
+  recorded_at: Tue, 05 Jul 2022 23:16:29 GMT
+recorded_with: VCR 6.1.0

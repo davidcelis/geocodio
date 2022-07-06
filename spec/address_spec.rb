@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Geocodio::Address do
   let(:geocodio) { Geocodio::Client.new }
-
+  
   context 'when parsed' do
     subject(:address) do
       VCR.use_cassette('parse') do
@@ -189,7 +189,7 @@ describe Geocodio::Address do
     context 'with additional fields' do
       subject(:address) do
         VCR.use_cassette('geocode_with_fields') do
-          geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd stateleg school timezone]).best
+          geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd118 stateleg-next school timezone]).best
         end
       end
 

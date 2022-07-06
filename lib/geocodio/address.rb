@@ -2,9 +2,11 @@ require 'geocodio/congressional_district'
 require 'geocodio/school_district'
 require 'geocodio/state_legislative_district'
 require 'geocodio/timezone'
+require 'geocodio/canadian/electoral_districts'
 
 module Geocodio
   class Address
+    include Geocodio::Canadian
     attr_reader :number, :predirectional, :street, :suffix, :postdirectional,
                 :formatted_street, :city, :state, :zip, :county
 
@@ -65,19 +67,24 @@ module Geocodio
       set_legislative_districts(fields['state_legislative_districts']) if fields['state_legislative_districts']
       set_school_districts(fields['school_districts'])                 if fields['school_districts']
       set_timezone(fields['timezone'])                                 if fields['timezone']
+      
+      riding, provincial_riding = fields.values_at('riding', 'provincial_riding')
+      if riding || provincial_riding
+        set_canadian_fields(riding, provincial_riding)
+      end
     end
 
     def set_congressional_districts(districts)
       return if districts.empty?
-
+        
       @congressional_districts = districts.map { |district| CongressionalDistrict.new(district) }
     end
 
     def set_legislative_districts(districts)
       return if districts.empty?
-
-      @house_district = StateLegislativeDistrict.new(districts['house']) if districts['house']
-      @senate_district = StateLegislativeDistrict.new(districts['senate']) if districts['senate']
+      house, senate = districts.values_at('house', 'senate').map(&:first)
+      @house_district = StateLegislativeDistrict.new(house) if house
+      @senate_district = StateLegislativeDistrict.new(senate) if senate
     end
 
     def set_school_districts(schools)

@@ -6,7 +6,7 @@ describe Geocodio::StateLegislativeDistrict do
   context 'typical numeric district' do
     subject(:district) do
       VCR.use_cassette('geocode_with_fields') do
-        geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd stateleg school timezone]).best.house_district
+        geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd118 stateleg-next school timezone]).best.house_district
       end
     end
 

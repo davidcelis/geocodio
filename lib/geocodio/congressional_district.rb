@@ -7,6 +7,7 @@ module Geocodio
     attr_reader :congress_number
     attr_reader :proportion
     attr_reader :current_legislators
+    attr_accessor :ocd_id
 
     def initialize(payload = {})
       @name            = payload['name']
@@ -14,8 +15,9 @@ module Geocodio
       @congress_number = payload['congress_number'].to_i
       @congress_years  = payload['congress_years']
       @proportion      = payload['proportion'].to_i
-
-      @current_legislators = payload['current_legislators'].map do |legislator|
+      @ocd_id          = payload['ocd_id']
+      
+      @current_legislators = [*payload['current_legislators']].map do |legislator|
         Legislator.new(legislator)
       end
     end
