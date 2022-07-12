@@ -6,7 +6,10 @@ describe Geocodio::StateLegislativeDistrict do
   context 'typical numeric district' do
     subject(:district) do
       VCR.use_cassette('geocode_with_fields') do
-        geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd118 stateleg-next school timezone]).best.house_district
+        geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd118 stateleg-next school timezone])
+          .best
+          .house_districts
+          .first
       end
     end
 
@@ -22,7 +25,10 @@ describe Geocodio::StateLegislativeDistrict do
   context 'Alaska non-numeric state district' do
     subject(:alaska_district) do
       VCR.use_cassette('alaska_geocode_with_fields') do
-        geocodio.geocode(['4141 woronzof dr anchorage ak 99517'], fields: %w[cd stateleg]).best.senate_district
+        geocodio.geocode(['4141 woronzof dr anchorage ak 99517'], fields: %w[cd stateleg])
+          .best
+          .senate_districts
+          .first
       end
     end
 

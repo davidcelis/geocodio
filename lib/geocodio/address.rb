@@ -14,7 +14,7 @@ module Geocodio
     alias :lat :latitude
     alias :lng :longitude
 
-    attr_reader :congressional_districts, :house_district, :senate_district,
+    attr_reader :congressional_districts, :house_districts, :senate_districts,
                 :unified_school_district, :elementary_school_district,
                 :secondary_school_district
 
@@ -83,9 +83,9 @@ module Geocodio
 
     def set_legislative_districts(districts)
       return if districts.empty?
-      house, senate = districts.values_at('house', 'senate').map(&:first)
-      @house_district = StateLegislativeDistrict.new(house) if house
-      @senate_district = StateLegislativeDistrict.new(senate) if senate
+      @house_districts, @senate_districts = districts.values_at('house', 'senate').map do |district_entries|
+        [*district_entries].map{|entry|  StateLegislativeDistrict.new(entry)}
+      end
     end
 
     def set_school_districts(schools)

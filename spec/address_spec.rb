@@ -203,12 +203,16 @@ describe Geocodio::Address do
         end
       end
 
-      it 'has a house district' do
-        expect(address.house_district).to be_a(Geocodio::StateLegislativeDistrict)
+      it 'has house districts' do
+        expect(address.house_districts).to be_a(Array)
+        expect(address.house_districts.size).to eq(1)
+        expect(address.house_districts.first).to be_a(Geocodio::StateLegislativeDistrict)
       end
 
-      it 'has a senate district' do
-        expect(address.senate_district).to be_a(Geocodio::StateLegislativeDistrict)
+      it 'has senate districts' do
+        expect(address.senate_districts).to be_a(Array)
+        expect(address.senate_districts.size).to eq(1)
+        expect(address.senate_districts.first).to be_a(Geocodio::StateLegislativeDistrict)
       end
 
       it 'has a unified school district' do
