@@ -122,6 +122,10 @@ describe Geocodio::Address do
       it 'has an accuracy_type' do
         expect(address.accuracy_type).to eq("rooftop")
       end
+      
+      it 'has a source' do
+        expect(address.source).to eq("Los Angeles")
+      end
     end
 
     context 'has postdirectional' do

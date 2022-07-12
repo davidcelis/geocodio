@@ -23,13 +23,14 @@ module Geocodio
     # How accurate geocod.io deemed this result to be given the original query.
     #
     # @return [Float] a number between 0 and 1
-    attr_reader :accuracy, :accuracy_type
+    attr_reader :accuracy, :accuracy_type, :source
 
     def initialize(payload = {})
       set_attributes(payload['address_components']) if payload['address_components']
       set_coordinates(payload['location'])          if payload['location']
       set_additional_fields(payload['fields'])      if payload['fields']
 
+      @source            = payload['source']
       @accuracy          = payload['accuracy']
       @accuracy_type     = payload['accuracy_type']
       @formatted_address = payload['formatted_address']
