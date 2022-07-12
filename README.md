@@ -1,6 +1,6 @@
 # Geocodio [![Build Status](https://travis-ci.org/davidcelis/geocodio.png?branch=master)](https://travis-ci.org/davidcelis/geocodio) [![Coverage Status](https://coveralls.io/repos/davidcelis/geocodio/badge.png)](https://coveralls.io/r/davidcelis/geocodio) [![Code Climate](https://codeclimate.com/github/davidcelis/geocodio.png)](https://codeclimate.com/github/davidcelis/geocodio)
 
-Geocodio is a lightweight Ruby wrapper around the [geocod.io][geocod.io] API.
+Geocodio is a lightweight Ruby wrapper around the [geocod.io][geocod.io] API for [`versions >= 1.7`](https://www.geocod.io/docs/#v1-7).
 
 ## Installation
 
@@ -94,10 +94,10 @@ Note that this endpoint performs no geocoding; it merely formats a single provid
 
 ### Additional fields
 
-Geocodio has added support for retrieving [additional fields][fields] when geocoding or reverse geocoding. To request these fields, pass an options hash to either `#geocode` or `#reverse_geocode`. Possible fields include `cd` or `cd113`, `stateleg`, `school`, and `timezone`:
+Geocodio has added support for retrieving [additional fields][fields] when geocoding or reverse geocoding. To request these fields, pass an options hash to either `#geocode` or `#reverse_geocode`. Possible fields include or `cd113`,( or `cd` to get current legislators), `stateleg`, `stateleg-next`, `school`, and `timezone`, [Open Civic Data Division Identifiers (OCD-IDs)](https://www.geocod.io/docs/#ocd-identifiers) `cd118` and `stateleg-next` are required.
 
 ```ruby
-address = geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd stateleg school timezone]).best
+address = geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd118 stateleg-next school timezone]).best
 
 address.congressional_districts
 # => #<Geocodio::CongressionalDistrict:0x007fa3c15f41c0 @name="Congressional District 27" @district_number=27 @congress_number=113 @congress_years=2013..2015>
@@ -116,6 +116,34 @@ address.timezone
 address.timezone.observes_dst?
 # => true
 ```
+
+#### Canadian address
+
+To fetch Canadian federal and provincial electoral districts, include to [`provriding` and `riding`](https://www.geocod.io/docs/#riding-canadian-provincial-electoral-district) to the  `fields` input. From the result, check if the Canadian data is available by method `Address#canadian?` then it's `true`, get the districts data from method `Address#canadian` as following:
+
+```ruby
+address = geocodio.geocode(['160 Spadina Ave., Toronto, ON M5T 2C2, Canada'], 
+  fields: %w[cd118 stateleg-next school timezone]).best
+
+address.canadian?
+# => true
+
+address.canadian.federal_electoral_district
+# => #<Geocodio::Canadian::FederalElectoralDistrict:0x00007f9c173ff358
+#  @code="35101",
+#  @name_english="Spadina--Fort York",
+#  @name_french="Spadina--Fort York",
+#  @ocd_id="ocd-division/country:ca/ed:35101-2013",
+#  @source="Statistics Canada">
+
+address.canadian.provincial_electoral_district
+#<Geocodio::Canadian::ProvincialElectoralDistrict:0x00007fd9001046a0
+#  @name_english="University - Rosedale",
+#  @name_french="University - Rosedale",
+#  @ocd_id="ocd-division/country:ca/province:on/ed:112-2015",
+#  @source="Elections Ontario">
+```
+
 
 ## Contributing
 

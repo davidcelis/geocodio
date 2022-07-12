@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.geocod.io/v1.2/geocode?api_key=secret_api_key&q=54%20West%20Colorado%20Boulevard%20Pasadena%20CA%2091105
+    uri: http://api.geocod.io/v1.7/geocode?api_key=secret_api_key&q=54%20West%20Colorado%20Boulevard%20Pasadena%20CA%2091105
     body:
       encoding: US-ASCII
       string: ''
@@ -18,39 +18,44 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx/1.12.2
       Content-Type:
       - application/json
       Transfer-Encoding:
       - chunked
-      X-Powered-By:
-      - PHP/7.1.14
       Cache-Control:
-      - no-cache
+      - no-cache, private
       Date:
-      - Fri, 16 Feb 2018 17:35:08 GMT
-      Request-Handler:
-      - api35
+      - Tue, 05 Jul 2022 22:21:36 GMT
+      X-Billable-Lookups-Count:
+      - '1'
+      X-Billable-Fields-Count:
+      - '0'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
       - GET, POST
       Access-Control-Allow-Headers:
-      - Content-Type
+      - Content-Type, User-Agent
       Access-Control-Expose-Headers:
       - Request-Handler
+      Request-Handler:
+      - api228
+      Server:
+      - Unicorns with magic wands (https://www.geocod.io)
+      X-Request-Id:
+      - 6167D31F:FDE3_05A15419:0050_62C4B970_53B75:3D82
+      Connection:
+      - close
     body:
       encoding: UTF-8
       string: '{"input":{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
         Colorado Blvd","city":"Pasadena","state":"CA","zip":"91105","country":"US"},"formatted_address":"54
-        W Colorado Blvd, Pasadena, CA 91105"},"results":[{"address_components":{"number":"54","predirectional":"E","street":"Colorado","suffix":"Blvd","formatted_street":"E
-        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"54
-        E Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145499,"lng":-118.14932},"accuracy":1,"accuracy_type":"rooftop","source":"Los
-        Angeles"},{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        W Colorado Blvd, Pasadena, CA 91105"},"results":[{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
         Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"54
         W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145375,"lng":-118.151622},"accuracy":1,"accuracy_type":"rooftop","source":"Los
+        Angeles"},{"address_components":{"number":"54","predirectional":"E","street":"Colorado","suffix":"Blvd","formatted_street":"E
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"54
+        E Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145499,"lng":-118.14932},"accuracy":0.8,"accuracy_type":"rooftop","source":"Los
         Angeles"}]}'
-    http_version: 
-  recorded_at: Fri, 16 Feb 2018 17:35:08 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Tue, 05 Jul 2022 22:21:36 GMT
+recorded_with: VCR 6.1.0

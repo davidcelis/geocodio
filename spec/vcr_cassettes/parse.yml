@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.geocod.io/v1.2/parse?api_key=secret_api_key&q=54%20West%20Colorado%20Boulevard%20Pasadena%20CA%2091105
+    uri: http://api.geocod.io/v1.7/parse?api_key=secret_api_key&q=54%20West%20Colorado%20Boulevard%20Pasadena%20CA%2091105
     body:
       encoding: US-ASCII
       string: ''
@@ -18,33 +18,34 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx/1.12.2
       Content-Type:
       - application/json
       Transfer-Encoding:
       - chunked
-      X-Powered-By:
-      - PHP/7.1.14
       Cache-Control:
-      - no-cache
+      - no-cache, private
       Date:
-      - Fri, 16 Feb 2018 19:38:21 GMT
-      Request-Handler:
-      - api7
+      - Tue, 05 Jul 2022 22:21:35 GMT
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
       - GET, POST
       Access-Control-Allow-Headers:
-      - Content-Type
+      - Content-Type, User-Agent
       Access-Control-Expose-Headers:
       - Request-Handler
+      Request-Handler:
+      - api245
+      Server:
+      - Unicorns with magic wands (https://www.geocod.io)
+      X-Request-Id:
+      - 6167D31F:FDE0_05A15419:0050_62C4B96F_53A6D:3D82
+      Connection:
+      - close
     body:
       encoding: UTF-8
       string: '{"address_components":{"number":"54","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
         Colorado Blvd","city":"Pasadena","state":"CA","zip":"91105","country":"US"},"formatted_address":"54
         W Colorado Blvd, Pasadena, CA 91105"}'
-    http_version: 
-  recorded_at: Fri, 16 Feb 2018 19:38:21 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Tue, 05 Jul 2022 22:21:35 GMT
+recorded_with: VCR 6.1.0

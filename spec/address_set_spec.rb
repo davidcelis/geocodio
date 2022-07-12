@@ -17,7 +17,7 @@ describe Geocodio::AddressSet do
   end
 
   it 'has a size' do
-    expect(address_set.size).to eq(2)
+    expect(address_set.size).to eq(4)
   end
 
   it 'has a best' do

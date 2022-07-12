@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Geocodio::Address do
   let(:geocodio) { Geocodio::Client.new }
-
+  
   context 'when parsed' do
     subject(:address) do
       VCR.use_cassette('parse') do
@@ -122,6 +122,10 @@ describe Geocodio::Address do
       it 'has an accuracy_type' do
         expect(address.accuracy_type).to eq("rooftop")
       end
+      
+      it 'has a source' do
+        expect(address.source).to eq("Los Angeles")
+      end
     end
 
     context 'has postdirectional' do
@@ -189,7 +193,7 @@ describe Geocodio::Address do
     context 'with additional fields' do
       subject(:address) do
         VCR.use_cassette('geocode_with_fields') do
-          geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd stateleg school timezone]).best
+          geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd118 stateleg-next school timezone]).best
         end
       end
 
@@ -199,12 +203,16 @@ describe Geocodio::Address do
         end
       end
 
-      it 'has a house district' do
-        expect(address.house_district).to be_a(Geocodio::StateLegislativeDistrict)
+      it 'has house districts' do
+        expect(address.house_districts).to be_a(Array)
+        expect(address.house_districts.size).to eq(1)
+        expect(address.house_districts.first).to be_a(Geocodio::StateLegislativeDistrict)
       end
 
-      it 'has a senate district' do
-        expect(address.senate_district).to be_a(Geocodio::StateLegislativeDistrict)
+      it 'has senate districts' do
+        expect(address.senate_districts).to be_a(Array)
+        expect(address.senate_districts.size).to eq(1)
+        expect(address.senate_districts.first).to be_a(Geocodio::StateLegislativeDistrict)
       end
 
       it 'has a unified school district' do
